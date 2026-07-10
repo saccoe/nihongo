@@ -1,6 +1,6 @@
 # 日本語 クイズ · Nihongo
 
-App de estudio de japonés (Cap 14–17, Nankai): repaso de gramática y vocabulario,
+App de estudio de japonés: repaso de gramática y vocabulario,
 entrenador de conjugación de verbos y una referencia con las reglas de cada grupo.
 
 Hecho con **Astro + React + Tailwind + daisyUI**. Los datos viven en JSON, así que

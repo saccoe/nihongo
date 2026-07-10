@@ -4,8 +4,10 @@ import type { Question, Category } from '../lib/types';
 import { normalize } from '../lib/conjugator';
 
 const QUESTIONS = questionsData as Question[];
-const CHAPTERS = [14, 15, 16, 17] as const;
-const CH_LABEL: Record<number, string> = {
+
+// Bloques temáticos (la clave interna es el nº de capítulo, pero no se muestra).
+const BLOCKS = [14, 15, 16, 17] as const;
+const BLOCK_LABEL: Record<number, string> = {
   14: 'forma て · pedidos',
   15: 'permiso · prohibición',
   16: 'くて/で · から · partículas',
@@ -28,7 +30,7 @@ const hasJP = (s: string) => /[぀-ゟ゠-ヿ一-鿿]/.test(s);
 
 export default function Quiz() {
   const [phase, setPhase] = useState<Phase>('setup');
-  const [selCh, setSelCh] = useState<Set<number>>(new Set(CHAPTERS));
+  const [selCh, setSelCh] = useState<Set<number>>(new Set(BLOCKS));
   const [selCat, setSelCat] = useState<Set<Category>>(new Set(['gram', 'vocab']));
   const [len, setLen] = useState<'15' | '30' | 'all'>('15');
   const [shuffle, setShuffle] = useState(true);
@@ -113,20 +115,19 @@ export default function Quiz() {
             Configurá tu repaso
           </span>
           <p className="mb-2 text-sm opacity-70">
-            Gramática y vocabulario de los capítulos 14 a 17. Corrección al instante con explicación.
+            Gramática y vocabulario. Corrección al instante con explicación.
           </p>
 
-          <Label>Capítulos</Label>
+          <Label>Temas</Label>
           <div className="flex flex-wrap gap-2">
-            {CHAPTERS.map((c) => (
+            {BLOCKS.map((c) => (
               <Chip
                 key={c}
                 color="primary"
                 active={selCh.has(c)}
                 onClick={() => toggle(selCh, c, setSelCh)}
               >
-                <span>Cap {c}</span>
-                <small className="block text-[11px] font-normal opacity-70">{CH_LABEL[c]}</small>
+                <span className="jp">{BLOCK_LABEL[c]}</span>
               </Chip>
             ))}
           </div>
@@ -173,7 +174,7 @@ export default function Quiz() {
               Empezar →
             </button>
             <span className="text-xs opacity-60">
-              {pool.length ? `${target} de ${pool.length} disponibles` : 'Elegí capítulo y tipo'}
+              {pool.length ? `${target} de ${pool.length} disponibles` : 'Elegí tema y tipo'}
             </span>
           </div>
         </div>
@@ -215,7 +216,7 @@ export default function Quiz() {
                     className="rounded-box border border-base-300 border-l-4 border-l-error bg-base-200 px-3.5 py-3"
                   >
                     <div className="text-sm opacity-70">
-                      <b>CAP {m.q.ch}</b> · {m.q.prompt}
+                      <b>{m.q.topic === 'vocabulario' ? 'Vocabulario' : m.q.topic}</b> · {m.q.prompt}
                       {m.q.cue && <span className="jp"> （{m.q.cue}）</span>}
                     </div>
                     <div className="jp mt-1 font-bold">
@@ -264,7 +265,6 @@ export default function Quiz() {
 
         <div className="mt-5">
           <div className="mb-1 flex flex-wrap items-center gap-2 text-[11px] font-bold uppercase tracking-wider">
-            <span className="badge badge-accent badge-sm">CAP {q.ch}</span>
             <span className="badge badge-ghost badge-sm">
               {q.cat === 'vocab' ? 'Vocabulario' : 'Gramática'}
             </span>
