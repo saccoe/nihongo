@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://saccoe.github.io',
+  site: 'https://esacco.dev',
   base: '/nihongo',
   integrations: [react()],
   vite: {

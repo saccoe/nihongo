@@ -28,4 +28,4 @@ pnpm build     # genera dist/
 ## Deploy
 
 GitHub Pages vía Actions (`.github/workflows/deploy.yml`): cada push a `main`
-publica en `https://saccoe.github.io/nihongo/`.
+publica en `https://esacco.dev/nihongo/`.

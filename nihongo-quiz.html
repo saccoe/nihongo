@@ -1,0 +1,923 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nihongo · Cap 14–17</title>
+<style>
+  :root{
+    --cream:#F6EEDF; --cream-2:#EFE3CE; --card:#FFFBF3;
+    --ink:#232B4D; --ink-soft:#4A5170; --muted:#8A8199;
+    --crimson:#C41230; --crimson-soft:#E0546B; --gold:#C89B3C;
+    --good:#2E7D5B; --good-bg:#E3F1EA; --bad:#C41230; --bad-bg:#FBE4E7;
+    --g1:#2E6DB4; --g2:#B4642E; --g3:#7A4FB0;
+    --line:#E3D5BC; --shadow:20px 30px 60px -30px rgba(35,43,77,.35);
+    --r:18px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --cream:#171C33; --cream-2:#10142a; --card:#232B4D;
+      --ink:#F3ECDD; --ink-soft:#C6C2D4; --muted:#8E8AA0;
+      --crimson:#F26B82; --crimson-soft:#F26B82; --gold:#E3B85A;
+      --good:#57C79A; --good-bg:#173a2e; --bad:#F26B82; --bad-bg:#3a1a22;
+      --g1:#6FA8E0; --g2:#E0A66F; --g3:#B694E0;
+      --line:#33406B; --shadow:20px 30px 60px -30px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="light"]{
+    --cream:#F6EEDF; --cream-2:#EFE3CE; --card:#FFFBF3;
+    --ink:#232B4D; --ink-soft:#4A5170; --muted:#8A8199;
+    --crimson:#C41230; --crimson-soft:#E0546B; --gold:#C89B3C;
+    --good:#2E7D5B; --good-bg:#E3F1EA; --bad:#C41230; --bad-bg:#FBE4E7;
+    --g1:#2E6DB4; --g2:#B4642E; --g3:#7A4FB0;
+    --line:#E3D5BC; --shadow:20px 30px 60px -30px rgba(35,43,77,.35);
+  }
+  :root[data-theme="dark"]{
+    --cream:#171C33; --cream-2:#10142a; --card:#232B4D;
+    --ink:#F3ECDD; --ink-soft:#C6C2D4; --muted:#8E8AA0;
+    --crimson:#F26B82; --crimson-soft:#F26B82; --gold:#E3B85A;
+    --good:#57C79A; --good-bg:#173a2e; --bad:#F26B82; --bad-bg:#3a1a22;
+    --g1:#6FA8E0; --g2:#E0A66F; --g3:#B694E0;
+    --line:#33406B; --shadow:20px 30px 60px -30px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:radial-gradient(1200px 500px at 50% -8%, var(--cream-2), transparent 60%), var(--cream);
+    color:var(--ink); line-height:1.5; min-height:100vh;
+    display:flex; flex-direction:column; align-items:center;
+    padding:clamp(14px,3.5vw,40px) 16px 64px;
+  }
+  .jp{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",system-ui,sans-serif;}
+  .disp{font-family:ui-rounded,"SF Pro Rounded",system-ui,sans-serif;letter-spacing:-.01em;}
+  .wrap{width:100%;max-width:720px;display:flex;flex-direction:column;gap:20px}
+
+  header{text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center;position:relative}
+  .sun{width:54px;height:54px;border-radius:50%;
+    background:radial-gradient(circle at 50% 42%, var(--crimson), var(--crimson) 62%, transparent 63%);margin-bottom:2px;position:relative;}
+  .sun::before,.sun::after{content:"❁";position:absolute;color:var(--card);font-size:11px}
+  .sun::before{left:9px;top:11px}.sun::after{right:9px;top:11px}
+  h1{font-size:clamp(26px,6vw,38px);font-weight:800;line-height:1.05;text-wrap:balance}
+  h1 .accent{color:var(--crimson)}
+  .sub{color:var(--ink-soft);font-size:14px;max-width:46ch}
+  .theme-btn{position:absolute;top:0;right:0;border:1px solid var(--line);background:var(--card);
+    color:var(--ink-soft);width:38px;height:38px;border-radius:12px;cursor:pointer;font-size:16px}
+  .theme-btn:hover{border-color:var(--gold)}
+
+  /* tabs */
+  .tabs{display:flex;gap:6px;background:var(--cream-2);border:1px solid var(--line);border-radius:14px;padding:5px}
+  .tab{flex:1;border:none;background:transparent;color:var(--ink-soft);font-family:inherit;font-weight:700;
+    font-size:14.5px;padding:11px 8px;border-radius:10px;cursor:pointer;transition:.12s}
+  .tab[aria-selected="true"]{background:var(--card);color:var(--crimson);box-shadow:0 2px 8px -4px rgba(0,0,0,.3)}
+  .tab:hover:not([aria-selected="true"]){color:var(--ink)}
+
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+    box-shadow:var(--shadow);padding:clamp(20px,4.5vw,34px);}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .lead{margin:10px 0 18px;color:var(--ink-soft);font-size:15px}
+  .chip-label{font-size:12px;font-weight:700;color:var(--ink-soft);margin:16px 0 9px;text-transform:uppercase;letter-spacing:.06em}
+  .chips{display:flex;flex-wrap:wrap;gap:9px}
+  .chip{border:1.5px solid var(--line);background:transparent;color:var(--ink);
+    padding:9px 15px;border-radius:999px;cursor:pointer;font-size:14px;font-weight:600;
+    display:flex;flex-direction:column;align-items:flex-start;line-height:1.15;transition:.12s;}
+  .chip small{font-weight:500;color:var(--muted);font-size:11px}
+  .chip[aria-pressed="true"]{border-color:var(--crimson);background:var(--crimson);color:#fff}
+  .chip[aria-pressed="true"] small{color:rgba(255,255,255,.85)}
+  .chip:focus-visible,.opt:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+  .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:22px}
+  .btn{font-family:inherit;font-size:16px;font-weight:700;border:none;border-radius:13px;cursor:pointer;
+    padding:14px 26px;background:var(--crimson);color:#fff;transition:.12s;}
+  .btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+  .btn.ghost:hover{border-color:var(--gold)}
+  .btn.sm{padding:10px 18px;font-size:14px}
+  .btn:disabled{opacity:.45;cursor:not-allowed;transform:none;filter:none}
+  .muted-note{color:var(--muted);font-size:12.5px}
+
+  .toggle-line{display:flex;align-items:center;gap:9px;margin-top:16px;font-size:14px;color:var(--ink-soft)}
+  .switch{position:relative;width:42px;height:24px;flex:none}
+  .switch input{opacity:0;width:0;height:0}
+  .slider{position:absolute;inset:0;background:var(--line);border-radius:999px;transition:.15s;cursor:pointer}
+  .slider::before{content:"";position:absolute;width:18px;height:18px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.15s}
+  .switch input:checked + .slider{background:var(--crimson)}
+  .switch input:checked + .slider::before{transform:translateX(18px)}
+
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:13.5px;color:var(--ink-soft);font-weight:600}
+  .bar{height:8px;background:var(--cream-2);border-radius:999px;overflow:hidden;margin-top:12px;border:1px solid var(--line)}
+  .bar > i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--crimson),var(--gold));transition:width .35s ease}
+  .score-pill{background:var(--cream-2);border:1px solid var(--line);border-radius:999px;padding:5px 13px;font-variant-numeric:tabular-nums}
+
+  .qtag{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;flex-wrap:wrap}
+  .qtag b{background:var(--gold);color:var(--card);border-radius:6px;padding:2px 7px}
+  .qtag .kind{border:1px solid var(--line);color:var(--ink-soft);border-radius:6px;padding:2px 7px;background:var(--cream-2)}
+  .prompt{font-size:clamp(17px,3.4vw,20px);font-weight:600;margin:10px 0 6px;text-wrap:pretty}
+  .prompt .blank{color:var(--crimson);font-weight:800;letter-spacing:1px}
+  .cue{font-size:clamp(26px,7vw,40px);font-weight:800;text-align:center;margin:18px 0;
+    padding:16px;background:var(--cream-2);border-radius:14px;border:1px dashed var(--line);}
+
+  .opts{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .opt{text-align:left;font-family:inherit;font-size:17px;padding:14px 17px;border-radius:12px;cursor:pointer;
+    border:1.5px solid var(--line);background:var(--card);color:var(--ink);transition:.1s;display:flex;align-items:center;gap:12px;}
+  .opt .key{flex:none;width:24px;height:24px;border-radius:7px;background:var(--cream-2);display:grid;place-items:center;font-size:12px;font-weight:700;color:var(--ink-soft)}
+  .opt:hover:not(:disabled){border-color:var(--gold)}
+  .opt.correct{border-color:var(--good);background:var(--good-bg)}
+  .opt.correct .key{background:var(--good);color:#fff}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .key{background:var(--bad);color:#fff}
+  .opt:disabled{cursor:default}
+
+  .typebox{display:flex;gap:10px;margin-top:6px;flex-wrap:wrap}
+  .typebox input{flex:1;min-width:180px;font-family:inherit;font-size:22px;padding:13px 16px;border-radius:12px;
+    border:1.5px solid var(--line);background:var(--card);color:var(--ink);}
+  .typebox input.correct{border-color:var(--good);background:var(--good-bg)}
+  .typebox input.wrong{border-color:var(--bad);background:var(--bad-bg)}
+
+  .feedback{margin-top:16px;border-radius:12px;padding:14px 16px;font-size:14.5px;display:none;border:1px solid}
+  .feedback.show{display:block;animation:pop .25s ease}
+  .feedback.ok{background:var(--good-bg);border-color:var(--good)}
+  .feedback.no{background:var(--bad-bg);border-color:var(--bad)}
+  .feedback .head{font-weight:800;margin-bottom:4px}
+  .feedback.ok .head{color:var(--good)}
+  .feedback.no .head{color:var(--bad)}
+  .feedback .sol{font-weight:700}
+  .feedback .exp{color:var(--ink-soft);margin-top:4px}
+  @keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .qfoot{display:flex;justify-content:flex-end;gap:10px;margin-top:18px}
+
+  .big-score{text-align:center;padding:8px 0 4px}
+  .big-score .num{font-size:clamp(52px,15vw,84px);font-weight:800;line-height:1;color:var(--crimson)}
+  .big-score .den{color:var(--muted);font-weight:600}
+  .verdict{font-size:19px;font-weight:700;margin-top:8px;text-wrap:balance}
+  .review{margin-top:22px;display:flex;flex-direction:column;gap:10px}
+  .review h3{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold)}
+  .miss{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:10px;padding:12px 14px;background:var(--cream-2)}
+  .miss .m-q{font-size:14px;color:var(--ink-soft)}
+  .miss .m-a{font-weight:700;margin-top:3px}
+  .miss .m-a .x{color:var(--bad);text-decoration:line-through;font-weight:600}
+  .miss .m-a .v{color:var(--good)}
+  .hidden{display:none!important}
+  footer{color:var(--muted);font-size:12px;text-align:center;margin-top:4px}
+
+  /* ruby / furigana */
+  ruby{ruby-align:center}
+  rt{font-size:.5em;color:var(--gold);font-weight:700;letter-spacing:0}
+  .no-furi rt{visibility:hidden}
+
+  /* conjugation drill */
+  .verb-head{text-align:center;margin:6px 0 4px}
+  .verb-kanji{font-size:clamp(38px,11vw,60px);font-weight:800;line-height:1.2}
+  .verb-mean{color:var(--ink-soft);font-size:15px;margin-top:2px}
+  .given{display:inline-flex;gap:8px;align-items:baseline;background:var(--cream-2);border:1px solid var(--line);
+    border-radius:12px;padding:9px 15px;margin:12px auto 4px;font-size:18px}
+  .given .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700}
+  .center{display:flex;justify-content:center}
+  .grp-row{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:16px 0 4px}
+  .grp{border:1.5px solid var(--line);background:var(--card);color:var(--ink);font-family:inherit;font-weight:700;
+    font-size:15px;padding:11px 18px;border-radius:12px;cursor:pointer;transition:.1s}
+  .grp[data-g="1"][aria-pressed="true"]{border-color:var(--g1);background:var(--g1);color:#fff}
+  .grp[data-g="2"][aria-pressed="true"]{border-color:var(--g2);background:var(--g2);color:#fff}
+  .grp[data-g="3"][aria-pressed="true"]{border-color:var(--g3);background:var(--g3);color:#fff}
+  .grp.ok{border-color:var(--good);background:var(--good-bg)}
+  .grp.bad{border-color:var(--bad);background:var(--bad-bg)}
+  .fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+  @media(max-width:520px){.fields{grid-template-columns:1fr}}
+  .field label{display:block;font-size:12px;font-weight:700;color:var(--ink-soft);margin-bottom:5px}
+  .field input{width:100%;font-family:"Hiragino Sans",system-ui,sans-serif;font-size:19px;padding:11px 13px;border-radius:11px;
+    border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+  .field input.correct{border-color:var(--good);background:var(--good-bg)}
+  .field input.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .field .fix{font-size:13px;font-weight:700;color:var(--good);margin-top:4px;min-height:1px}
+  .cbadge{display:inline-block;font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;color:#fff}
+  .cbadge.g1{background:var(--g1)}.cbadge.g2{background:var(--g2)}.cbadge.g3{background:var(--g3)}
+
+  /* reference */
+  .rules{display:flex;flex-direction:column;gap:16px}
+  .rblock{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:var(--cream-2)}
+  .rblock h3{font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  .rblock p{font-size:14px;color:var(--ink-soft);margin:5px 0}
+  .rblock .jp{color:var(--ink);font-weight:600}
+  .rtable{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
+  .rtable th,.rtable td{border:1px solid var(--line);padding:7px 9px;text-align:center}
+  .rtable th{background:var(--card);font-weight:700;color:var(--ink-soft)}
+  .rtable td.jp{font-weight:600}
+  .callout{border-left:4px solid var(--crimson);background:var(--card);border-radius:0 12px 12px 0;padding:12px 16px;font-size:14px}
+  .callout b{color:var(--crimson)}
+  .ex{display:inline-flex;flex-direction:column;align-items:center;margin:6px 10px 0 0;font-size:20px}
+  .ex small{font-size:11px;color:var(--muted);font-weight:600;margin-top:2px}
+  .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:6px;border:1px solid var(--line);border-radius:12px}
+  .vtable{border-collapse:collapse;font-size:13.5px;min-width:640px;width:100%}
+  .vtable th,.vtable td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;white-space:nowrap}
+  .vtable thead th{position:sticky;top:0;background:var(--card);color:var(--ink-soft);font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+  .vtable td.jp{font-weight:600}
+  .vtable tr:hover td{background:var(--cream-2)}
+  .searchbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0 4px}
+  .searchbar input{flex:1;min-width:160px;font-family:inherit;font-size:15px;padding:10px 13px;border-radius:11px;border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <button class="theme-btn" id="themeBtn" aria-label="Cambiar tema">◐</button>
+    <div class="sun" aria-hidden="true"></div>
+    <h1 class="disp">日本語 <span class="accent">クイズ</span></h1>
+    <p class="sub">Cap 14–17 · Nankai — repaso, conjugación y referencia de verbos</p>
+  </header>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" id="tab-quiz" role="tab" aria-selected="true">Repaso</button>
+    <button class="tab" id="tab-conj" role="tab" aria-selected="false">Conjugación</button>
+    <button class="tab" id="tab-ref" role="tab" aria-selected="false">Referencia</button>
+  </div>
+
+<!-- ============================= TAB: REPASO ============================= -->
+<div id="viewQuiz">
+  <section class="panel" id="startPanel">
+    <div class="eyebrow">Configurá tu repaso</div>
+    <p class="lead">Gramática y vocabulario de los capítulos 14 a 17. Corrección al instante con explicación.</p>
+    <div class="chip-label">Capítulos</div>
+    <div class="chips" id="chChips">
+      <button class="chip" data-ch="14" aria-pressed="true">Cap 14 <small>forma て · pedidos</small></button>
+      <button class="chip" data-ch="15" aria-pressed="true">Cap 15 <small>permiso · prohibición</small></button>
+      <button class="chip" data-ch="16" aria-pressed="true">Cap 16 <small>くて/で · から · partículas</small></button>
+      <button class="chip" data-ch="17" aria-pressed="true">Cap 17 <small>ない · obligación · までに</small></button>
+    </div>
+    <div class="chip-label">Contenido</div>
+    <div class="chips" id="catChips">
+      <button class="chip" data-cat="gram" aria-pressed="true">Gramática</button>
+      <button class="chip" data-cat="vocab" aria-pressed="true">Vocabulario</button>
+    </div>
+    <div class="chip-label">Cantidad</div>
+    <div class="chips" id="lenChips">
+      <button class="chip" data-len="15" aria-pressed="true">15 preguntas</button>
+      <button class="chip" data-len="30" aria-pressed="false">30 preguntas</button>
+      <button class="chip" data-len="all" aria-pressed="false">Todas</button>
+    </div>
+    <label class="toggle-line"><span class="switch"><input type="checkbox" id="shuffleTog" checked><span class="slider"></span></span> Mezclar el orden</label>
+    <div class="row"><button class="btn" id="startBtn">Empezar →</button><span class="muted-note" id="countNote"></span></div>
+  </section>
+
+  <section class="panel hidden" id="quizPanel">
+    <div class="topbar"><span id="progText">Pregunta 1</span><span class="score-pill" id="scorePill">0 / 0</span></div>
+    <div class="bar"><i id="barFill"></i></div>
+    <div style="margin-top:22px">
+      <div class="qtag"><b id="qCh">CAP 14</b> <span class="kind" id="qKind">Gramática</span> <span id="qTopic"></span></div>
+      <div class="prompt" id="qPrompt"></div>
+      <div id="qCue" class="cue hidden"></div>
+      <div class="opts hidden" id="qOpts"></div>
+      <div class="typebox hidden" id="qType">
+        <input type="text" id="qInput" class="jp" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="escribí en hiragana…">
+        <button class="btn" id="checkBtn">Revisar</button>
+      </div>
+      <div class="feedback" id="feedback"><div class="head" id="fHead"></div><div class="sol jp" id="fSol"></div><div class="exp" id="fExp"></div></div>
+    </div>
+    <div class="qfoot"><button class="btn ghost" id="quitBtn">Salir</button><button class="btn hidden" id="nextBtn">Siguiente →</button></div>
+  </section>
+
+  <section class="panel hidden" id="resultPanel">
+    <div class="big-score"><div><span class="num" id="rNum">0</span><span class="den" id="rDen"> / 0</span></div><div class="verdict disp" id="rVerdict"></div></div>
+    <div class="review" id="reviewBox"></div>
+    <div class="row" style="justify-content:center"><button class="btn" id="retryWrong">Repasar los errores</button><button class="btn ghost" id="restartBtn">Volver al inicio</button></div>
+  </section>
+</div>
+
+<!-- ============================= TAB: CONJUGACIÓN ============================= -->
+<div id="viewConj" class="hidden">
+  <section class="panel">
+    <div class="topbar"><span id="cProg">Verbo 1</span><span class="score-pill" id="cScore">0 / 0</span></div>
+    <div class="bar"><i id="cBar" style="width:0"></i></div>
+
+    <div class="verb-head" style="margin-top:20px">
+      <div class="verb-kanji jp" id="cKanji"></div>
+      <div class="verb-mean" id="cMean"></div>
+    </div>
+    <div class="center"><div class="given jp"><span class="lbl" id="cGivenLbl">Dato</span> <span id="cGivenVal"></span></div></div>
+
+    <div class="chip-label" style="text-align:center">¿Qué grupo es?</div>
+    <div class="grp-row" id="cGroups">
+      <button class="grp" data-g="1" aria-pressed="false">Grupo 1<br><small>ごだん</small></button>
+      <button class="grp" data-g="2" aria-pressed="false">Grupo 2<br><small>いちだん</small></button>
+      <button class="grp" data-g="3" aria-pressed="false">Grupo 3<br><small>へんかく</small></button>
+    </div>
+
+    <div class="fields" id="cFields"></div>
+
+    <div class="qfoot" style="justify-content:space-between;align-items:center">
+      <label class="toggle-line" style="margin:0"><span class="switch"><input type="checkbox" id="furiTog" checked><span class="slider"></span></span> Furigana</label>
+      <div style="display:flex;gap:10px">
+        <button class="btn ghost sm" id="cSkip">Otro verbo</button>
+        <button class="btn" id="cCheck">Revisar</button>
+      </div>
+    </div>
+
+    <div class="chip-label">Ajustes</div>
+    <div class="chips" id="cGroupFilter">
+      <button class="chip" data-g="1" aria-pressed="true">Grupo 1</button>
+      <button class="chip" data-g="2" aria-pressed="true">Grupo 2</button>
+      <button class="chip" data-g="3" aria-pressed="true">Grupo 3</button>
+      <button class="chip" data-g="false2" aria-pressed="true">Falsos G2</button>
+    </div>
+    <div class="chips" id="cMode" style="margin-top:9px">
+      <button class="chip" data-mode="rapido" aria-pressed="true">Rápido <small>grupo · ます · ない · て</small></button>
+      <button class="chip" data-mode="completo" aria-pressed="false">Completo <small>todas las formas</small></button>
+    </div>
+  </section>
+</div>
+
+<!-- ============================= TAB: REFERENCIA ============================= -->
+<div id="viewRef" class="hidden">
+  <section class="panel">
+    <div class="eyebrow">Cómo conjugar</div>
+    <div class="rules" style="margin-top:14px" id="refRules"></div>
+
+    <div class="chip-label" style="margin-top:26px">Lista de verbos</div>
+    <div class="searchbar">
+      <input type="text" id="vSearch" placeholder="Buscar (kana o significado)…" autocomplete="off">
+    </div>
+    <div class="chips" id="vFilter">
+      <button class="chip" data-g="all" aria-pressed="true">Todos</button>
+      <button class="chip" data-g="1" aria-pressed="false">Grupo 1</button>
+      <button class="chip" data-g="2" aria-pressed="false">Grupo 2</button>
+      <button class="chip" data-g="3" aria-pressed="false">Grupo 3</button>
+      <button class="chip" data-g="false2" aria-pressed="false">Falsos G2</button>
+    </div>
+    <div class="scroll"><table class="vtable"><thead><tr>
+      <th>Verbo</th><th>Dicc.</th><th>ます</th><th>ない</th><th>た</th><th>て</th><th>Grupo</th><th>Significado</th>
+    </tr></thead><tbody id="vBody"></tbody></table></div>
+    <p class="muted-note" style="margin-top:8px">Deslizá la tabla para ver todas las columnas. El furigana va solo sobre el kanji: si la vocal い/え está adentro del kanji suele ser Grupo 1; si está en el okurigana, Grupo 2.</p>
+  </section>
+</div>
+
+  <footer>頑張って！ · Hecho para tu examen</footer>
+</div>
+
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+
+/* ===== theme ===== */
+$("themeBtn").addEventListener("click",()=>{
+  const root=document.documentElement, now=root.getAttribute("data-theme");
+  const isDark = now ? now==="dark" : matchMedia("(prefers-color-scheme:dark)").matches;
+  root.setAttribute("data-theme", isDark ? "light" : "dark");
+});
+
+/* ===== tabs ===== */
+const views={quiz:$("viewQuiz"),conj:$("viewConj"),ref:$("viewRef")};
+function selectTab(name){
+  ["quiz","conj","ref"].forEach(n=>{
+    $("tab-"+n).setAttribute("aria-selected", n===name?"true":"false");
+    views[n].classList.toggle("hidden", n!==name);
+  });
+  if(name==="conj" && !cVerb) newConj();
+  if(name==="ref") renderRefTable();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+$("tab-quiz").onclick=()=>selectTab("quiz");
+$("tab-conj").onclick=()=>selectTab("conj");
+$("tab-ref").onclick=()=>selectTab("ref");
+
+/* ==================================================================== */
+/* ============================ VERB DATA ============================= */
+/* k = display (kanji+ruby o kana) · r = lectura kana · g = grupo · m = significado · f2 = falso grupo 2 */
+const VERBS = [
+ // ---- Grupo 1 ----
+ {k:'<ruby>書<rt>か</rt></ruby>く', r:'かく', g:1, m:'escribir'},
+ {k:'<ruby>聞<rt>き</rt></ruby>く', r:'きく', g:1, m:'escuchar / preguntar'},
+ {k:'<ruby>行<rt>い</rt></ruby>く', r:'いく', g:1, m:'ir (excepción て → いって)'},
+ {k:'<ruby>急<rt>いそ</rt></ruby>ぐ', r:'いそぐ', g:1, m:'apurarse'},
+ {k:'<ruby>泳<rt>およ</rt></ruby>ぐ', r:'およぐ', g:1, m:'nadar'},
+ {k:'<ruby>話<rt>はな</rt></ruby>す', r:'はなす', g:1, m:'hablar'},
+ {k:'<ruby>消<rt>け</rt></ruby>す', r:'けす', g:1, m:'apagar'},
+ {k:'<ruby>返<rt>かえ</rt></ruby>す', r:'かえす', g:1, m:'devolver'},
+ {k:'<ruby>貸<rt>か</rt></ruby>す', r:'かす', g:1, m:'prestar'},
+ {k:'<ruby>待<rt>ま</rt></ruby>つ', r:'まつ', g:1, m:'esperar'},
+ {k:'<ruby>持<rt>も</rt></ruby>つ', r:'もつ', g:1, m:'tener / sostener'},
+ {k:'<ruby>立<rt>た</rt></ruby>つ', r:'たつ', g:1, m:'pararse'},
+ {k:'<ruby>買<rt>か</rt></ruby>う', r:'かう', g:1, m:'comprar'},
+ {k:'<ruby>使<rt>つか</rt></ruby>う', r:'つかう', g:1, m:'usar'},
+ {k:'<ruby>手伝<rt>てつだ</rt></ruby>う', r:'てつだう', g:1, m:'ayudar'},
+ {k:'<ruby>払<rt>はら</rt></ruby>う', r:'はらう', g:1, m:'pagar'},
+ {k:'<ruby>会<rt>あ</rt></ruby>う', r:'あう', g:1, m:'encontrarse'},
+ {k:'<ruby>歌<rt>うた</rt></ruby>う', r:'うたう', g:1, m:'cantar'},
+ {k:'<ruby>飲<rt>の</rt></ruby>む', r:'のむ', g:1, m:'tomar / beber'},
+ {k:'<ruby>読<rt>よ</rt></ruby>む', r:'よむ', g:1, m:'leer'},
+ {k:'<ruby>住<rt>す</rt></ruby>む', r:'すむ', g:1, m:'vivir / residir'},
+ {k:'<ruby>休<rt>やす</rt></ruby>む', r:'やすむ', g:1, m:'descansar'},
+ {k:'<ruby>呼<rt>よ</rt></ruby>ぶ', r:'よぶ', g:1, m:'llamar'},
+ {k:'<ruby>遊<rt>あそ</rt></ruby>ぶ', r:'あそぶ', g:1, m:'jugar / pasarla'},
+ {k:'<ruby>運<rt>はこ</rt></ruby>ぶ', r:'はこぶ', g:1, m:'transportar'},
+ {k:'<ruby>売<rt>う</rt></ruby>る', r:'うる', g:1, m:'vender'},
+ {k:'<ruby>取<rt>と</rt></ruby>る', r:'とる', g:1, m:'tomar / sacar (foto)'},
+ {k:'<ruby>乗<rt>の</rt></ruby>る', r:'のる', g:1, m:'subirse (a transporte)'},
+ {k:'<ruby>降<rt>ふ</rt></ruby>る', r:'ふる', g:1, m:'caer (lluvia)'},
+ {k:'<ruby>作<rt>つく</rt></ruby>る', r:'つくる', g:1, m:'hacer / cocinar'},
+ {k:'<ruby>曲<rt>ま</rt></ruby>がる', r:'まがる', g:1, m:'doblar / girar'},
+ {k:'<ruby>送<rt>おく</rt></ruby>る', r:'おくる', g:1, m:'enviar'},
+ {k:'<ruby>止<rt>と</rt></ruby>まる', r:'とまる', g:1, m:'detenerse'},
+ {k:'<ruby>分<rt>わ</rt></ruby>かる', r:'わかる', g:1, m:'entender'},
+ // ---- Falsos Grupo 2 (terminan en える/いる pero son Grupo 1) ----
+ {k:'<ruby>帰<rt>かえ</rt></ruby>る', r:'かえる', g:1, m:'volver', f2:true},
+ {k:'<ruby>入<rt>はい</rt></ruby>る', r:'はいる', g:1, m:'entrar', f2:true},
+ {k:'<ruby>走<rt>はし</rt></ruby>る', r:'はしる', g:1, m:'correr', f2:true},
+ {k:'<ruby>知<rt>し</rt></ruby>る', r:'しる', g:1, m:'saber / conocer', f2:true},
+ {k:'<ruby>切<rt>き</rt></ruby>る', r:'きる', g:1, m:'cortar', f2:true},
+ {k:'<ruby>要<rt>い</rt></ruby>る', r:'いる', g:1, m:'necesitar', f2:true},
+ // ---- Grupo 2 ----
+ {k:'<ruby>食<rt>た</rt></ruby>べる', r:'たべる', g:2, m:'comer'},
+ {k:'<ruby>見<rt>み</rt></ruby>る', r:'みる', g:2, m:'ver / mirar'},
+ {k:'<ruby>見<rt>み</rt></ruby>せる', r:'みせる', g:2, m:'mostrar'},
+ {k:'<ruby>寝<rt>ね</rt></ruby>る', r:'ねる', g:2, m:'dormir'},
+ {k:'<ruby>起<rt>お</rt></ruby>きる', r:'おきる', g:2, m:'levantarse'},
+ {k:'<ruby>出<rt>で</rt></ruby>る', r:'でる', g:2, m:'salir'},
+ {k:'つける', r:'つける', g:2, m:'encender / prender'},
+ {k:'<ruby>開<rt>あ</rt></ruby>ける', r:'あける', g:2, m:'abrir'},
+ {k:'<ruby>閉<rt>し</rt></ruby>める', r:'しめる', g:2, m:'cerrar'},
+ {k:'<ruby>入<rt>い</rt></ruby>れる', r:'いれる', g:2, m:'meter / poner dentro'},
+ {k:'<ruby>教<rt>おし</rt></ruby>える', r:'おしえる', g:2, m:'enseñar'},
+ {k:'<ruby>止<rt>と</rt></ruby>める', r:'とめる', g:2, m:'detener / estacionar'},
+ {k:'<ruby>覚<rt>おぼ</rt></ruby>える', r:'おぼえる', g:2, m:'memorizar'},
+ {k:'<ruby>忘<rt>わす</rt></ruby>れる', r:'わすれる', g:2, m:'olvidar'},
+ {k:'<ruby>調<rt>しら</rt></ruby>べる', r:'しらべる', g:2, m:'investigar / revisar'},
+ {k:'<ruby>借<rt>か</rt></ruby>りる', r:'かりる', g:2, m:'pedir prestado'},
+ {k:'<ruby>降<rt>お</rt></ruby>りる', r:'おりる', g:2, m:'bajarse (de transporte)'},
+ {k:'<ruby>着<rt>き</rt></ruby>る', r:'きる', g:2, m:'ponerse (ropa)'},
+ {k:'<ruby>浴<rt>あ</rt></ruby>びる', r:'あびる', g:2, m:'ducharse'},
+ {k:'<ruby>出<rt>で</rt></ruby>かける', r:'でかける', g:2, m:'salir (de casa)'},
+ {k:'<ruby>捨<rt>す</rt></ruby>てる', r:'すてる', g:2, m:'tirar (basura)'},
+ // ---- Grupo 3 ----
+ {k:'する', r:'する', g:3, m:'hacer'},
+ {k:'<ruby>来<rt>く</rt></ruby>る', r:'くる', g:3, m:'venir'},
+ {k:'<ruby>勉強<rt>べんきょう</rt></ruby>する', r:'べんきょうする', g:3, m:'estudiar'},
+ {k:'コピーする', r:'コピーする', g:3, m:'copiar / fotocopiar'},
+ {k:'<ruby>心配<rt>しんぱい</rt></ruby>する', r:'しんぱいする', g:3, m:'preocuparse'},
+ {k:'<ruby>残業<rt>ざんぎょう</rt></ruby>する', r:'ざんぎょうする', g:3, m:'hacer horas extra'},
+ {k:'<ruby>出張<rt>しゅっちょう</rt></ruby>する', r:'しゅっちょうする', g:3, m:'viaje de trabajo'}
+];
+
+/* ===== conjugator ===== */
+function conj(r,g){
+  const F={dict:r};
+  if(g===3){
+    if(r.endsWith('する')){const b=r.slice(0,-2);
+      Object.assign(F,{masu:b+'します',nai:b+'しない',ta:b+'した',nakatta:b+'しなかった',te:b+'して',nakereba:b+'しなければ'});}
+    else{const b=r.slice(0,-2); // くる
+      Object.assign(F,{masu:b+'きます',nai:b+'こない',ta:b+'きた',nakatta:b+'こなかった',te:b+'きて',nakereba:b+'こなければ'});}
+    return F;
+  }
+  if(g===2){const b=r.slice(0,-1);
+    Object.assign(F,{masu:b+'ます',nai:b+'ない',ta:b+'た',nakatta:b+'なかった',te:b+'て',nakereba:b+'なければ'});
+    return F;
+  }
+  // grupo 1
+  const last=r.slice(-1), stem=r.slice(0,-1);
+  const iM={'う':'い','く':'き','ぐ':'ぎ','す':'し','つ':'ち','ぬ':'に','ぶ':'び','む':'み','る':'り'};
+  const aM={'う':'わ','く':'か','ぐ':'が','す':'さ','つ':'た','ぬ':'な','ぶ':'ば','む':'ま','る':'ら'};
+  F.masu=stem+iM[last]+'ます';
+  if(r==='ある'){F.nai='ない';F.nakatta='なかった';F.nakereba='なければ';}
+  else{const ns=stem+aM[last];F.nai=ns+'ない';F.nakatta=ns+'なかった';F.nakereba=ns+'なければ';}
+  let te,ta;
+  if(r==='いく'){te='いって';ta='いった';}
+  else if('うつる'.includes(last)){te=stem+'って';ta=stem+'った';}
+  else if('むぶぬ'.includes(last)){te=stem+'んで';ta=stem+'んだ';}
+  else if(last==='く'){te=stem+'いて';ta=stem+'いた';}
+  else if(last==='ぐ'){te=stem+'いで';ta=stem+'いだ';}
+  else if(last==='す'){te=stem+'して';ta=stem+'した';}
+  F.te=te;F.ta=ta;
+  return F;
+}
+
+/* ===== conjugation drill ===== */
+const FORM_LABELS={dict:'Diccionario',masu:'ます',nai:'ない',ta:'た (pasado)',nakatta:'なかった',te:'て',nakereba:'なければ (obligación)'};
+const MODE_FIELDS={rapido:['masu','nai','te'],completo:['masu','nai','ta','nakatta','te','nakereba']};
+let cVerb=null, cForms=null, cGiven=null, cGroupPick=null, cChecked=false, cAskFields=[];
+let cScoreN=0, cScoreT=0;
+let cSelGroups=new Set([1,2,3]), cIncludeF2=true, cMode='rapido';
+
+function norm(s){return (s||'').trim().replace(/[\s　。、]/g,'');}
+function acc(key,val){ // aceptados por campo
+  if(key==='nakereba') return [val,val+'ならない',val+'なりません',val+'いけない',val+'いけません'];
+  return [val];
+}
+function conjPool(){
+  return VERBS.filter(v=>{
+    if(v.f2) return cIncludeF2;
+    return cSelGroups.has(v.g);
+  });
+}
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+
+function newConj(){
+  cChecked=false; cGroupPick=null;
+  const pool=conjPool();
+  if(!pool.length) return;
+  cVerb=pick(pool);
+  cForms=conj(cVerb.r,cVerb.g);
+  const fields=MODE_FIELDS[cMode];
+  cGiven=pick(fields);
+  cAskFields=fields.filter(f=>f!==cGiven);
+
+  $("cKanji").innerHTML=cVerb.k;
+  $("cKanji").classList.toggle('no-furi', !$("furiTog").checked);
+  $("cMean").textContent=cVerb.m;
+  $("cGivenLbl").textContent="Forma "+FORM_LABELS[cGiven];
+  $("cGivenVal").textContent=cForms[cGiven];
+
+  document.querySelectorAll('#cGroups .grp').forEach(b=>{b.setAttribute('aria-pressed','false');b.classList.remove('ok','bad');});
+  const fc=$("cFields"); fc.innerHTML='';
+  cAskFields.forEach(f=>{
+    const d=document.createElement('div'); d.className='field';
+    d.innerHTML=`<label>${FORM_LABELS[f]}</label><input type="text" data-f="${f}" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="…"><div class="fix"></div>`;
+    fc.appendChild(d);
+  });
+  $("cCheck").textContent="Revisar";
+  $("cCheck").onclick=checkConj;
+  $("cProg").textContent="Verbo "+(cScoreT+1);
+  $("cScore").textContent=cScoreN+" / "+cScoreT;
+  $("cBar").style.width=(cScoreT? (cScoreN/cScoreT*100):0)+"%";
+  const first=fc.querySelector('input'); if(first) setTimeout(()=>first.focus(),60);
+}
+
+document.querySelectorAll('#cGroups .grp').forEach(b=>{
+  b.addEventListener('click',()=>{
+    if(cChecked) return;
+    document.querySelectorAll('#cGroups .grp').forEach(x=>x.setAttribute('aria-pressed','false'));
+    b.setAttribute('aria-pressed','true'); cGroupPick=+b.dataset.g;
+  });
+});
+$("furiTog").addEventListener('change',()=>{
+  $("cKanji").classList.toggle('no-furi', !$("furiTog").checked);
+});
+$("cSkip").addEventListener('click',newConj);
+
+function checkConj(){
+  if(cChecked){ newConj(); return; }
+  cChecked=true;
+  let allOk = (cGroupPick===cVerb.g);
+  document.querySelectorAll('#cGroups .grp').forEach(b=>{
+    const g=+b.dataset.g;
+    if(g===cVerb.g) b.classList.add('ok');
+    else if(g===cGroupPick) b.classList.add('bad');
+  });
+  $("cFields").querySelectorAll('input').forEach(inp=>{
+    const f=inp.dataset.f, val=norm(inp.value);
+    const ok = acc(f,cForms[f]).map(norm).includes(val) && val!=='';
+    inp.classList.add(ok?'correct':'wrong'); inp.disabled=true;
+    if(!ok){ inp.parentElement.querySelector('.fix').textContent='→ '+cForms[f]; allOk=false; }
+  });
+  cScoreT++; if(allOk) cScoreN++;
+  $("cScore").textContent=cScoreN+" / "+cScoreT;
+  $("cBar").style.width=(cScoreN/cScoreT*100)+"%";
+  $("cCheck").textContent="Siguiente →";
+}
+
+// conj settings
+document.querySelectorAll('#cGroupFilter .chip').forEach(chip=>{
+  chip.addEventListener('click',()=>{
+    const on=chip.getAttribute('aria-pressed')==='true';
+    const key=chip.dataset.g;
+    // avoid empty pool
+    const willHave = ()=>conjPoolPreview(key,!on).length>0;
+    if(on && !willHave()) return;
+    chip.setAttribute('aria-pressed', on?'false':'true');
+    if(key==='false2') cIncludeF2=!on;
+    else { const g=+key; if(on) cSelGroups.delete(g); else cSelGroups.add(g); }
+  });
+});
+function conjPoolPreview(toggleKey,newState){
+  const sg=new Set(cSelGroups), f2= toggleKey==='false2'? newState : cIncludeF2;
+  if(toggleKey!=='false2'){const g=+toggleKey; if(newState) sg.add(g); else sg.delete(g);}
+  return VERBS.filter(v=> v.f2? f2 : sg.has(v.g));
+}
+document.querySelectorAll('#cMode .chip').forEach(chip=>{
+  chip.addEventListener('click',()=>{
+    document.querySelectorAll('#cMode .chip').forEach(c=>c.setAttribute('aria-pressed','false'));
+    chip.setAttribute('aria-pressed','true'); cMode=chip.dataset.mode; newConj();
+  });
+});
+
+/* ===== reference ===== */
+function renderRefRules(){
+  $("refRules").innerHTML=`
+  <div class="rblock">
+    <h3><span class="cbadge g1">G1</span> Grupo 1 · ごだん (godan)</h3>
+    <p>Termina en sílaba de la fila <b>-u</b> (う く ぐ す つ ぬ ぶ む る). Se conjuga cambiando esa última sílaba.</p>
+    <div class="scroll"><table class="rtable">
+      <tr><th>Final</th><th>ます</th><th>ない</th><th>て</th><th>た</th></tr>
+      <tr><td class="jp">う・つ・る</td><td class="jp">〜います…</td><td class="jp">〜わ/た/ら ない</td><td class="jp">〜って</td><td class="jp">〜った</td></tr>
+      <tr><td class="jp">む・ぶ・ぬ</td><td class="jp">〜みます…</td><td class="jp">〜ま/ば/な ない</td><td class="jp">〜んで</td><td class="jp">〜んだ</td></tr>
+      <tr><td class="jp">く</td><td class="jp">〜きます</td><td class="jp">〜かない</td><td class="jp">〜いて</td><td class="jp">〜いた</td></tr>
+      <tr><td class="jp">ぐ</td><td class="jp">〜ぎます</td><td class="jp">〜がない</td><td class="jp">〜いで</td><td class="jp">〜いだ</td></tr>
+      <tr><td class="jp">す</td><td class="jp">〜します</td><td class="jp">〜さない</td><td class="jp">〜して</td><td class="jp">〜した</td></tr>
+    </table></div>
+    <p><b>Regla ます:</b> la última sílaba pasa a fila <b>-i</b> + ます. <b>Regla ない:</b> pasa a fila <b>-a</b> + ない (う → わ).</p>
+    <p><b>Excepción:</b> <span class="jp">いく → いって</span> (no いいて).</p>
+  </div>
+  <div class="rblock">
+    <h3><span class="cbadge g2">G2</span> Grupo 2 · いちだん (ichidan)</h3>
+    <p>Termina en <b class="jp">〜る</b> con vocal <b>i</b> o <b>e</b> antes. Quito <span class="jp">る</span> y agrego la terminación:</p>
+    <div class="scroll"><table class="rtable">
+      <tr><th>ます</th><th>ない</th><th>た</th><th>なかった</th><th>て</th></tr>
+      <tr><td class="jp">〜ます</td><td class="jp">〜ない</td><td class="jp">〜た</td><td class="jp">〜なかった</td><td class="jp">〜て</td></tr>
+    </table></div>
+    <p>Ej: <span class="jp">たべる → たべます / たべない / たべて</span>.</p>
+  </div>
+  <div class="rblock">
+    <h3><span class="cbadge g3">G3</span> Grupo 3 · へんかく (irregulares)</h3>
+    <div class="scroll"><table class="rtable">
+      <tr><th>Dicc.</th><th>ます</th><th>ない</th><th>た</th><th>て</th></tr>
+      <tr><td class="jp">する</td><td class="jp">します</td><td class="jp">しない</td><td class="jp">した</td><td class="jp">して</td></tr>
+      <tr><td class="jp">くる</td><td class="jp">きます</td><td class="jp">こない</td><td class="jp">きた</td><td class="jp">きて</td></tr>
+    </table></div>
+    <p>Los verbos como <span class="jp">べんきょうする、コピーする</span> se conjugan igual que する.</p>
+  </div>
+  <div class="callout">
+    <b>Truco de los «falsos Grupo 2».</b> Verbos que terminan en <span class="jp">〜える / 〜いる</span> parecen Grupo 2, pero algunos son Grupo 1. Mirá dónde está la vocal <b>い/え</b> con el furigana:
+    <div style="margin-top:8px">
+      <span class="ex jp"><ruby>帰<rt>かえ</rt></ruby>る<small>え DENTRO del kanji → G1</small></span>
+      <span class="ex jp"><ruby>入<rt>はい</rt></ruby>る<small>い dentro → G1</small></span>
+      <span class="ex jp"><ruby>走<rt>はし</rt></ruby>る<small>し dentro → G1</small></span>
+      <span class="ex jp"><ruby>食<rt>た</rt></ruby>べる<small>べ es okurigana → G2</small></span>
+      <span class="ex jp"><ruby>起<rt>お</rt></ruby>きる<small>き es okurigana → G2</small></span>
+    </div>
+    <p style="margin-top:6px;color:var(--ink-soft)">Si la vocal い/え está <b>dentro</b> de la lectura del kanji, casi siempre es Grupo 1. Si está en el <b>okurigana</b> (kana suelto después del kanji), es Grupo 2. Verbos cortos como <span class="jp">みる・きる(着る)</span> hay que memorizarlos.</p>
+  </div>`;
+}
+let vFilterG='all';
+function renderRefTable(){
+  if(!$("refRules").innerHTML) renderRefRules();
+  const q=norm($("vSearch").value).toLowerCase();
+  const qraw=($("vSearch").value||'').trim().toLowerCase();
+  const body=$("vBody"); body.innerHTML='';
+  VERBS.filter(v=>{
+    if(vFilterG==='false2') { if(!v.f2) return false; }
+    else if(vFilterG!=='all'){ if(v.f2){ /*falsos van en G1*/ } if(v.g!==+vFilterG) return false; }
+    if(qraw){ return v.r.includes(qraw) || v.m.toLowerCase().includes(qraw); }
+    return true;
+  }).forEach(v=>{
+    const F=conj(v.r,v.g);
+    const badge=`<span class="cbadge g${v.g}">G${v.g}${v.f2?'*':''}</span>`;
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td class="jp">${v.k}</td><td class="jp">${F.dict}</td><td class="jp">${F.masu}</td><td class="jp">${F.nai}</td><td class="jp">${F.ta}</td><td class="jp">${F.te}</td><td>${badge}</td><td>${v.m}</td>`;
+    body.appendChild(tr);
+  });
+}
+document.querySelectorAll('#vFilter .chip').forEach(chip=>{
+  chip.addEventListener('click',()=>{
+    document.querySelectorAll('#vFilter .chip').forEach(c=>c.setAttribute('aria-pressed','false'));
+    chip.setAttribute('aria-pressed','true'); vFilterG=chip.dataset.g; renderRefTable();
+  });
+});
+$("vSearch").addEventListener('input',renderRefTable);
+
+/* ==================================================================== */
+/* ============================ QUIZ BANK ============================= */
+const BANK = [
+{ch:14,cat:"gram",topic:"forma て",type:"type",cue:"あける",prompt:"Conjugá a forma て",a:["あけて"],exp:"2º grupo: quito る + て."},
+{ch:14,cat:"gram",topic:"forma て",type:"type",cue:"けす",prompt:"Conjugá a forma て",a:["けして"],exp:"1º grupo, す → して."},
+{ch:14,cat:"gram",topic:"forma て",type:"type",cue:"いそぐ",prompt:"Conjugá a forma て",a:["いそいで"],exp:"1º grupo, ぐ → いで."},
+{ch:14,cat:"gram",topic:"forma て",type:"type",cue:"よぶ",prompt:"Conjugá a forma て",a:["よんで"],exp:"1º grupo, む・ぶ・ぬ → んで."},
+{ch:14,cat:"gram",topic:"forma て",type:"type",cue:"もつ",prompt:"Conjugá a forma て",a:["もって"],exp:"1º grupo, う・つ・る → って."},
+{ch:14,cat:"gram",topic:"forma て",type:"type",cue:"てつだう",prompt:"Conjugá a forma て",a:["てつだって"],exp:"1º grupo, う → って."},
+{ch:14,cat:"gram",topic:"forma て",type:"type",cue:"はなす",prompt:"Conjugá a forma て",a:["はなして"],exp:"1º grupo, す → して."},
+{ch:14,cat:"gram",topic:"forma て · excepción",type:"type",cue:"いく",prompt:"Conjugá a forma て (¡ojo!)",a:["いって"],exp:"Excepción: いく → いって, NO いいて."},
+{ch:14,cat:"gram",topic:"ています",type:"mc",prompt:"「いま 母は ばんごはんを ＿＿。」 (つくる = cocinar)",options:["つくります","つくっています","つくりましょう","つくってください"],correct:1,exp:"forma て + います = acción en curso."},
+{ch:14,cat:"gram",topic:"ています",type:"mc",prompt:"「先生は いま でんわで ＿＿。」 (はなす)",options:["はなしています","はなしてください","はなしましょうか","はなします"],correct:0,exp:"はなす → はなして → はなしています."},
+{ch:14,cat:"gram",topic:"pedido cortés",type:"mc",prompt:"「じかんが ありません。＿＿ください。」 (いそぐ)",options:["いそって","いそいで","いそぎて","いそんで"],correct:1,exp:"いそぐ → いそいで + ください."},
+{ch:14,cat:"gram",topic:"ましょうか",type:"mc",prompt:"「にもつを ＿＿か。」 (ofrecerte a cargarlo)",options:["もってください","もっています","もちましょう","もつでしょう"],correct:2,exp:"V.ましょうか = ofrecerse. もつ → もちましょうか."},
+{ch:14,cat:"gram",topic:"ましょうか",type:"mc",prompt:"「これ、コピー ＿＿か。」",options:["しましょう","してください","しています","しては"],correct:0,exp:"〜ましょうか = «¿lo hago yo?»."},
+{ch:14,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"あける",options:["cerrar","abrir","apagar","apurarse"],correct:1,exp:"あける = abrir."},
+{ch:14,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"けす",options:["apagar","encender","llamar","sostener"],correct:0,exp:"けす = apagar."},
+{ch:14,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"つける",options:["quitar","encender / prender","cerrar","esperar"],correct:1,exp:"つける = encender/prender."},
+{ch:14,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"まがる",options:["esperar","ayudar","doblar (girar)","llamar"],correct:2,exp:"まがる = doblar / girar."},
+{ch:14,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"てつだう",options:["ayudar","enseñar","sacar (foto)","estacionar"],correct:0,exp:"てつだう = ayudar."},
+{ch:14,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"みせる",options:["ver","mirar","mostrar","enseñar (materia)"],correct:2,exp:"みせる = mostrar."},
+{ch:14,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"よぶ",options:["llamar","esperar","apurarse","hablar"],correct:0,exp:"よぶ = llamar."},
+{ch:14,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"とめる",options:["parar / estacionar","tomar","doblar","abrir"],correct:0,exp:"とめる = detener / estacionar."},
+{ch:14,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"さとう",options:["sal","azúcar","aire acondicionado","mapa"],correct:1,exp:"さとう = azúcar. しお = sal."},
+{ch:14,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"ちず",options:["catálogo","pasaporte","mapa","horario"],correct:2,exp:"ちず = mapa."},
+{ch:14,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"ふる",options:["caer (lluvia)","soplar","doblar","subir"],correct:0,exp:"ふる = caer (あめが ふる)."},
+
+{ch:15,cat:"gram",topic:"permiso",type:"mc",prompt:"「すみません、ここに ＿＿もいいですか。」 (すわる)",options:["すわっては","すわっても","すわらない","すわりましょう"],correct:1,exp:"forma て + もいいですか = pedir permiso."},
+{ch:15,cat:"gram",topic:"permiso",type:"mc",prompt:"「この しりょうを ＿＿もいいですか。」 (みる)",options:["みても","みては","みなくて","みましょう"],correct:0,exp:"みる → みて + もいいですか."},
+{ch:15,cat:"gram",topic:"prohibición",type:"mc",prompt:"「ここに 車を ＿＿。」 (No estacionar)",options:["とめてもいいです","とめてはいけません","とめましょうか","とめています"],correct:1,exp:"forma て + はいけません = prohibición."},
+{ch:15,cat:"gram",topic:"prohibición",type:"mc",prompt:"「クラスで ソフトを ＿＿。」 (No usar)",options:["つかってもいいです","つかっています","つかってはいけません","つかいましょう"],correct:2,exp:"つかう → つかって + はいけません."},
+{ch:15,cat:"gram",topic:"permiso vs prohibición",type:"mc",prompt:"きんえん (prohibido fumar): 「ここで たばこを ＿＿。」",options:["すってもいいです","すってはいけません","すいましょうか","すっています"],correct:1,exp:"Prohibición → てはいけません."},
+{ch:15,cat:"gram",topic:"rutina",type:"mc",prompt:"「あねは 大学で 日本語を ＿＿。」 (rutina)",options:["べんきょうします","べんきょうしています","べんきょうしましょう","べんきょうしてください"],correct:1,exp:"V.ています también sirve para hábitos."},
+{ch:15,cat:"gram",topic:"estado",type:"mc",prompt:"「わたしは コモドロに ＿＿。」 (すむ)",options:["すみます","すんでいます","すんでください","すみましょう"],correct:1,exp:"すむ → すんでいます (estado)."},
+{ch:15,cat:"gram",topic:"しる",type:"mc",prompt:"「あの人を しっていますか。」 — 「いいえ、＿＿。」",options:["しっていません","しりません","しらないです","しってません"],correct:1,exp:"El negativo de しっています es しりません."},
+{ch:15,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"すわる",options:["pararse","sentarse","vivir","usar"],correct:1,exp:"すわる = sentarse."},
+{ch:15,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"たつ",options:["sentarse","pararse / estar de pie","vender","dejar"],correct:1,exp:"たつ = pararse."},
+{ch:15,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"すむ",options:["usar","vivir / residir","hacer","sentarse"],correct:1,exp:"すむ = vivir / residir."},
+{ch:15,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"つくる",options:["hacer / cocinar","usar","vender","dejar"],correct:0,exp:"つくる = hacer / cocinar."},
+{ch:15,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"うる",options:["comprar","vender","usar","guardar"],correct:1,exp:"うる = vender."},
+{ch:15,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"おく",options:["poner / dejar (algo)","abrir","levantar","escuchar"],correct:0,exp:"おく = poner / dejar algo."},
+{ch:15,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"はいしゃ",options:["barbería","dentista","santuario","catálogo"],correct:1,exp:"はいしゃ = dentista."},
+{ch:15,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"とこや",options:["dentista","barbería / peluquería","tienda","templo"],correct:1,exp:"とこや = barbería."},
+{ch:15,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"じこくひょう",options:["catálogo","documento","horario (de trenes)","producto"],correct:2,exp:"じこくひょう = horario."},
+{ch:15,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"せんもん",options:["especialidad / carrera","empresa","documento","software"],correct:0,exp:"せんもん = especialidad."},
+{ch:15,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"しりょう",options:["software","documentos / material","catálogo","producto"],correct:1,exp:"しりょう = documentos / material."},
+
+{ch:16,cat:"gram",topic:"adjetivo て (い)",type:"type",cue:"ながい",prompt:"forma て del adjetivo い (largo y…):",a:["ながくて"],exp:"い → くて. ながい → ながくて."},
+{ch:16,cat:"gram",topic:"adjetivo て (い)",type:"type",cue:"みじかい",prompt:"forma て del adjetivo い (corto y…):",a:["みじかくて"],exp:"みじかい → みじかくて."},
+{ch:16,cat:"gram",topic:"adjetivo て (い)",type:"type",cue:"たかい",prompt:"forma て del adjetivo い (caro/alto y…):",a:["たかくて"],exp:"たかい → たかくて."},
+{ch:16,cat:"gram",topic:"adjetivo て (な)",type:"mc",prompt:"「京都は ＿＿、にぎやかです。」 (きれい, adj な)",options:["きれくて","きれいで","きれいくて","きれいと"],correct:1,exp:"な-adj + で. きれい → きれいで."},
+{ch:16,cat:"gram",topic:"くて (enumerar)",type:"mc",prompt:"「この こうえんは みどりが ＿＿、きれいです。」 (おおい)",options:["おおいで","おおくて","おおいくて","おおくって"],correct:1,exp:"おおい es adjetivo い → おおくて."},
+{ch:16,cat:"gram",topic:"けど / が (pero)",type:"mc",prompt:"「この うわぎは かわいい ＿＿、たかいです。」",options:["くて","で","けど","から"],correct:2,exp:"Positivo + negativo → (だ)けど / ですが."},
+{ch:16,cat:"gram",topic:"てから",type:"mc",prompt:"「おふろに ＿＿から、ねます。」 (はいる)",options:["はいてから","はいってから","はいるから","はいったから"],correct:1,exp:"forma て + から. はいる → はいって."},
+{ch:16,cat:"gram",topic:"てから",type:"mc",prompt:"「くすりを ＿＿から、でかけます。」 (のむ)",options:["のみてから","のむから","のんでから","のんだから"],correct:2,exp:"のむ → のんで + から."},
+{ch:16,cat:"gram",topic:"transporte に",type:"mc",prompt:"「つぎの えきで しんかんせん＿ のります。」",options:["を","で","に","へ"],correct:2,exp:"Subir a un transporte: に (のります)."},
+{ch:16,cat:"gram",topic:"transporte を",type:"mc",prompt:"「東京えきで 電車＿ おります。」",options:["に","を","で","へ"],correct:1,exp:"Bajarse: を (おります)."},
+{ch:16,cat:"gram",topic:"のりかえる",type:"mc",prompt:"「しんじゅくで JR＿ のりかえます。」",options:["に","を","で","から"],correct:0,exp:"〜に のりかえる = hacer transbordo a."},
+{ch:16,cat:"gram",topic:"は / が",type:"mc",prompt:"「あの りゅうがくせいは せ＿ たかいです。」",options:["は","が","を","に"],correct:1,exp:"Tema con は; rasgo descrito con が (せが)."},
+{ch:16,cat:"gram",topic:"は / が",type:"mc",prompt:"「ねこは め＿ 大きくて、かわいいです。」",options:["は","が","を","で"],correct:1,exp:"El rasgo lleva が: め が 大きい."},
+{ch:16,cat:"gram",topic:"どうやって",type:"mc",prompt:"「えきまで ＿＿ いきますか。」",options:["どうやって","どこで","なにを","いつ"],correct:0,exp:"どうやって = «cómo»."},
+{ch:16,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"あびる（シャワーを）",options:["llenar","ducharse","secarse","nadar"],correct:1,exp:"シャワーを あびる = ducharse."},
+{ch:16,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"いれる",options:["sacar","meter / poner dentro","empujar","mostrar"],correct:1,exp:"いれる = meter. だす = sacar."},
+{ch:16,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"のる",options:["subirse a (transporte)","bajarse de","hacer transbordo","conducir"],correct:0,exp:"のる = subirse (〜に のる)."},
+{ch:16,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"おりる",options:["subirse a","bajarse de (transporte)","transbordar","estacionar"],correct:1,exp:"おりる = bajarse (〜を おりる)."},
+{ch:16,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"のりかえる",options:["subir","bajar","hacer transbordo","manejar"],correct:2,exp:"のりかえる = hacer transbordo."},
+{ch:16,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"おす",options:["tirar","apretar / empujar","levantar","abrir"],correct:1,exp:"おす = apretar / empujar."},
+{ch:16,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"やめる",options:["empezar","continuar","dejar / renunciar","descansar"],correct:2,exp:"やめる = dejar / renunciar."},
+{ch:16,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"じんじゃ",options:["templo (budista)","santuario (sintoísta)","iglesia","castillo"],correct:1,exp:"じんじゃ = santuario sintoísta."},
+{ch:16,cat:"vocab",topic:"cuerpo",type:"mc",prompt:"あたま",options:["cara","cabeza","panza","brazo"],correct:1,exp:"あたま = cabeza."},
+{ch:16,cat:"vocab",topic:"cuerpo",type:"mc",prompt:"め",options:["oreja","boca","ojo","nariz"],correct:2,exp:"め = ojo."},
+{ch:16,cat:"vocab",topic:"cuerpo",type:"mc",prompt:"かみ",options:["cara","pelo / cabello","panza","pierna"],correct:1,exp:"かみ = pelo."},
+{ch:16,cat:"vocab",topic:"adjetivos",type:"mc",prompt:"みじかい",options:["largo","corto","alto","bajo"],correct:1,exp:"みじかい = corto. ながい = largo."},
+{ch:16,cat:"vocab",topic:"adjetivos",type:"mc",prompt:"わかい",options:["anciano","joven","alto","inteligente"],correct:1,exp:"わかい = joven."},
+{ch:16,cat:"vocab",topic:"adjetivos",type:"mc",prompt:"せがたかい",options:["bajo (estatura)","alto (estatura)","inteligente","joven"],correct:1,exp:"せがたかい = alto de estatura."},
+{ch:16,cat:"vocab",topic:"adjetivos",type:"mc",prompt:"あたまがいい",options:["cabezón","inteligente","olvidadizo","alegre"],correct:1,exp:"あたまがいい = inteligente."},
+
+{ch:17,cat:"gram",topic:"forma ない",type:"type",cue:"はらう",prompt:"Conjugá a forma ない",a:["はらわない"],exp:"1º grupo: う → わ + ない."},
+{ch:17,cat:"gram",topic:"forma ない",type:"type",cue:"かえす",prompt:"Conjugá a forma ない",a:["かえさない"],exp:"1º grupo: す → さ + ない."},
+{ch:17,cat:"gram",topic:"forma ない",type:"type",cue:"ぬぐ",prompt:"Conjugá a forma ない",a:["ぬがない"],exp:"1º grupo: ぐ → が + ない."},
+{ch:17,cat:"gram",topic:"forma ない",type:"type",cue:"まつ",prompt:"Conjugá a forma ない",a:["またない"],exp:"1º grupo: つ → た + ない."},
+{ch:17,cat:"gram",topic:"forma ない",type:"type",cue:"のむ",prompt:"Conjugá a forma ない",a:["のまない"],exp:"1º grupo: む → ま + ない."},
+{ch:17,cat:"gram",topic:"forma ない",type:"type",cue:"でかける",prompt:"Conjugá a forma ない",a:["でかけない"],exp:"2º grupo: quito る + ない."},
+{ch:17,cat:"gram",topic:"forma ない",type:"type",cue:"くる",prompt:"Conjugá a forma ない",a:["こない"],exp:"3º grupo: くる → こない."},
+{ch:17,cat:"gram",topic:"ない · falso G2",type:"type",cue:"はいる",prompt:"Conjugá a forma ない (¡falso Grupo 2!)",a:["はいらない"],exp:"はいる es Grupo 1 → はいらない (no はいない)."},
+{ch:17,cat:"gram",topic:"ない · excepción",type:"mc",prompt:"El negativo informal de ある es…",options:["あらない","あない","ない","ありない"],correct:2,exp:"Excepción: ある → ない."},
+{ch:17,cat:"gram",topic:"pasado ない",type:"type",cue:"はらわない",prompt:"Pasalo a pasado negativo (…なかった):",a:["はらわなかった"],exp:"ない → なかった."},
+{ch:17,cat:"gram",topic:"no hagas",type:"mc",prompt:"「あぶないですから、そこに ＿＿ください。」 (はいる)",options:["はいって","はいらないで","はいらなくて","はいっては"],correct:1,exp:"V.ない + でください. はいる → はいらない."},
+{ch:17,cat:"gram",topic:"no hagas",type:"mc",prompt:"「その ボタンを ＿＿ください。」 (おす)",options:["おして","おさなくて","おさないで","おしては"],correct:2,exp:"おす → おさない + でください."},
+{ch:17,cat:"gram",topic:"obligación",type:"mc",prompt:"「かぜですから、くすりを ＿＿。」",options:["のまなくてもいいです","のまなければなりません","のまないでください","のんでもいいです"],correct:1,exp:"V.ない → なければなりません = obligación."},
+{ch:17,cat:"gram",topic:"obligación",type:"mc",prompt:"「あした レポートを ＿＿。」",options:["ださなくてもいいです","だしてはいけません","ださなければなりません","だしてもいいです"],correct:2,exp:"だす → ださなければなりません."},
+{ch:17,cat:"gram",topic:"no hace falta",type:"mc",prompt:"「かんじは ＿＿。」 (no hace falta escribir)",options:["かかなくてもいいです","かかなければなりません","かいてはいけません","かいてください"],correct:0,exp:"V.ない + くてもいいです. かく → かかなくてもいいです."},
+{ch:17,cat:"gram",topic:"までに",type:"mc",prompt:"「この 本は 金曜日＿ かえして ください。」",options:["まで","までに","から","に"],correct:1,exp:"までに = fecha/hora LÍMITE."},
+{ch:17,cat:"gram",topic:"objeto como tema",type:"mc",prompt:"「カレー＿ スプーンで 食べます。」",options:["を","は","が","で"],correct:1,exp:"El objeto pasa a tema: は y la を desaparece."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"おぼえる",options:["olvidar","memorizar / recordar","enseñar","estudiar"],correct:1,exp:"おぼえる = memorizar."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"はらう",options:["devolver","pagar","prestar","comprar"],correct:1,exp:"はらう = pagar."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"かえす",options:["devolver","pagar","recibir","pedir prestado"],correct:0,exp:"かえす = devolver."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"でかける",options:["volver","salir (de casa)","entrar","viajar"],correct:1,exp:"でかける = salir de casa."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"ぬぐ",options:["ponerse (ropa)","quitarse (ropa/zapatos)","lavar","doblar"],correct:1,exp:"ぬぐ = quitarse."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"もっていく",options:["traer","llevar","dejar","perder"],correct:1,exp:"もっていく = llevar."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"もってくる",options:["llevar","traer","devolver","mostrar"],correct:1,exp:"もってくる = traer."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"しんぱいする",options:["preocuparse","alegrarse","apurarse","descansar"],correct:0,exp:"しんぱいする = preocuparse."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"ざんぎょうする",options:["viajar por trabajo","hacer horas extra","renunciar","descansar"],correct:1,exp:"ざんぎょうする = horas extra."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"しゅっちょうする",options:["horas extra","viaje de trabajo","mudarse","estudiar"],correct:1,exp:"しゅっちょうする = viaje de trabajo."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"あぶない",options:["doloroso","peligroso","aburrido","tranquilo"],correct:1,exp:"あぶない = peligroso."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"いたい",options:["peligroso","doloroso / duele","cansado","importante"],correct:1,exp:"いたい = duele."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"くすり",options:["enfermedad","medicina / remedio","fiebre","resfriado"],correct:1,exp:"くすり = medicina."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"かぜ",options:["fiebre","resfriado","viento fuerte","enfermedad grave"],correct:1,exp:"かぜ = resfriado."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"ねつ",options:["resfriado","fiebre","dolor","tos"],correct:1,exp:"ねつ = fiebre."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"びょうき",options:["enfermedad","medicina","hospital","dolor"],correct:0,exp:"びょうき = enfermedad."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"こたえ",options:["pregunta / problema","respuesta","examen","duda"],correct:1,exp:"こたえ = respuesta."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"もんだい",options:["respuesta","problema / pregunta","examen","tarea"],correct:1,exp:"もんだい = problema / pregunta."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"きんえん",options:["prohibido pasar","prohibido fumar","salida de emergencia","zona de fumadores"],correct:1,exp:"きんえん = prohibido fumar."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"たいせつ",options:["peligroso","importante / preciado","difícil","tranquilo"],correct:1,exp:"たいせつ (な) = importante."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"だいじょうぶ",options:["está bien / OK","peligroso","imposible","importante"],correct:0,exp:"だいじょうぶ = está bien."},
+{ch:17,cat:"vocab",topic:"vocabulario",type:"mc",prompt:"うわぎ",options:["ropa interior","abrigo / prenda de arriba","zapatos","sombrero"],correct:1,exp:"うわぎ = prenda de arriba. したぎ = ropa interior."}
+];
+
+/* ===== quiz engine ===== */
+let selCh=new Set([14,15,16,17]), selCat=new Set(["gram","vocab"]), selLen="15";
+let queue=[], idx=0, score=0, answered=false, misses=[];
+function bindMulti(cid,set,key){
+  document.querySelectorAll(`#${cid} .chip`).forEach(chip=>{
+    chip.addEventListener("click",()=>{
+      const val = key==="ch" ? +chip.dataset[key] : chip.dataset[key];
+      const on = chip.getAttribute("aria-pressed")==="true";
+      if(on && set.size===1) return;
+      chip.setAttribute("aria-pressed", on?"false":"true");
+      if(on) set.delete(val); else set.add(val);
+      updateCount();
+    });
+  });
+}
+bindMulti("chChips",selCh,"ch"); bindMulti("catChips",selCat,"cat");
+document.querySelectorAll("#lenChips .chip").forEach(chip=>{
+  chip.addEventListener("click",()=>{
+    document.querySelectorAll("#lenChips .chip").forEach(c=>c.setAttribute("aria-pressed","false"));
+    chip.setAttribute("aria-pressed","true"); selLen=chip.dataset.len; updateCount();
+  });
+});
+function pool(){ return BANK.filter(q=>selCh.has(q.ch)&&selCat.has(q.cat)); }
+function targetLen(){ const n=pool().length; return selLen==="all"?n:Math.min(+selLen,n); }
+function updateCount(){
+  const n=pool().length,t=targetLen();
+  $("countNote").textContent = n ? `${t} de ${n} disponibles` : "Elegí al menos un capítulo y un tipo";
+  $("startBtn").disabled=n===0;
+}
+updateCount();
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}}
+$("startBtn").addEventListener("click",()=>{
+  let p=pool(); if($("shuffleTog").checked) shuffle(p);
+  queue=p.slice(0,targetLen()); idx=0;score=0;misses=[];
+  $("startPanel").classList.add("hidden"); $("resultPanel").classList.add("hidden");
+  $("quizPanel").classList.remove("hidden"); renderQ(); window.scrollTo({top:0,behavior:"smooth"});
+});
+function renderQ(){
+  answered=false; const q=queue[idx];
+  $("progText").textContent=`Pregunta ${idx+1} de ${queue.length}`;
+  $("scorePill").textContent=`${score} / ${idx}`;
+  $("barFill").style.width=(idx/queue.length*100)+"%";
+  $("qCh").textContent="CAP "+q.ch;
+  $("qKind").textContent=q.cat==="vocab"?"Vocabulario":"Gramática";
+  $("qTopic").textContent=q.topic==="vocabulario"?"":q.topic;
+  const pe=$("qPrompt");
+  pe.innerHTML=escapeHtml(q.prompt).replace(/＿＿/g,'<span class="blank jp">＿＿</span>');
+  pe.classList.toggle("jp",/[぀-ゟ゠-ヿ一-鿿]/.test(q.prompt));
+  const cue=$("qCue");
+  if(q.cue){cue.textContent=q.cue;cue.className="cue jp";}else{cue.classList.add("hidden");}
+  $("feedback").className="feedback"; $("nextBtn").classList.add("hidden");
+  const opts=$("qOpts"),tb=$("qType"); opts.innerHTML="";opts.classList.add("hidden");tb.classList.add("hidden");
+  if(q.type==="mc"){
+    opts.classList.remove("hidden");
+    const jp=q.cat!=="vocab"||/[぀-ゟ゠-ヿ一-鿿]/.test(q.options[0]);
+    q.options.forEach((t,i)=>{
+      const b=document.createElement("button"); b.className="opt"+(jp?" jp":"");b.type="button";
+      b.innerHTML=`<span class="key">${"ABCD"[i]}</span><span>${escapeHtml(t)}</span>`;
+      b.addEventListener("click",()=>ansMC(i,b)); opts.appendChild(b);
+    });
+  }else{
+    tb.classList.remove("hidden"); const inp=$("qInput"); inp.value="";inp.className="jp";inp.disabled=false;
+    setTimeout(()=>inp.focus(),50);
+  }
+}
+function ansMC(i,btn){
+  if(answered)return;answered=true;const q=queue[idx];
+  const bs=[...$("qOpts").children]; bs.forEach(b=>b.disabled=true);
+  const ok=i===q.correct;
+  if(ok){btn.classList.add("correct");score++;}
+  else{btn.classList.add("wrong");bs[q.correct].classList.add("correct");misses.push({q,given:q.options[i]});}
+  fb(ok,q.options[q.correct],q.exp);
+}
+$("checkBtn").addEventListener("click",checkT);
+$("qInput").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();answered?nextQ():checkT();}});
+function checkT(){
+  if(answered)return;const q=queue[idx],inp=$("qInput"),val=norm(inp.value);
+  if(!val)return;answered=true;inp.disabled=true;
+  const ok=q.a.map(norm).includes(val);
+  inp.classList.add(ok?"correct":"wrong");
+  if(ok)score++;else misses.push({q,given:inp.value.trim()||"(vacío)"});
+  fb(ok,q.a[0],q.exp);
+}
+function fb(ok,sol,exp){
+  const f=$("feedback");f.className="feedback show "+(ok?"ok":"no");
+  $("fHead").textContent=ok?"✓ ¡Correcto!":"✗ No exactamente";
+  $("fSol").textContent=(ok?"":"Respuesta: ")+sol; $("fExp").textContent=exp||"";
+  $("scorePill").textContent=`${score} / ${idx+1}`;
+  const nb=$("nextBtn"); nb.classList.remove("hidden");
+  nb.textContent=idx+1>=queue.length?"Ver resultado →":"Siguiente →"; setTimeout(()=>nb.focus(),60);
+}
+$("nextBtn").addEventListener("click",nextQ);
+function nextQ(){idx++; if(idx>=queue.length)finish(); else renderQ();}
+$("quitBtn").addEventListener("click",()=>{$("quizPanel").classList.add("hidden");$("startPanel").classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"});});
+$("restartBtn").addEventListener("click",()=>{$("resultPanel").classList.add("hidden");$("startPanel").classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"});});
+$("retryWrong").addEventListener("click",()=>{
+  if(!misses.length)return; queue=misses.map(m=>m.q); if($("shuffleTog").checked)shuffle(queue);
+  idx=0;score=0;misses=[]; $("resultPanel").classList.add("hidden");$("quizPanel").classList.remove("hidden");
+  renderQ(); window.scrollTo({top:0,behavior:"smooth"});
+});
+function finish(){
+  $("barFill").style.width="100%"; $("quizPanel").classList.add("hidden");$("resultPanel").classList.remove("hidden");
+  const total=queue.length,pct=Math.round(score/total*100);
+  $("rNum").textContent=score;$("rDen").textContent=" / "+total;
+  let v; if(pct===100)v="満点！Impecable. Andá tranquilo al examen 🌸";
+  else if(pct>=80)v="¡Muy bien! Repasá un par de detalles y listo.";
+  else if(pct>=60)v="Vas bien. Enfocá los errores de abajo.";
+  else v="A repasar — mirá los errores y volvé a intentar.";
+  $("rVerdict").textContent=v;
+  const box=$("reviewBox"); box.innerHTML="";
+  if(misses.length){
+    const h=document.createElement("h3");h.textContent=`Para repasar (${misses.length})`;box.appendChild(h);
+    misses.forEach(m=>{
+      const d=document.createElement("div");d.className="miss";
+      const sol=m.q.type==="mc"?m.q.options[m.q.correct]:m.q.a[0];
+      d.innerHTML=`<div class="m-q"><b>CAP ${m.q.ch}</b> · ${escapeHtml(m.q.prompt)}${m.q.cue?` <span class="jp">（${escapeHtml(m.q.cue)}）</span>`:""}</div>
+        <div class="m-a jp"><span class="x">${escapeHtml(m.given)}</span> → <span class="v">${escapeHtml(sol)}</span></div>
+        <div class="m-q" style="margin-top:5px">${escapeHtml(m.q.exp)}</div>`;
+      box.appendChild(d);
+    });
+  }else{
+    const p=document.createElement("p");p.className="verdict";p.style.textAlign="center";p.style.color="var(--good)";p.textContent="Sin errores. 完璧！";box.appendChild(p);
+  }
+  $("retryWrong").classList.toggle("hidden",!misses.length);
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function escapeHtml(s){return (s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+</script>
+</body>
+</html>
