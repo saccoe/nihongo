@@ -297,31 +297,38 @@ export default function Quiz() {
               })}
             </div>
           ) : (
-            <div className="mt-2 flex flex-wrap gap-2.5">
-              <input
-                className={`jp input input-bordered flex-1 text-xl ${
-                  answered ? (feedback?.ok ? 'input-success' : 'input-error') : ''
-                }`}
-                autoComplete="off"
-                autoCapitalize="off"
-                spellCheck={false}
-                placeholder="escribí en hiragana…"
-                value={typed}
-                readOnly={answered}
-                onChange={(e) => setTyped(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') {
-                    e.preventDefault();
-                    answered ? next() : checkType();
-                  }
-                }}
-              />
+            <>
+              <div className="mt-2 flex flex-wrap gap-2.5">
+                <input
+                  className={`jp input input-bordered flex-1 text-xl ${
+                    answered ? (feedback?.ok ? 'input-success' : 'input-error') : ''
+                  }`}
+                  autoComplete="off"
+                  autoCapitalize="off"
+                  spellCheck={false}
+                  placeholder="escribí en hiragana…"
+                  value={typed}
+                  readOnly={answered}
+                  onChange={(e) => setTyped(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      e.preventDefault();
+                      answered ? next() : checkType();
+                    }
+                  }}
+                />
+                {!answered && (
+                  <button className="btn btn-primary" onClick={checkType}>
+                    Revisar
+                  </button>
+                )}
+              </div>
               {!answered && (
-                <button className="btn btn-primary" onClick={checkType}>
-                  Revisar
-                </button>
+                <p className="mt-2 text-xs font-semibold text-accent">
+                  ✍ Escribí la respuesta únicamente en hiragana
+                </p>
               )}
-            </div>
+            </>
           )}
 
           {feedback && (

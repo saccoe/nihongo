@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import verbsData from '../data/verbs.json';
 import type { Verb, Group, FormKey, Forms } from '../lib/types';
 import { conjugate, FORM_LABELS, acceptedFor, normalize } from '../lib/conjugator';
-import Furigana from './Furigana';
 
 const VERBS = verbsData as Verb[];
 
@@ -87,7 +86,12 @@ export default function Conjugation() {
 
   if (!verb || !forms) return null;
 
-  const givenIsKanjiDict = givenKey === 'dict' && !!verb.kanji;
+  // Muestra kanji+furigana en CUALQUIER forma: la lectura del kanji es fija y
+  // siempre es el prefijo de la forma conjugada (salvo irregulares como 来る,
+  // donde la lectura del kanji cambia → ahí caemos a kana).
+  const givenForm = forms[givenKey];
+  const givenHasKanji = !!verb.kanji && !!verb.furi && givenForm.startsWith(verb.furi);
+  const givenTail = givenHasKanji ? givenForm.slice(verb.furi!.length) : '';
 
   return (
     <section className="card border border-base-300 bg-base-100 shadow-xl">
@@ -111,10 +115,20 @@ export default function Conjugation() {
           </div>
           <div
             className={`jp mt-1 text-5xl font-extrabold sm:text-6xl ${
-              givenIsKanjiDict && !showFuri ? 'no-furi' : ''
+              givenHasKanji && !showFuri ? 'no-furi' : ''
             }`}
           >
-            {givenIsKanjiDict ? <Furigana verb={verb} /> : forms[givenKey]}
+            {givenHasKanji ? (
+              <>
+                <ruby>
+                  {verb.kanji}
+                  <rt>{verb.furi}</rt>
+                </ruby>
+                {givenTail}
+              </>
+            ) : (
+              givenForm
+            )}
           </div>
           <div className="mt-2 text-sm opacity-70">{verb.meaning}</div>
         </div>
@@ -144,7 +158,10 @@ export default function Conjugation() {
         </div>
 
         {/* completar las formas que faltan */}
-        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+        <p className="mt-4 text-center text-xs font-semibold text-accent">
+          ✍ Escribí las respuestas únicamente en hiragana
+        </p>
+        <div className="mt-2 grid gap-3 sm:grid-cols-2">
           {askKeys.map((k) => {
             const val = values[k] ?? '';
             const ok = checked && acceptedFor(k, forms[k]).map(normalize).includes(normalize(val));
@@ -176,7 +193,7 @@ export default function Conjugation() {
 
         {/* acciones */}
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
-          {givenIsKanjiDict ? (
+          {givenHasKanji ? (
             <label className="flex cursor-pointer items-center gap-2 text-sm opacity-80">
               <input
                 type="checkbox"
