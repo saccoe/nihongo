@@ -1,0 +1,30 @@
+@import 'tailwindcss';
+
+/* Todos los temas nativos de daisyUI habilitados; el default real
+   lo fija data-theme en <html> (dark) + el dropdown de la app. */
+@plugin "daisyui" {
+  themes: all;
+}
+
+@layer base {
+  body {
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  /* Fuente japonesa del sistema */
+  .jp {
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic',
+      'Noto Sans JP', system-ui, sans-serif;
+  }
+  /* Furigana: la lectura va sobre el kanji */
+  ruby > rt {
+    font-size: 0.5em;
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+  .no-furi rt {
+    visibility: hidden;
+  }
+}
