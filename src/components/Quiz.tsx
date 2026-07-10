@@ -290,15 +290,15 @@ export default function Quiz() {
               {q.options!.map((opt, i) => {
                 let cls = 'btn justify-start h-auto py-3.5 text-base font-normal';
                 if (answered) {
+                  cls += ' pointer-events-none';
                   if (i === q.correct) cls += ' btn-success';
                   else if (i === picked) cls += ' btn-error';
-                  else cls += ' btn-outline btn-disabled';
+                  else cls += ' btn-outline opacity-40';
                 } else cls += ' btn-outline';
                 return (
                   <button
                     key={i}
                     className={`${cls} ${optJP ? 'jp' : ''}`}
-                    disabled={answered}
                     onClick={() => answerMC(i)}
                   >
                     <span className="badge badge-sm mr-1">{'ABCD'[i]}</span>
@@ -318,7 +318,7 @@ export default function Quiz() {
                 spellCheck={false}
                 placeholder="escribí en hiragana…"
                 value={typed}
-                disabled={answered}
+                readOnly={answered}
                 onChange={(e) => setTyped(e.target.value)}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter') {
