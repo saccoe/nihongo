@@ -1,18 +1,26 @@
 import { useMemo, useState } from 'react';
 import questionsData from '../data/questions.json';
-import type { Question, Category } from '../lib/types';
+import type { Question } from '../lib/types';
 import { normalize } from '../lib/conjugator';
 
 const QUESTIONS = questionsData as Question[];
 
-// Bloques temáticos (la clave interna es el nº de capítulo, pero no se muestra).
-const BLOCKS = [14, 15, 16, 17] as const;
-const BLOCK_LABEL: Record<number, string> = {
-  14: 'forma て · pedidos',
-  15: 'permiso · prohibición',
-  16: 'くて/で · から · partículas',
-  17: 'ない · obligación · までに',
+// Un solo eje de filtro: temas de gramática + vocabulario como opción aparte.
+// (la clave usa el nº de capítulo internamente, pero no se muestra)
+type FilterDef = {
+  key: string;
+  label: string;
+  color: 'primary' | 'accent';
+  match: (q: Question) => boolean;
 };
+const FILTERS: FilterDef[] = [
+  { key: 'g14', label: 'forma て · pedidos', color: 'primary', match: (q) => q.cat === 'gram' && q.ch === 14 },
+  { key: 'g15', label: 'permiso · prohibición', color: 'primary', match: (q) => q.cat === 'gram' && q.ch === 15 },
+  { key: 'g16', label: 'くて/で · から · partículas', color: 'primary', match: (q) => q.cat === 'gram' && q.ch === 16 },
+  { key: 'g17', label: 'ない · obligación · までに', color: 'primary', match: (q) => q.cat === 'gram' && q.ch === 17 },
+  { key: 'vocab', label: 'Vocabulario', color: 'accent', match: (q) => q.cat === 'vocab' },
+];
+const ALL_KEYS = FILTERS.map((f) => f.key);
 
 type Miss = { q: Question; given: string };
 type Feedback = { ok: boolean; sol: string; exp: string } | null;
@@ -30,8 +38,7 @@ const hasJP = (s: string) => /[぀-ゟ゠-ヿ一-鿿]/.test(s);
 
 export default function Quiz() {
   const [phase, setPhase] = useState<Phase>('setup');
-  const [selCh, setSelCh] = useState<Set<number>>(new Set(BLOCKS));
-  const [selCat, setSelCat] = useState<Set<Category>>(new Set(['gram', 'vocab']));
+  const [selKeys, setSelKeys] = useState<Set<string>>(new Set(ALL_KEYS));
   const [len, setLen] = useState<'15' | '30' | 'all'>('15');
   const [shuffle, setShuffle] = useState(true);
 
@@ -45,18 +52,18 @@ export default function Quiz() {
   const [misses, setMisses] = useState<Miss[]>([]);
 
   const pool = useMemo(
-    () => QUESTIONS.filter((q) => selCh.has(q.ch) && selCat.has(q.cat)),
-    [selCh, selCat],
+    () => QUESTIONS.filter((q) => FILTERS.some((f) => selKeys.has(f.key) && f.match(q))),
+    [selKeys],
   );
   const target = len === 'all' ? pool.length : Math.min(+len, pool.length);
 
-  function toggle<T>(set: Set<T>, val: T, setter: (s: Set<T>) => void) {
-    const next = new Set(set);
-    if (next.has(val)) {
+  function toggleKey(key: string) {
+    const next = new Set(selKeys);
+    if (next.has(key)) {
       if (next.size === 1) return;
-      next.delete(val);
-    } else next.add(val);
-    setter(next);
+      next.delete(key);
+    } else next.add(key);
+    setSelKeys(next);
   }
 
   function start(list?: Question[]) {
@@ -118,36 +125,18 @@ export default function Quiz() {
             Gramática y vocabulario. Corrección al instante con explicación.
           </p>
 
-          <Label>Temas</Label>
+          <Label>Qué practicar</Label>
           <div className="flex flex-wrap gap-2">
-            {BLOCKS.map((c) => (
+            {FILTERS.map((f) => (
               <Chip
-                key={c}
-                color="primary"
-                active={selCh.has(c)}
-                onClick={() => toggle(selCh, c, setSelCh)}
+                key={f.key}
+                color={f.color}
+                active={selKeys.has(f.key)}
+                onClick={() => toggleKey(f.key)}
               >
-                <span className="jp">{BLOCK_LABEL[c]}</span>
+                <span className="jp">{f.label}</span>
               </Chip>
             ))}
-          </div>
-
-          <Label>Contenido</Label>
-          <div className="flex flex-wrap gap-2">
-            <Chip
-              color="secondary"
-              active={selCat.has('gram')}
-              onClick={() => toggle(selCat, 'gram', setSelCat)}
-            >
-              Gramática
-            </Chip>
-            <Chip
-              color="secondary"
-              active={selCat.has('vocab')}
-              onClick={() => toggle(selCat, 'vocab', setSelCat)}
-            >
-              Vocabulario
-            </Chip>
           </div>
 
           <Label>Cantidad</Label>
