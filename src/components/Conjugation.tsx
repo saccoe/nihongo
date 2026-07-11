@@ -110,12 +110,13 @@ export default function Conjugation() {
     setGroupPick(g);
     setGroupAnswered(true);
   }
+  // Kanji y significado se corrigen al instante (independiente de "Revisar").
   function pickKanji(i: number) {
-    if (checked || kanjiPick !== null) return;
+    if (kanjiPick !== null) return;
     setKanjiPick(i);
   }
   function pickMeaning(i: number) {
-    if (checked || meaningPick !== null) return;
+    if (meaningPick !== null) return;
     setMeaningPick(i);
   }
 
@@ -125,14 +126,14 @@ export default function Conjugation() {
       newRound();
       return;
     }
+    // "Revisar" corrige únicamente la conjugación escrita (+ el grupo).
+    // El kanji y el significado son opción múltiple con feedback instantáneo.
     setChecked(true);
     let allOk = groupPick === verb.group;
     for (const k of askKeys) {
       const ok = acceptedFor(k, forms[k]).map(normalize).includes(normalize(values[k] ?? ''));
       if (!ok) allOk = false;
     }
-    if (guessKanji && verb.kanji && kanjiPick !== kanjiCorrect) allOk = false;
-    if (guessMeaning && meaningPick !== meaningCorrect) allOk = false;
     setScoreT((t) => t + 1);
     if (allOk) setScoreN((n) => n + 1);
   }
@@ -196,7 +197,6 @@ export default function Conjugation() {
             options={meaningOpts}
             correct={meaningCorrect}
             picked={meaningPick}
-            checked={checked}
             onPick={pickMeaning}
           />
         )}
@@ -211,7 +211,6 @@ export default function Conjugation() {
               options={kanjiOpts}
               correct={kanjiCorrect}
               picked={kanjiPick}
-              checked={checked}
               onPick={pickKanji}
             />
           ) : (
@@ -343,7 +342,6 @@ function McChoices({
   options,
   correct,
   picked,
-  checked,
   onPick,
   jp = false,
   layout = 'wrap',
@@ -352,12 +350,11 @@ function McChoices({
   options: string[];
   correct: number;
   picked: number | null;
-  checked: boolean;
   onPick: (i: number) => void;
   jp?: boolean;
   layout?: 'wrap' | 'stack';
 }) {
-  const reveal = picked !== null || checked;
+  const reveal = picked !== null;
   const container =
     layout === 'stack'
       ? 'mt-1 flex flex-col gap-2.5'
