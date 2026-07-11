@@ -24,9 +24,11 @@ const DEFAULT_THEME = 'dark';
 export default function App() {
   const [tab, setTab] = useState<Tab>('quiz');
   const [theme, setTheme] = useState(DEFAULT_THEME);
+  const [furigana, setFurigana] = useState(true);
 
   useEffect(() => {
     setTheme(localStorage.getItem('nihongo-theme') || DEFAULT_THEME);
+    setFurigana(localStorage.getItem('nihongo-furigana') !== '0');
   }, []);
 
   useEffect(() => {
@@ -34,8 +36,16 @@ export default function App() {
     localStorage.setItem('nihongo-theme', theme);
   }, [theme]);
 
+  useEffect(() => {
+    localStorage.setItem('nihongo-furigana', furigana ? '1' : '0');
+  }, [furigana]);
+
   return (
-    <div className="mx-auto flex w-full max-w-3xl flex-col gap-5 px-4 pb-16 pt-4">
+    <div
+      className={`mx-auto flex w-full max-w-3xl flex-col gap-5 px-4 pb-16 pt-4 ${
+        furigana ? '' : 'no-furi'
+      }`}
+    >
       <nav className="flex flex-wrap items-center justify-between gap-3 rounded-box border border-base-300 bg-base-200 px-4 py-2.5">
         <div className="flex items-center gap-2">
           <span
@@ -52,6 +62,18 @@ export default function App() {
         </div>
 
         <div className="flex items-center gap-2">
+          <label
+            className="flex cursor-pointer items-center gap-1.5"
+            title="Furigana (lecturas sobre el kanji)"
+          >
+            <span className="jp text-sm font-semibold opacity-70">振</span>
+            <input
+              type="checkbox"
+              className="toggle toggle-primary toggle-sm"
+              checked={furigana}
+              onChange={(e) => setFurigana(e.target.checked)}
+            />
+          </label>
           <div role="tablist" className="tabs tabs-box tabs-sm bg-base-100">
             {TABS.map((t) => (
               <button

@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import questionsData from '../data/questions.json';
 import type { Question } from '../lib/types';
 import { normalize } from '../lib/conjugator';
+import { renderRuby } from './Ruby';
 
 const QUESTIONS = questionsData as Question[];
 
@@ -205,12 +206,13 @@ export default function Quiz() {
                     className="rounded-box border border-base-300 border-l-4 border-l-error bg-base-200 px-3.5 py-3"
                   >
                     <div className="text-sm opacity-70">
-                      <b>{m.q.topic === 'vocabulario' ? 'Vocabulario' : m.q.topic}</b> · {m.q.prompt}
-                      {m.q.cue && <span className="jp"> （{m.q.cue}）</span>}
+                      <b>{m.q.topic === 'vocabulario' ? 'Vocabulario' : m.q.topic}</b> ·{' '}
+                      {renderRuby(m.q.prompt)}
+                      {m.q.cue && <span className="jp"> （{renderRuby(m.q.cue)}）</span>}
                     </div>
                     <div className="jp mt-1 font-bold">
                       <span className="text-error line-through opacity-80">{m.given}</span> →{' '}
-                      <span className="text-success">{sol}</span>
+                      <span className="text-success">{renderRuby(sol)}</span>
                     </div>
                     <div className="mt-1 text-sm opacity-70">{m.q.exp}</div>
                   </div>
@@ -262,7 +264,7 @@ export default function Quiz() {
           <div className={`text-lg font-semibold text-pretty ${hasJP(q.prompt) ? 'jp' : ''}`}>
             {q.prompt.split('＿＿').map((part, i, arr) => (
               <span key={i}>
-                {part}
+                {renderRuby(part)}
                 {i < arr.length - 1 && <span className="jp font-extrabold text-primary">＿＿</span>}
               </span>
             ))}
@@ -270,7 +272,7 @@ export default function Quiz() {
 
           {q.cue && (
             <div className="jp my-4 rounded-box border border-dashed border-base-300 bg-base-200 p-4 text-center text-3xl font-extrabold sm:text-4xl">
-              {q.cue}
+              {renderRuby(q.cue)}
             </div>
           )}
 
@@ -291,7 +293,7 @@ export default function Quiz() {
                     onClick={() => answerMC(i)}
                   >
                     <span className="badge badge-sm mr-1">{'ABCD'[i]}</span>
-                    {opt}
+                    {renderRuby(opt)}
                   </button>
                 );
               })}
@@ -349,7 +351,7 @@ export default function Quiz() {
               </div>
               <div className="jp mt-1 font-bold">
                 {feedback.ok ? '' : 'Respuesta: '}
-                {feedback.sol}
+                {renderRuby(feedback.sol)}
               </div>
               <div className="mt-1 opacity-70">{feedback.exp}</div>
             </div>

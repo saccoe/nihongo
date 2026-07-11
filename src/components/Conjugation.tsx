@@ -42,7 +42,6 @@ type Mode = 'rapido' | 'completo';
 
 export default function Conjugation() {
   const [mode, setMode] = useState<Mode>('rapido');
-  const [showFuri, setShowFuri] = useState(true);
   // Funciones extra (opcionales): adivinar el kanji y/o el significado.
   const [guessKanji, setGuessKanji] = useState(false);
   const [guessMeaning, setGuessMeaning] = useState(false);
@@ -169,11 +168,7 @@ export default function Conjugation() {
           <div className="text-xs font-bold uppercase tracking-wider text-accent">
             Forma {FORM_LABELS[givenKey]}
           </div>
-          <div
-            className={`jp mt-1 text-5xl font-extrabold sm:text-6xl ${
-              showRuby && !showFuri ? 'no-furi' : ''
-            }`}
-          >
+          <div className="jp mt-1 text-5xl font-extrabold sm:text-6xl">
             {showRuby ? (
               <>
                 <ruby>
@@ -278,20 +273,7 @@ export default function Conjugation() {
         </div>
 
         {/* acciones */}
-        <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
-          {showRuby ? (
-            <label className="flex cursor-pointer items-center gap-2 text-sm opacity-80">
-              <input
-                type="checkbox"
-                className="toggle toggle-primary toggle-sm"
-                checked={showFuri}
-                onChange={(e) => setShowFuri(e.target.checked)}
-              />
-              Furigana
-            </label>
-          ) : (
-            <span />
-          )}
+        <div className="mt-5 flex items-center justify-end gap-3">
           <button className="btn btn-primary" onClick={check}>
             {checked ? 'Siguiente →' : 'Revisar'}
           </button>
