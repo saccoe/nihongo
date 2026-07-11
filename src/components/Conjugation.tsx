@@ -173,7 +173,7 @@ export default function Conjugation() {
 
   return (
     <section className="card border border-base-300 bg-base-100 shadow-xl">
-      <div className="card-body">
+      <div className="card-body p-4 sm:p-6">
         <div className="flex items-center gap-3 text-sm font-semibold">
           <span className="badge badge-ghost shrink-0 tabular-nums opacity-70">
             {scoreN} / {scoreT}

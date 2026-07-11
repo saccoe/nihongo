@@ -42,11 +42,11 @@ export default function App() {
 
   return (
     <div
-      className={`mx-auto flex w-full max-w-3xl flex-col gap-5 px-4 pb-16 pt-4 ${
+      className={`mx-auto flex w-full max-w-3xl flex-col gap-3 px-2 pb-12 pt-3 sm:gap-5 sm:px-4 sm:pb-16 sm:pt-4 ${
         furigana ? '' : 'no-furi'
       }`}
     >
-      <nav className="flex flex-wrap items-center justify-between gap-3 rounded-box border border-base-300 bg-base-200 px-4 py-2.5">
+      <nav className="flex flex-wrap items-center justify-between gap-2 rounded-box border border-base-300 bg-base-200 px-3 py-2 sm:gap-3 sm:px-4 sm:py-2.5">
         <div className="flex items-center gap-2">
           <span
             aria-hidden

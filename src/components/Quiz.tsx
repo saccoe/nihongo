@@ -118,7 +118,7 @@ export default function Quiz() {
   if (phase === 'setup') {
     return (
       <section className="card border border-base-300 bg-base-100 shadow-xl">
-        <div className="card-body gap-1">
+        <div className="card-body gap-1 p-4 sm:p-6">
           <span className="text-xs font-bold uppercase tracking-widest text-accent">
             Configurá tu repaso
           </span>
@@ -186,7 +186,7 @@ export default function Quiz() {
             : 'A repasar — mirá los errores y volvé a intentar.';
     return (
       <section className="card border border-base-300 bg-base-100 shadow-xl">
-        <div className="card-body">
+        <div className="card-body p-4 sm:p-6">
           <div className="text-center">
             <div className="text-6xl font-extrabold text-primary sm:text-7xl">{score}</div>
             <div className="font-semibold opacity-60">/ {total}</div>
@@ -243,7 +243,7 @@ export default function Quiz() {
   const optJP = q.cat !== 'vocab' || hasJP(q.options?.[0] ?? '');
   return (
     <section className="card border border-base-300 bg-base-100 shadow-xl">
-      <div className="card-body">
+      <div className="card-body p-4 sm:p-6">
         <div className="flex items-center justify-between gap-3 text-sm font-semibold opacity-70">
           <span>
             Pregunta {idx + 1} de {queue.length}
