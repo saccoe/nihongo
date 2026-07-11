@@ -271,7 +271,7 @@ export default function Quiz() {
           </div>
 
           {q.cue && (
-            <div className="jp my-4 rounded-box border border-dashed border-base-300 bg-base-200 p-4 text-center text-3xl font-extrabold sm:text-4xl">
+            <div className="jp eva-titlecard my-4 rounded-box border border-dashed border-base-300 bg-base-200 p-4 text-center text-3xl font-extrabold sm:text-4xl">
               {renderRuby(q.cue)}
             </div>
           )}

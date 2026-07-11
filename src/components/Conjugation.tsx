@@ -257,7 +257,7 @@ export default function Conjugation() {
           </div>
           {/* Siempre <ruby> con <rt> (oculto hasta saber el kanji) para reservar
               el alto de la furigana y que la tarjeta no cambie de tamaño. */}
-          <div className="jp mt-1 text-4xl font-extrabold sm:text-5xl">
+          <div className="jp eva-titlecard mt-1 text-4xl font-extrabold sm:text-5xl">
             <ruby>
               {showRuby ? verb.kanji : givenForm}
               <rt className={showRuby ? '' : 'invisible'}>{verb.furi ?? '　'}</rt>

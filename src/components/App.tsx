@@ -57,7 +57,7 @@ export default function App() {
                 'radial-gradient(circle at 50% 42%, var(--color-primary), var(--color-primary) 62%, transparent 63%)',
             }}
           />
-          <span className="text-lg font-extrabold tracking-tight">
+          <span className="eva-titlecard text-lg font-extrabold tracking-tight">
             日本語 <span className="text-primary">クイズ</span>
           </span>
         </div>
