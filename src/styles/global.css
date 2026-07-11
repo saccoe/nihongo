@@ -57,6 +57,32 @@
   --noise: 0;
 }
 
+/* Zen Old Mincho (Google Fonts) — stand-in libre de Matisse EB.
+   Subconjunto self-hosted con sólo los glifos que usa la app; el
+   navegador sólo lo descarga cuando el tema «evangelion» está activo
+   (es el único que referencia esta familia). */
+@font-face {
+  font-family: 'Zen Old Mincho';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/zen-old-mincho-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Zen Old Mincho';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/zen-old-mincho-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Zen Old Mincho';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('../assets/fonts/zen-old-mincho-900.woff2') format('woff2');
+}
+
 @layer base {
   body {
     min-height: 100vh;
@@ -85,15 +111,15 @@
      y damos a los títulos un tratamiento «title card»: pesado, apretado
      y de alto contraste. Fuera de este tema, nada cambia. */
   [data-theme='evangelion'] .jp {
-    font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN',
-      'Hiragino Mincho Pro', 'Noto Serif JP', 'Noto Serif CJK JP', 'Songti SC',
-      serif;
+    font-family: 'Zen Old Mincho', 'Yu Mincho', 'YuMincho',
+      'Hiragino Mincho ProN', 'Hiragino Mincho Pro', 'Noto Serif JP',
+      'Noto Serif CJK JP', 'Songti SC', serif;
   }
   /* Cabecera y kanji grandes = title card: mincho pesada y comprimida. */
   [data-theme='evangelion'] .eva-titlecard {
-    font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN',
-      'Hiragino Mincho Pro', 'Noto Serif JP', 'Noto Serif CJK JP', 'Songti SC',
-      serif;
+    font-family: 'Zen Old Mincho', 'Yu Mincho', 'YuMincho',
+      'Hiragino Mincho ProN', 'Hiragino Mincho Pro', 'Noto Serif JP',
+      'Noto Serif CJK JP', 'Songti SC', serif;
     font-weight: 900;
     letter-spacing: -0.04em;
   }
