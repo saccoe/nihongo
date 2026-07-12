@@ -1,8 +1,9 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import questionsData from '../data/questions.json';
 import type { Question } from '../lib/types';
 import { normalize } from '../lib/conjugator';
 import { renderRuby } from './Ruby';
+import Choices from './Choices';
 
 const QUESTIONS = questionsData as Question[];
 
@@ -114,15 +115,30 @@ export default function Quiz() {
     }
   }
 
+  // Enter pasa a la siguiente pregunta cuando la actual ya está respondida.
+  const enterRef = useRef({ active: false, next: () => {} });
+  enterRef.current = { active: phase === 'quiz' && answered, next };
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key !== 'Enter' || e.metaKey || e.ctrlKey || e.altKey) return;
+      const s = enterRef.current;
+      if (!s.active) return;
+      e.preventDefault();
+      s.next();
+    }
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
   /* ---------- SETUP ---------- */
   if (phase === 'setup') {
     return (
       <section className="card border border-base-300 bg-base-100 shadow-xl">
-        <div className="card-body gap-1 p-4 sm:p-6">
+        <div className="card-body p-4 sm:p-6">
           <span className="text-xs font-bold uppercase tracking-widest text-accent">
             Configurá tu repaso
           </span>
-          <p className="mb-2 text-sm opacity-70">
+          <p className="mt-1 text-sm opacity-70">
             Gramática y vocabulario. Corrección al instante con explicación.
           </p>
 
@@ -135,7 +151,7 @@ export default function Quiz() {
                 active={selKeys.has(f.key)}
                 onClick={() => toggleKey(f.key)}
               >
-                <span className="jp">{f.label}</span>
+                {f.label}
               </Chip>
             ))}
           </div>
@@ -241,27 +257,41 @@ export default function Quiz() {
   /* ---------- QUIZ ---------- */
   if (!q) return null;
   const optJP = q.cat !== 'vocab' || hasJP(q.options?.[0] ?? '');
+  // Largo visible: descartamos la lectura de furigana ([漢字|よみ] → 漢字).
+  const displayLen = (s: string) => s.replace(/\[([^|\]]+)\|[^\]]+\]/g, '$1').length;
+  // Opciones japonesas cortas (partículas, formas breves) → grilla 2×2;
+  // el resto (significados en español, frases largas) → una por fila.
+  const mcLayout =
+    optJP && (q.options?.every((o) => displayLen(o) <= 10) ?? false) ? 'grid' : 'stack';
+  const isLast = idx + 1 >= queue.length;
   return (
     <section className="card border border-base-300 bg-base-100 shadow-xl">
       <div className="card-body p-4 sm:p-6">
-        <div className="flex items-center justify-between gap-3 text-sm font-semibold opacity-70">
-          <span>
-            Pregunta {idx + 1} de {queue.length}
-          </span>
-          <span className="badge badge-ghost tabular-nums">
+        {/* header: puntaje · progreso · salir (mismo patrón que Conjugación) */}
+        <div className="flex items-center gap-3 text-sm font-semibold">
+          <span className="badge badge-ghost shrink-0 tabular-nums opacity-70">
             {score} / {answered ? idx + 1 : idx}
           </span>
+          <progress
+            className="progress progress-primary min-w-0 flex-1"
+            value={idx}
+            max={queue.length}
+          />
+          <button className="btn btn-ghost btn-sm shrink-0" onClick={() => setPhase('setup')}>
+            Salir
+          </button>
         </div>
-        <progress className="progress progress-primary mt-2" value={idx} max={queue.length} />
 
-        <div className="mt-5">
-          <div className="mb-1 flex flex-wrap items-center gap-2 text-[11px] font-bold uppercase tracking-wider">
-            <span className="badge badge-ghost badge-sm">
-              {q.cat === 'vocab' ? 'Vocabulario' : 'Gramática'}
-            </span>
+        {/* ───── ÁREA DE PREGUNTA (card de info) ───── */}
+        <div className="mt-3 rounded-box border border-base-300 bg-base-200/50 p-4 text-center">
+          <div className="text-[11px] font-bold uppercase tracking-wider text-accent">
+            {q.cat === 'vocab' ? 'Vocabulario' : 'Gramática'}
           </div>
-
-          <div className={`text-lg font-semibold text-pretty ${hasJP(q.prompt) ? 'jp' : ''}`}>
+          <div
+            className={`mx-auto mt-2 max-w-prose text-pretty text-xl font-semibold sm:text-2xl ${
+              hasJP(q.prompt) ? 'jp' : ''
+            }`}
+          >
             {q.prompt.split('＿＿').map((part, i, arr) => (
               <span key={i}>
                 {renderRuby(part)}
@@ -269,76 +299,56 @@ export default function Quiz() {
               </span>
             ))}
           </div>
-
           {q.cue && (
-            <div className="jp eva-titlecard my-4 rounded-box border border-dashed border-base-300 bg-base-200 p-4 text-center text-3xl font-extrabold sm:text-4xl">
+            <div className="jp eva-titlecard mt-3 text-3xl font-extrabold sm:text-4xl">
               {renderRuby(q.cue)}
             </div>
           )}
+        </div>
 
+        {/* ───── ÁREA DE RESPUESTA (tamaño fijo) ───── */}
+        <div className="mt-3 flex min-h-[13rem] flex-col justify-center">
           {q.type === 'mc' ? (
-            <div className="mt-2 flex flex-col gap-2.5">
-              {q.options!.map((opt, i) => {
-                let cls = 'btn justify-start h-auto py-3.5 text-base font-normal';
-                if (answered) {
-                  cls += ' pointer-events-none';
-                  if (i === q.correct) cls += ' btn-success';
-                  else if (i === picked) cls += ' btn-error';
-                  else cls += ' btn-outline opacity-40';
-                } else cls += ' btn-outline';
-                return (
-                  <button
-                    key={i}
-                    className={`${cls} ${optJP ? 'jp' : ''}`}
-                    onClick={() => answerMC(i)}
-                  >
-                    <span className="badge badge-sm mr-1">{'ABCD'[i]}</span>
-                    {renderRuby(opt)}
-                  </button>
-                );
-              })}
-            </div>
+            <Choices
+              options={q.options!}
+              correct={q.correct!}
+              picked={picked}
+              onPick={answerMC}
+              jp={optJP}
+              layout={mcLayout}
+            />
           ) : (
-            <>
-              <div className="mt-2 flex flex-wrap gap-2.5">
-                <input
-                  className={`jp input input-bordered flex-1 text-xl ${
-                    answered ? (feedback?.ok ? 'input-success' : 'input-error') : ''
-                  }`}
-                  autoComplete="off"
-                  autoCapitalize="off"
-                  spellCheck={false}
-                  placeholder="escribí en hiragana…"
-                  value={typed}
-                  readOnly={answered}
-                  onChange={(e) => setTyped(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter') {
-                      e.preventDefault();
-                      answered ? next() : checkType();
-                    }
-                  }}
-                />
-                {!answered && (
-                  <button className="btn btn-primary" onClick={checkType}>
-                    Revisar
-                  </button>
-                )}
-              </div>
-              {!answered && (
-                <p className="mt-2 text-xs font-semibold text-accent">
-                  ✍ Escribí la respuesta únicamente en hiragana
-                </p>
-              )}
-            </>
+            <div className="mx-auto w-full max-w-sm">
+              <input
+                className={`jp input input-bordered w-full text-center text-2xl ${
+                  answered ? (feedback?.ok ? 'input-success' : 'input-error') : ''
+                }`}
+                autoComplete="off"
+                autoCapitalize="off"
+                spellCheck={false}
+                placeholder="escribí en hiragana…"
+                value={typed}
+                readOnly={answered}
+                autoFocus
+                onChange={(e) => setTyped(e.target.value)}
+                onKeyDown={(e) => {
+                  // Enter revisa; una vez revisado, el handler global avanza.
+                  if (e.key === 'Enter') {
+                    e.preventDefault();
+                    if (!answered) checkType();
+                  }
+                }}
+              />
+            </div>
           )}
+        </div>
 
+        {/* feedback: espacio reservado para que el botón no se mueva */}
+        <div className="mt-3 min-h-[5.5rem]">
           {feedback && (
             <div
-              className={`mt-4 rounded-box border px-4 py-3.5 text-sm ${
-                feedback.ok
-                  ? 'border-success bg-success/10'
-                  : 'border-error bg-error/10'
+              className={`rounded-box border px-4 py-3 text-sm ${
+                feedback.ok ? 'border-success bg-success/10' : 'border-error bg-error/10'
               }`}
             >
               <div className="flex items-center justify-between gap-2">
@@ -358,13 +368,17 @@ export default function Quiz() {
           )}
         </div>
 
-        <div className="mt-5 flex justify-end gap-3">
-          <button className="btn btn-ghost" onClick={() => setPhase('setup')}>
-            Salir
-          </button>
-          {answered && (
-            <button className="btn btn-primary" onClick={next}>
-              {idx + 1 >= queue.length ? 'Ver resultado →' : 'Siguiente →'}
+        {/* acción — siempre en el mismo lugar */}
+        <div className="mt-2 flex h-12 items-center justify-center">
+          {answered ? (
+            <button className="btn btn-primary px-8" onClick={next}>
+              {isLast ? 'Ver resultado →' : 'Siguiente →'}
+            </button>
+          ) : q.type === 'mc' ? (
+            <span className="text-xs opacity-40">Elegí una opción</span>
+          ) : (
+            <button className="btn btn-primary px-8" onClick={checkType}>
+              Revisar
             </button>
           )}
         </div>
