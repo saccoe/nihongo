@@ -406,7 +406,9 @@ function Chip({
   const on = { primary: 'btn-primary', secondary: 'btn-secondary', accent: 'btn-accent' }[color];
   return (
     <button
-      className={`btn btn-sm h-auto flex-col items-start py-2 ${active ? on : 'btn-outline'}`}
+      className={`btn btn-sm h-auto flex-col items-start py-2 btn-outline ${
+        active ? on : 'opacity-60'
+      }`}
       aria-pressed={active}
       onClick={onClick}
     >
