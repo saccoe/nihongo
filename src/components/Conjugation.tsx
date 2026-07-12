@@ -174,12 +174,17 @@ export default function Conjugation() {
   return (
     <section className="card border border-base-300 bg-base-100 shadow-xl">
       <div className="card-body">
-        <div className="flex items-center justify-between gap-3 text-sm font-semibold">
-          <span className="opacity-70">Verbo {scoreT + 1}</span>
-          <div className="flex items-center gap-2">
-            <span className="badge badge-ghost tabular-nums opacity-70">
-              {scoreN} / {scoreT}
-            </span>
+        <div className="flex items-center gap-3 text-sm font-semibold">
+          <span className="badge badge-ghost shrink-0 tabular-nums opacity-70">
+            {scoreN} / {scoreT}
+          </span>
+          {/* progreso de este verbo: steps chiquitos ocupando el header */}
+          <ul className="steps min-w-0 flex-1 [&_.step]:min-w-[1.25rem] [&_.step]:before:!h-1 [&_.step]:after:!size-2.5 [&_.step]:after:!min-h-0 [&_.step]:after:!text-[0px]">
+            {steps.map((_, i) => (
+              <li key={i} className={`step ${i <= step ? 'step-primary' : ''}`} />
+            ))}
+          </ul>
+          <div className="flex shrink-0 items-center gap-2">
             <details className="dropdown dropdown-end">
               <summary
                 className="btn btn-ghost btn-sm btn-circle"
@@ -244,32 +249,23 @@ export default function Conjugation() {
             </details>
           </div>
         </div>
-        <progress
-          className="progress progress-primary mt-2"
-          value={scoreT ? scoreN : 0}
-          max={scoreT || 1}
-        />
 
         {/* ───── Tarjeta de info: se va llenando con cada respuesta ───── */}
-        <div className="mt-6 rounded-box border border-base-300 bg-base-200/50 p-5 text-center">
-          <div className="text-xs font-bold uppercase tracking-wider text-accent">
+        <div className="mt-3 rounded-box border border-base-300 bg-base-200/50 p-4 text-center">
+          <div className="text-[11px] font-bold uppercase tracking-wider text-accent">
             Forma {FORM_LABELS[givenKey]}
           </div>
-          <div className="jp mt-1 text-5xl font-extrabold sm:text-6xl">
-            {showRuby ? (
-              <>
-                <ruby>
-                  {verb.kanji}
-                  <rt>{verb.furi}</rt>
-                </ruby>
-                {givenTail}
-              </>
-            ) : (
-              givenForm
-            )}
+          {/* Siempre <ruby> con <rt> (oculto hasta saber el kanji) para reservar
+              el alto de la furigana y que la tarjeta no cambie de tamaño. */}
+          <div className="jp mt-1 text-4xl font-extrabold sm:text-5xl">
+            <ruby>
+              {showRuby ? verb.kanji : givenForm}
+              <rt className={showRuby ? '' : 'invisible'}>{verb.furi ?? '　'}</rt>
+            </ruby>
+            {showRuby ? givenTail : ''}
           </div>
 
-          <div className="mt-2 text-sm">
+          <div className="mt-1 text-sm">
             {meaningRevealed ? (
               <span className="opacity-70">{verb.meaning}</span>
             ) : (
@@ -277,9 +273,9 @@ export default function Conjugation() {
             )}
           </div>
 
-          <div className="mt-3">
+          <div className="mt-2">
             {groupRevealed ? (
-              <span className="badge badge-outline gap-1.5">
+              <span className="badge badge-outline badge-sm gap-1.5">
                 {GROUP_META[verb.group].name}
                 <span className="jp opacity-70">{GROUP_META[verb.group].sub}</span>
               </span>
@@ -289,14 +285,14 @@ export default function Conjugation() {
           </div>
 
           {askKeys.length > 0 && (
-            <div className="mt-4 grid gap-x-6 gap-y-2 border-t border-base-300 pt-4 text-left sm:grid-cols-2">
+            <div className="mt-3 grid gap-x-6 gap-y-1.5 border-t border-base-300 pt-3 text-left sm:grid-cols-2">
               {askKeys.map((k) => (
                 <div key={k} className="flex items-baseline justify-between gap-2">
                   <span className="text-xs font-bold opacity-60">{FORM_LABELS[k]}</span>
                   {formChecked[k] || done ? (
-                    <span className="jp text-lg font-bold text-success">{forms[k]}</span>
+                    <span className="jp text-base font-bold text-success">{forms[k]}</span>
                   ) : (
-                    <span className="jp text-lg opacity-25">···</span>
+                    <span className="jp text-base opacity-25">···</span>
                   )}
                 </div>
               ))}
@@ -306,15 +302,13 @@ export default function Conjugation() {
 
         {/* ───── Pregunta del paso actual ───── */}
         {!done && (
-          <div className="mt-6">
-            <div className="text-center text-[11px] font-semibold uppercase tracking-wider opacity-40">
-              Paso {step + 1} de {steps.length}
-            </div>
-
+          <>
+            {/* altura fija: el botón Siguiente siempre queda en el mismo lugar */}
+            <div className="mt-3 flex min-h-[9rem] flex-col justify-center">
             {current.type === 'meaning' && (
               <McChoices
                 title="¿Qué significa?"
-                layout="stack"
+                layout="grid"
                 options={meaningOpts}
                 correct={meaningCorrect}
                 picked={meaningPick}
@@ -405,9 +399,10 @@ export default function Conjugation() {
                   </div>
                 );
               })()}
+            </div>
 
-            {/* acción del paso */}
-            <div className="mt-6 flex justify-center">
+            {/* acción del paso — posición fija */}
+            <div className="mt-3 flex h-12 items-center justify-center">
               {current.type === 'form' && !curAnswered ? (
                 <button className="btn btn-primary px-8" onClick={() => checkForm(current.key)}>
                   Revisar
@@ -420,7 +415,7 @@ export default function Conjugation() {
                 <span className="text-xs opacity-40">Elegí una opción</span>
               )}
             </div>
-          </div>
+          </>
         )}
 
         {/* ───── Resultado del verbo ───── */}
@@ -464,24 +459,28 @@ function McChoices({
   picked: number | null;
   onPick: (i: number) => void;
   jp?: boolean;
-  layout?: 'wrap' | 'stack';
+  layout?: 'wrap' | 'stack' | 'grid';
 }) {
   const reveal = picked !== null;
   const container =
     layout === 'stack'
-      ? 'mt-1 flex flex-col gap-2.5'
-      : 'mt-1 flex flex-wrap justify-center gap-2.5';
+      ? 'mt-1 flex flex-col gap-2'
+      : layout === 'grid'
+        ? 'mt-1 grid grid-cols-2 gap-2'
+        : 'mt-1 flex flex-wrap justify-center gap-2.5';
   return (
     <>
-      <div className="mt-3 text-center text-xs font-bold uppercase tracking-wider opacity-70">
+      <div className="text-center text-xs font-bold uppercase tracking-wider opacity-70">
         {title}
       </div>
       <div className={container}>
         {options.map((opt, i) => {
           let cls =
             layout === 'stack'
-              ? 'btn h-auto justify-start py-3 text-base font-normal'
-              : 'btn h-auto px-5 py-2 text-3xl';
+              ? 'btn h-auto justify-start py-2.5 text-base font-normal'
+              : layout === 'grid'
+                ? 'btn h-auto py-2 text-sm font-normal normal-case'
+                : 'btn h-auto px-5 py-2 text-3xl';
           if (reveal) {
             cls += ' pointer-events-none';
             if (i === correct) cls += ' btn-success';
