@@ -7,6 +7,12 @@ import Choices from './Choices';
 
 const QUESTIONS = questionsData as Question[];
 
+declare global {
+  interface Window {
+    __nihongoQuizActive?: boolean;
+  }
+}
+
 // Un solo eje de filtro: temas de gramática + vocabulario como opción aparte.
 // (la clave usa el nº de capítulo internamente, pero no se muestra)
 type FilterDef = {
@@ -129,6 +135,14 @@ export default function Quiz() {
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, []);
+
+  // Señaliza al navbar que hay un quiz en curso (para confirmar al salir).
+  useEffect(() => {
+    window.__nihongoQuizActive = phase === 'quiz';
+    return () => {
+      window.__nihongoQuizActive = false;
+    };
+  }, [phase]);
 
   /* ---------- SETUP ---------- */
   if (phase === 'setup') {
