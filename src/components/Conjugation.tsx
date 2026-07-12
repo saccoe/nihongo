@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import verbsData from '../data/verbs.json';
 import type { Verb, Group, FormKey, Forms } from '../lib/types';
 import { conjugate, FORM_LABELS, acceptedFor, normalize } from '../lib/conjugator';
+import Choices from './Choices';
 
 const VERBS = verbsData as Verb[];
 
@@ -111,6 +112,21 @@ export default function Conjugation() {
     newRound();
   }, [mode, guessKanji, guessMeaning]);
 
+  // Enter avanza al siguiente paso cuando el actual ya está respondido.
+  // (un ref evita closures viejos y re-suscribir el listener en cada render)
+  const enterRef = useRef({ answered: false, done: true, next: () => {} });
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key !== 'Enter' || e.metaKey || e.ctrlKey || e.altKey) return;
+      const s = enterRef.current;
+      if (s.done || !s.answered) return;
+      e.preventDefault();
+      s.next();
+    }
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
   if (!verb || !forms) return null;
 
   // Secuencia de pasos: significado → kanji → grupo → una conjugación tras otra.
@@ -170,6 +186,7 @@ export default function Conjugation() {
     if (isLast) finish();
     else setStep((s) => s + 1);
   }
+  enterRef.current = { answered: curAnswered, done, next };
 
   return (
     <section className="card border border-base-300 bg-base-100 shadow-xl">
@@ -306,8 +323,7 @@ export default function Conjugation() {
             {/* altura fija: el botón Siguiente siempre queda en el mismo lugar */}
             <div className="mt-3 flex min-h-[9rem] flex-col justify-center">
             {current.type === 'meaning' && (
-              <McChoices
-                title="¿Qué significa?"
+              <Choices
                 layout="grid"
                 options={meaningOpts}
                 correct={meaningCorrect}
@@ -317,8 +333,7 @@ export default function Conjugation() {
             )}
 
             {current.type === 'kanji' && (
-              <McChoices
-                title="¿Cuál es el kanji?"
+              <Choices
                 layout="wrap"
                 jp
                 options={kanjiOpts}
@@ -330,9 +345,6 @@ export default function Conjugation() {
 
             {current.type === 'group' && (
               <>
-                <div className="mt-2 text-center text-xs font-bold uppercase tracking-wider opacity-70">
-                  ¿Qué grupo es?
-                </div>
                 <div className="mt-2 flex flex-wrap justify-center gap-2.5">
                   {([1, 2, 3] as Group[]).map((g) => {
                     let cls = 'btn h-auto flex-col py-2';
@@ -386,9 +398,8 @@ export default function Conjugation() {
                       autoFocus
                       onChange={(e) => setValues((v) => ({ ...v, [k]: e.target.value }))}
                       onKeyDown={(e) => {
-                        if (e.key !== 'Enter') return;
-                        if (checked) next();
-                        else checkForm(k);
+                        // Enter revisa; una vez revisado, el handler global avanza.
+                        if (e.key === 'Enter' && !checked) checkForm(k);
                       }}
                     />
                     {checked && !ok && (
@@ -441,62 +452,6 @@ function Placeholder({ children }: { children: React.ReactNode }) {
     <span className="rounded bg-base-300/60 px-2 py-0.5 text-xs italic opacity-40">
       {children}
     </span>
-  );
-}
-
-function McChoices({
-  title,
-  options,
-  correct,
-  picked,
-  onPick,
-  jp = false,
-  layout = 'wrap',
-}: {
-  title: string;
-  options: string[];
-  correct: number;
-  picked: number | null;
-  onPick: (i: number) => void;
-  jp?: boolean;
-  layout?: 'wrap' | 'stack' | 'grid';
-}) {
-  const reveal = picked !== null;
-  const container =
-    layout === 'stack'
-      ? 'mt-1 flex flex-col gap-2'
-      : layout === 'grid'
-        ? 'mt-1 grid grid-cols-2 gap-2'
-        : 'mt-1 flex flex-wrap justify-center gap-2.5';
-  return (
-    <>
-      <div className="text-center text-xs font-bold uppercase tracking-wider opacity-70">
-        {title}
-      </div>
-      <div className={container}>
-        {options.map((opt, i) => {
-          let cls =
-            layout === 'stack'
-              ? 'btn h-auto justify-start py-2.5 text-base font-normal'
-              : layout === 'grid'
-                ? 'btn h-auto py-2 text-sm font-normal normal-case'
-                : 'btn h-auto px-5 py-2 text-3xl';
-          if (reveal) {
-            cls += ' pointer-events-none';
-            if (i === correct) cls += ' btn-success';
-            else if (i === picked) cls += ' btn-error';
-            else cls += ' btn-outline opacity-40';
-          } else {
-            cls += ' btn-outline';
-          }
-          return (
-            <button key={i} className={`${cls} ${jp ? 'jp' : ''}`} onClick={() => onPick(i)}>
-              {opt}
-            </button>
-          );
-        })}
-      </div>
-    </>
   );
 }
 
