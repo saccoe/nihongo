@@ -228,14 +228,14 @@ export default function Conjugation() {
                 <div className="text-xs font-bold uppercase tracking-wider opacity-70">Modo</div>
                 <div className="mt-2 flex gap-2">
                   <Chip color="accent" active={mode === 'rapido'} onClick={() => setMode('rapido')}>
-                    Rápido <small className="block text-[11px] opacity-70">2 formas</small>
+                    Rápido <small className="block text-xs opacity-70">2 formas</small>
                   </Chip>
                   <Chip
                     color="accent"
                     active={mode === 'completo'}
                     onClick={() => setMode('completo')}
                   >
-                    Completo <small className="block text-[11px] opacity-70">todas</small>
+                    Completo <small className="block text-xs opacity-70">todas</small>
                   </Chip>
                 </div>
 
@@ -269,7 +269,7 @@ export default function Conjugation() {
 
         {/* ───── Tarjeta de info: se va llenando con cada respuesta ───── */}
         <div className="mt-3 rounded-box border border-base-300 bg-base-200/50 p-4 text-center">
-          <div className="text-[11px] font-bold uppercase tracking-wider text-accent">
+          <div className="text-xs font-bold uppercase tracking-wider text-accent">
             Forma {FORM_LABELS[givenKey]}
           </div>
           {/* Siempre <ruby> con <rt> (oculto hasta saber el kanji) para reservar
@@ -363,7 +363,7 @@ export default function Conjugation() {
                         onClick={() => groupPick === null && setGroupPick(g)}
                       >
                         <span>{GROUP_META[g].name}</span>
-                        <small className="jp text-[11px] font-normal opacity-70">
+                        <small className="jp text-xs font-normal opacity-70">
                           {GROUP_META[g].sub}
                         </small>
                       </button>
@@ -423,7 +423,7 @@ export default function Conjugation() {
                   {isLast ? 'Terminar ✓' : 'Siguiente →'}
                 </button>
               ) : (
-                <span className="text-xs opacity-40">Elegí una opción</span>
+                <span className="text-sm opacity-70">Elegí una opción</span>
               )}
             </div>
           </>
@@ -449,7 +449,7 @@ export default function Conjugation() {
 
 function Placeholder({ children }: { children: React.ReactNode }) {
   return (
-    <span className="rounded bg-base-300/60 px-2 py-0.5 text-xs italic opacity-40">
+    <span className="rounded bg-base-300/60 px-2 py-0.5 text-sm italic opacity-60">
       {children}
     </span>
   );

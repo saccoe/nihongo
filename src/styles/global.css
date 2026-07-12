@@ -84,6 +84,11 @@
 }
 
 @layer base {
+  /* Sube el tamaño base (respeta el zoom del navegador) para mejor
+     legibilidad; todo lo demás usa rem y escala en proporción. */
+  html {
+    font-size: 112.5%;
+  }
   body {
     min-height: 100vh;
   }
@@ -98,7 +103,7 @@
   /* Furigana: la lectura va sobre el kanji. Un pelín más grande que el
      0.5em típico para que se lea cómodo en textos chicos. */
   ruby > rt {
-    font-size: 0.6em;
+    font-size: 0.7em;
     line-height: 1.1;
     color: var(--color-accent);
     font-weight: 700;

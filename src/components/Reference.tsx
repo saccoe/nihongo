@@ -150,7 +150,7 @@ export default function Reference() {
             </tbody>
           </table>
         </div>
-        <p className="mt-2 text-xs opacity-60">
+        <p className="mt-2 text-sm opacity-70">
           Deslizá la tabla para ver todas las columnas. * = falso Grupo 2 (parece G2 pero es G1).
         </p>
       </div>
@@ -180,7 +180,7 @@ function RuleBlock({
 function RTable({ head, rows }: { head: string[]; rows: string[][] }) {
   return (
     <div className="overflow-x-auto">
-      <table className="table table-xs mt-1 w-full text-center">
+      <table className="table table-sm mt-1 w-full text-center">
         <thead>
           <tr>
             {head.map((h) => (
@@ -209,7 +209,7 @@ function Example({ verb, note }: { verb: { kanji: string; furi: string; okuri: s
   return (
     <span className="inline-flex flex-col items-center">
       <Furigana verb={verb} />
-      <small className="mt-0.5 text-[11px] font-semibold opacity-60">{note}</small>
+      <small className="mt-0.5 text-xs font-semibold opacity-60">{note}</small>
     </span>
   );
 }

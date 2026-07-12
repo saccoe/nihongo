@@ -298,7 +298,7 @@ export default function Quiz() {
 
         {/* ───── ÁREA DE PREGUNTA (card de info) ───── */}
         <div className="mt-3 rounded-box border border-base-300 bg-base-200/50 p-4 text-center">
-          <div className="text-[11px] font-bold uppercase tracking-wider text-accent">
+          <div className="text-xs font-bold uppercase tracking-wider text-accent">
             {q.cat === 'vocab' ? 'Vocabulario' : 'Gramática'}
           </div>
           <div
@@ -389,7 +389,7 @@ export default function Quiz() {
               {isLast ? 'Ver resultado →' : 'Siguiente →'}
             </button>
           ) : q.type === 'mc' ? (
-            <span className="text-xs opacity-40">Elegí una opción</span>
+            <span className="text-sm opacity-70">Elegí una opción</span>
           ) : (
             <button className="btn btn-primary px-8" onClick={checkType}>
               Revisar
