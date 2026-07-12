@@ -6,11 +6,11 @@
   themes: all;
 }
 
-/* Tema custom «evangelion»: estética terminal NERV / EVA-01.
+/* Tema custom «nerv»: estética terminal NERV.
    Negro cálido + naranja de peligro + verde tóxico + púrpura Unidad-01,
    esquinas rectas y borde marcado como una consola MAGI. */
 @plugin "daisyui/theme" {
-  name: 'evangelion';
+  name: 'nerv';
   default: false;
   prefersdark: false;
   color-scheme: dark;
@@ -59,7 +59,7 @@
 
 /* Zen Old Mincho (Google Fonts) — stand-in libre de Matisse EB.
    Subconjunto self-hosted con sólo los glifos que usa la app; el
-   navegador sólo lo descarga cuando el tema «evangelion» está activo
+   navegador sólo lo descarga cuando el tema «nerv» está activo
    (es el único que referencia esta familia). */
 @font-face {
   font-family: 'Zen Old Mincho';
@@ -107,19 +107,19 @@
     visibility: hidden;
   }
 
-  /* --- Tema «evangelion»: tipografía estilo Matisse EB ---
+  /* --- Tema «nerv»: tipografía estilo Matisse EB ---
      El sello de EVA es una serif mincho. Se aplica al CONTENIDO japonés
      (frases, opciones, furigana) vía .jp, y a los títulos grandes vía
      .eva-titlecard. El chrome de la UI (chips de filtro, botones en
      español) NO lleva .jp, así que queda en la sans del sistema y no se
      mezclan fuentes entre botones. */
-  [data-theme='evangelion'] .jp {
+  [data-theme='nerv'] .jp {
     font-family: 'Zen Old Mincho', 'Yu Mincho', 'YuMincho',
       'Hiragino Mincho ProN', 'Hiragino Mincho Pro', 'Noto Serif JP',
       'Noto Serif CJK JP', 'Songti SC', serif;
   }
   /* Cabecera y kanji grandes = title card: mincho pesada y comprimida. */
-  [data-theme='evangelion'] .eva-titlecard {
+  [data-theme='nerv'] .eva-titlecard {
     font-family: 'Zen Old Mincho', 'Yu Mincho', 'YuMincho',
       'Hiragino Mincho ProN', 'Hiragino Mincho Pro', 'Noto Serif JP',
       'Noto Serif CJK JP', 'Songti SC', serif;

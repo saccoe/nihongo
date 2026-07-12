@@ -11,9 +11,9 @@ const TABS: { id: Tab; label: string }[] = [
   { id: 'ref', label: 'Referencia' },
 ];
 
-// Tema custom «evangelion» (NERV) + temas nativos de daisyUI 5
+// Tema custom «nerv» (NERV) + temas nativos de daisyUI 5
 const THEMES = [
-  'evangelion',
+  'nerv',
   'dark', 'light', 'synthwave', 'dracula', 'night', 'dim', 'sunset', 'abyss',
   'coffee', 'business', 'luxury', 'black', 'halloween', 'forest', 'aqua',
   'cyberpunk', 'retro', 'valentine', 'cupcake', 'bumblebee', 'emerald',
