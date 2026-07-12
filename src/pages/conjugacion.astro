@@ -1,0 +1,10 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Conjugation from '../components/Conjugation';
+---
+
+<Layout section="conj" title="Conjugación · 日本語 クイズ">
+  <div class="mx-auto w-full max-w-3xl">
+    <Conjugation client:only="react" />
+  </div>
+</Layout>

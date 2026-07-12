@@ -7,6 +7,12 @@ import Choices from './Choices';
 
 const QUESTIONS = questionsData as Question[];
 
+declare global {
+  interface Window {
+    __nihongoQuizActive?: boolean;
+  }
+}
+
 // Un solo eje de filtro: temas de gramática + vocabulario como opción aparte.
 // (la clave usa el nº de capítulo internamente, pero no se muestra)
 type FilterDef = {
@@ -129,6 +135,14 @@ export default function Quiz() {
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, []);
+
+  // Señaliza al navbar que hay un quiz en curso (para confirmar al salir).
+  useEffect(() => {
+    window.__nihongoQuizActive = phase === 'quiz';
+    return () => {
+      window.__nihongoQuizActive = false;
+    };
+  }, [phase]);
 
   /* ---------- SETUP ---------- */
   if (phase === 'setup') {
@@ -284,7 +298,7 @@ export default function Quiz() {
 
         {/* ───── ÁREA DE PREGUNTA (card de info) ───── */}
         <div className="mt-3 rounded-box border border-base-300 bg-base-200/50 p-4 text-center">
-          <div className="text-[11px] font-bold uppercase tracking-wider text-accent">
+          <div className="text-xs font-bold uppercase tracking-wider text-accent">
             {q.cat === 'vocab' ? 'Vocabulario' : 'Gramática'}
           </div>
           <div
@@ -375,7 +389,7 @@ export default function Quiz() {
               {isLast ? 'Ver resultado →' : 'Siguiente →'}
             </button>
           ) : q.type === 'mc' ? (
-            <span className="text-xs opacity-40">Elegí una opción</span>
+            <span className="text-sm opacity-70">Elegí una opción</span>
           ) : (
             <button className="btn btn-primary px-8" onClick={checkType}>
               Revisar

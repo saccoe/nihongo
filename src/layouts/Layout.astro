@@ -1,9 +1,14 @@
 ---
 import '../styles/global.css';
+import Navbar from '../components/Navbar';
+
+type Section = 'repaso' | 'conj' | 'ref';
 interface Props {
   title?: string;
+  section: Section;
 }
-const { title = '日本語 クイズ' } = Astro.props;
+const { title = '日本語 クイズ', section } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
 <!doctype html>
@@ -12,21 +17,28 @@ const { title = '日本語 クイズ' } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Repaso interactivo de japonés: gramática, vocabulario y conjugación de verbos." />
-    <link rel="icon" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`} />
+    <link rel="icon" href={`${base.replace(/\/$/, '')}/favicon.svg`} />
     <title>{title}</title>
     <script is:inline>
-      // Aplica el tema guardado antes de pintar, para evitar flash. Default: dark.
+      // Aplica tema y furigana guardados antes de pintar, para evitar flash.
       (() => {
         try {
-          document.documentElement.setAttribute(
-            'data-theme',
-            localStorage.getItem('nihongo-theme') || 'dark',
-          );
+          const d = document.documentElement;
+          d.setAttribute('data-theme', localStorage.getItem('nihongo-theme') || 'dark');
+          if (localStorage.getItem('nihongo-furigana') === '0') d.classList.add('no-furi');
         } catch (e) {}
       })();
     </script>
   </head>
   <body>
-    <slot />
+    <div
+      class="mx-auto flex w-full max-w-6xl flex-col gap-3 px-2 pb-12 pt-3 sm:gap-5 sm:px-4 sm:pb-16 sm:pt-4"
+    >
+      <Navbar client:load current={section} base={base} />
+      <slot />
+      <footer class="mt-1 text-center text-xs opacity-50">
+        頑張って！ · Hecho para tu examen
+      </footer>
+    </div>
   </body>
 </html>

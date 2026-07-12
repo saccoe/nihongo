@@ -28,7 +28,7 @@ export default function Reference() {
       <div className="card-body p-4 sm:p-6">
         <span className="text-xs font-bold uppercase tracking-widest text-accent">Cómo conjugar</span>
 
-        <div className="mt-3 flex flex-col gap-4">
+        <div className="mx-auto mt-3 flex w-full max-w-3xl flex-col gap-4">
           <RuleBlock badge="badge-info" title="Grupo 1 · ごだん (godan)">
             <p>
               Termina en sílaba de la fila <b>-u</b> (う く ぐ す つ ぬ ぶ む る). Se conjuga cambiando
@@ -101,7 +101,7 @@ export default function Reference() {
           Lista de verbos
         </div>
         <input
-          className="input input-bordered mt-3 w-full"
+          className="input input-bordered mt-3 w-full max-w-md"
           placeholder="Buscar (kana o significado)…"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -119,9 +119,9 @@ export default function Reference() {
         </div>
 
         <div className="mt-3 overflow-x-auto rounded-box border border-base-300">
-          <table className="table table-sm">
+          <table className="table">
             <thead>
-              <tr className="text-[11px] uppercase">
+              <tr className="text-xs uppercase">
                 <th>Verbo</th><th>Dicc.</th><th>ます</th><th>ない</th><th>た</th><th>て</th>
                 <th>Grupo</th><th>Significado</th>
               </tr>
@@ -150,7 +150,7 @@ export default function Reference() {
             </tbody>
           </table>
         </div>
-        <p className="mt-2 text-xs opacity-60">
+        <p className="mt-2 text-sm opacity-70">
           Deslizá la tabla para ver todas las columnas. * = falso Grupo 2 (parece G2 pero es G1).
         </p>
       </div>
@@ -180,7 +180,7 @@ function RuleBlock({
 function RTable({ head, rows }: { head: string[]; rows: string[][] }) {
   return (
     <div className="overflow-x-auto">
-      <table className="table table-xs mt-1 w-full text-center">
+      <table className="table table-sm mt-1 w-full text-center">
         <thead>
           <tr>
             {head.map((h) => (
@@ -209,7 +209,7 @@ function Example({ verb, note }: { verb: { kanji: string; furi: string; okuri: s
   return (
     <span className="inline-flex flex-col items-center">
       <Furigana verb={verb} />
-      <small className="mt-0.5 text-[11px] font-semibold opacity-60">{note}</small>
+      <small className="mt-0.5 text-xs font-semibold opacity-60">{note}</small>
     </span>
   );
 }

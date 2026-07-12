@@ -1,8 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import App from '../components/App';
+import Quiz from '../components/Quiz';
 ---
 
-<Layout>
-  <App client:only="react" />
+<Layout section="repaso" title="Repaso · 日本語 クイズ">
+  <div class="mx-auto w-full max-w-3xl">
+    <Quiz client:only="react" />
+  </div>
 </Layout>
