@@ -95,9 +95,11 @@
     font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic',
       'Noto Sans JP', system-ui, sans-serif;
   }
-  /* Furigana: la lectura va sobre el kanji */
+  /* Furigana: la lectura va sobre el kanji. Un pelín más grande que el
+     0.5em típico para que se lea cómodo en textos chicos. */
   ruby > rt {
-    font-size: 0.5em;
+    font-size: 0.6em;
+    line-height: 1.1;
     color: var(--color-accent);
     font-weight: 700;
   }
@@ -106,10 +108,11 @@
   }
 
   /* --- Tema «evangelion»: tipografía estilo Matisse EB ---
-     El sello de EVA es una serif mincho (extra-bold) en las title cards
-     y las UIs de NERV. Sólo bajo este tema cambiamos el japonés a mincho
-     y damos a los títulos un tratamiento «title card»: pesado, apretado
-     y de alto contraste. Fuera de este tema, nada cambia. */
+     El sello de EVA es una serif mincho. Se aplica al CONTENIDO japonés
+     (frases, opciones, furigana) vía .jp, y a los títulos grandes vía
+     .eva-titlecard. El chrome de la UI (chips de filtro, botones en
+     español) NO lleva .jp, así que queda en la sans del sistema y no se
+     mezclan fuentes entre botones. */
   [data-theme='evangelion'] .jp {
     font-family: 'Zen Old Mincho', 'Yu Mincho', 'YuMincho',
       'Hiragino Mincho ProN', 'Hiragino Mincho Pro', 'Noto Serif JP',
