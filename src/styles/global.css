@@ -6,6 +6,83 @@
   themes: all;
 }
 
+/* Tema custom «nerv»: estética terminal NERV.
+   Negro cálido + naranja de peligro + verde tóxico + púrpura Unidad-01,
+   esquinas rectas y borde marcado como una consola MAGI. */
+@plugin "daisyui/theme" {
+  name: 'nerv';
+  default: false;
+  prefersdark: false;
+  color-scheme: dark;
+
+  --color-base-100: oklch(15% 0.012 55);
+  --color-base-200: oklch(20% 0.014 55);
+  --color-base-300: oklch(26% 0.016 55);
+  --color-base-content: oklch(90% 0.03 85);
+
+  /* Naranja de peligro NERV */
+  --color-primary: oklch(66% 0.2 42);
+  --color-primary-content: oklch(15% 0.02 42);
+
+  /* Púrpura EVA Unidad-01 */
+  --color-secondary: oklch(56% 0.15 300);
+  --color-secondary-content: oklch(96% 0.01 300);
+
+  /* Verde terminal / MAGI */
+  --color-accent: oklch(82% 0.21 130);
+  --color-accent-content: oklch(18% 0.03 130);
+
+  --color-neutral: oklch(24% 0.012 55);
+  --color-neutral-content: oklch(90% 0.02 85);
+
+  --color-info: oklch(72% 0.14 220);
+  --color-info-content: oklch(15% 0.02 220);
+  --color-success: oklch(72% 0.18 145);
+  --color-success-content: oklch(16% 0.02 145);
+  --color-warning: oklch(80% 0.16 75);
+  --color-warning-content: oklch(18% 0.03 75);
+
+  /* Rojo de alarma / patrón azul → sangre */
+  --color-error: oklch(60% 0.23 27);
+  --color-error-content: oklch(97% 0.01 27);
+
+  /* Consola angular: esquinas casi rectas y borde visible */
+  --radius-selector: 0.25rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+/* Zen Old Mincho (Google Fonts) — stand-in libre de Matisse EB.
+   Subconjunto self-hosted con sólo los glifos que usa la app; el
+   navegador sólo lo descarga cuando el tema «nerv» está activo
+   (es el único que referencia esta familia). */
+@font-face {
+  font-family: 'Zen Old Mincho';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/zen-old-mincho-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Zen Old Mincho';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/zen-old-mincho-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Zen Old Mincho';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('../assets/fonts/zen-old-mincho-900.woff2') format('woff2');
+}
+
 @layer base {
   body {
     min-height: 100vh;
@@ -18,13 +95,35 @@
     font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic',
       'Noto Sans JP', system-ui, sans-serif;
   }
-  /* Furigana: la lectura va sobre el kanji */
+  /* Furigana: la lectura va sobre el kanji. Un pelín más grande que el
+     0.5em típico para que se lea cómodo en textos chicos. */
   ruby > rt {
-    font-size: 0.5em;
+    font-size: 0.6em;
+    line-height: 1.1;
     color: var(--color-accent);
     font-weight: 700;
   }
   .no-furi rt {
     visibility: hidden;
+  }
+
+  /* --- Tema «nerv»: tipografía estilo Matisse EB ---
+     El sello de EVA es una serif mincho. Se aplica al CONTENIDO japonés
+     (frases, opciones, furigana) vía .jp, y a los títulos grandes vía
+     .eva-titlecard. El chrome de la UI (chips de filtro, botones en
+     español) NO lleva .jp, así que queda en la sans del sistema y no se
+     mezclan fuentes entre botones. */
+  [data-theme='nerv'] .jp {
+    font-family: 'Zen Old Mincho', 'Yu Mincho', 'YuMincho',
+      'Hiragino Mincho ProN', 'Hiragino Mincho Pro', 'Noto Serif JP',
+      'Noto Serif CJK JP', 'Songti SC', serif;
+  }
+  /* Cabecera y kanji grandes = title card: mincho pesada y comprimida. */
+  [data-theme='nerv'] .eva-titlecard {
+    font-family: 'Zen Old Mincho', 'Yu Mincho', 'YuMincho',
+      'Hiragino Mincho ProN', 'Hiragino Mincho Pro', 'Noto Serif JP',
+      'Noto Serif CJK JP', 'Songti SC', serif;
+    font-weight: 900;
+    letter-spacing: -0.04em;
   }
 }

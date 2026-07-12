@@ -11,8 +11,9 @@ const TABS: { id: Tab; label: string }[] = [
   { id: 'ref', label: 'Referencia' },
 ];
 
-// Temas nativos de daisyUI 5
+// Tema custom «nerv» (NERV) + temas nativos de daisyUI 5
 const THEMES = [
+  'nerv',
   'dark', 'light', 'synthwave', 'dracula', 'night', 'dim', 'sunset', 'abyss',
   'coffee', 'business', 'luxury', 'black', 'halloween', 'forest', 'aqua',
   'cyberpunk', 'retro', 'valentine', 'cupcake', 'bumblebee', 'emerald',
@@ -42,11 +43,11 @@ export default function App() {
 
   return (
     <div
-      className={`mx-auto flex w-full max-w-3xl flex-col gap-5 px-4 pb-16 pt-4 ${
+      className={`mx-auto flex w-full max-w-3xl flex-col gap-3 px-2 pb-12 pt-3 sm:gap-5 sm:px-4 sm:pb-16 sm:pt-4 ${
         furigana ? '' : 'no-furi'
       }`}
     >
-      <nav className="flex flex-wrap items-center justify-between gap-3 rounded-box border border-base-300 bg-base-200 px-4 py-2.5">
+      <nav className="flex flex-wrap items-center justify-between gap-2 rounded-box border border-base-300 bg-base-200 px-3 py-2 sm:gap-3 sm:px-4 sm:py-2.5">
         <div className="flex items-center gap-2">
           <span
             aria-hidden
@@ -56,7 +57,7 @@ export default function App() {
                 'radial-gradient(circle at 50% 42%, var(--color-primary), var(--color-primary) 62%, transparent 63%)',
             }}
           />
-          <span className="text-lg font-extrabold tracking-tight">
+          <span className="eva-titlecard text-lg font-extrabold tracking-tight">
             日本語 <span className="text-primary">クイズ</span>
           </span>
         </div>

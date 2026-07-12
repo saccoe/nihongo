@@ -25,7 +25,7 @@ export default function Reference() {
 
   return (
     <section className="card border border-base-300 bg-base-100 shadow-xl">
-      <div className="card-body">
+      <div className="card-body p-4 sm:p-6">
         <span className="text-xs font-bold uppercase tracking-widest text-accent">Cómo conjugar</span>
 
         <div className="mt-3 flex flex-col gap-4">
