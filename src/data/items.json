@@ -1,0 +1,1391 @@
+[
+  {
+    "id": "v_kaku",
+    "kind": "verb",
+    "kanji": "書",
+    "furi": "か",
+    "okuri": "く",
+    "kana": "かく",
+    "meaning": "escribir",
+    "group": 1
+  },
+  {
+    "id": "v_kiku",
+    "kind": "verb",
+    "kanji": "聞",
+    "furi": "き",
+    "okuri": "く",
+    "kana": "きく",
+    "meaning": "escuchar / preguntar",
+    "group": 1
+  },
+  {
+    "id": "v_iku",
+    "kind": "verb",
+    "kanji": "行",
+    "furi": "い",
+    "okuri": "く",
+    "kana": "いく",
+    "meaning": "ir (excepción て → いって)",
+    "group": 1
+  },
+  {
+    "id": "v_isogu",
+    "kind": "verb",
+    "kanji": "急",
+    "furi": "いそ",
+    "okuri": "ぐ",
+    "kana": "いそぐ",
+    "meaning": "apurarse",
+    "group": 1
+  },
+  {
+    "id": "v_oyogu",
+    "kind": "verb",
+    "kanji": "泳",
+    "furi": "およ",
+    "okuri": "ぐ",
+    "kana": "およぐ",
+    "meaning": "nadar",
+    "group": 1
+  },
+  {
+    "id": "v_hanasu",
+    "kind": "verb",
+    "kanji": "話",
+    "furi": "はな",
+    "okuri": "す",
+    "kana": "はなす",
+    "meaning": "hablar",
+    "group": 1
+  },
+  {
+    "id": "v_kesu",
+    "kind": "verb",
+    "kanji": "消",
+    "furi": "け",
+    "okuri": "す",
+    "kana": "けす",
+    "meaning": "apagar",
+    "group": 1
+  },
+  {
+    "id": "v_kaesu",
+    "kind": "verb",
+    "kanji": "返",
+    "furi": "かえ",
+    "okuri": "す",
+    "kana": "かえす",
+    "meaning": "devolver",
+    "group": 1
+  },
+  {
+    "id": "v_kasu",
+    "kind": "verb",
+    "kanji": "貸",
+    "furi": "か",
+    "okuri": "す",
+    "kana": "かす",
+    "meaning": "prestar",
+    "group": 1
+  },
+  {
+    "id": "v_matsu",
+    "kind": "verb",
+    "kanji": "待",
+    "furi": "ま",
+    "okuri": "つ",
+    "kana": "まつ",
+    "meaning": "esperar",
+    "group": 1
+  },
+  {
+    "id": "v_motsu",
+    "kind": "verb",
+    "kanji": "持",
+    "furi": "も",
+    "okuri": "つ",
+    "kana": "もつ",
+    "meaning": "tener / sostener",
+    "group": 1
+  },
+  {
+    "id": "v_tatsu",
+    "kind": "verb",
+    "kanji": "立",
+    "furi": "た",
+    "okuri": "つ",
+    "kana": "たつ",
+    "meaning": "pararse",
+    "group": 1
+  },
+  {
+    "id": "v_kau",
+    "kind": "verb",
+    "kanji": "買",
+    "furi": "か",
+    "okuri": "う",
+    "kana": "かう",
+    "meaning": "comprar",
+    "group": 1
+  },
+  {
+    "id": "v_tsukau",
+    "kind": "verb",
+    "kanji": "使",
+    "furi": "つか",
+    "okuri": "う",
+    "kana": "つかう",
+    "meaning": "usar",
+    "group": 1
+  },
+  {
+    "id": "v_tetsudau",
+    "kind": "verb",
+    "kanji": "手伝",
+    "furi": "てつだ",
+    "okuri": "う",
+    "kana": "てつだう",
+    "meaning": "ayudar",
+    "group": 1
+  },
+  {
+    "id": "v_harau",
+    "kind": "verb",
+    "kanji": "払",
+    "furi": "はら",
+    "okuri": "う",
+    "kana": "はらう",
+    "meaning": "pagar",
+    "group": 1
+  },
+  {
+    "id": "v_au",
+    "kind": "verb",
+    "kanji": "会",
+    "furi": "あ",
+    "okuri": "う",
+    "kana": "あう",
+    "meaning": "encontrarse",
+    "group": 1
+  },
+  {
+    "id": "v_utau",
+    "kind": "verb",
+    "kanji": "歌",
+    "furi": "うた",
+    "okuri": "う",
+    "kana": "うたう",
+    "meaning": "cantar",
+    "group": 1
+  },
+  {
+    "id": "v_nomu",
+    "kind": "verb",
+    "kanji": "飲",
+    "furi": "の",
+    "okuri": "む",
+    "kana": "のむ",
+    "meaning": "tomar / beber",
+    "group": 1
+  },
+  {
+    "id": "v_yomu",
+    "kind": "verb",
+    "kanji": "読",
+    "furi": "よ",
+    "okuri": "む",
+    "kana": "よむ",
+    "meaning": "leer",
+    "group": 1
+  },
+  {
+    "id": "v_sumu",
+    "kind": "verb",
+    "kanji": "住",
+    "furi": "す",
+    "okuri": "む",
+    "kana": "すむ",
+    "meaning": "vivir / residir",
+    "group": 1
+  },
+  {
+    "id": "v_yasumu",
+    "kind": "verb",
+    "kanji": "休",
+    "furi": "やす",
+    "okuri": "む",
+    "kana": "やすむ",
+    "meaning": "descansar",
+    "group": 1
+  },
+  {
+    "id": "v_yobu",
+    "kind": "verb",
+    "kanji": "呼",
+    "furi": "よ",
+    "okuri": "ぶ",
+    "kana": "よぶ",
+    "meaning": "llamar",
+    "group": 1
+  },
+  {
+    "id": "v_asobu",
+    "kind": "verb",
+    "kanji": "遊",
+    "furi": "あそ",
+    "okuri": "ぶ",
+    "kana": "あそぶ",
+    "meaning": "jugar / pasarla",
+    "group": 1
+  },
+  {
+    "id": "v_hakobu",
+    "kind": "verb",
+    "kanji": "運",
+    "furi": "はこ",
+    "okuri": "ぶ",
+    "kana": "はこぶ",
+    "meaning": "transportar",
+    "group": 1
+  },
+  {
+    "id": "v_uru",
+    "kind": "verb",
+    "kanji": "売",
+    "furi": "う",
+    "okuri": "る",
+    "kana": "うる",
+    "meaning": "vender",
+    "group": 1
+  },
+  {
+    "id": "v_toru",
+    "kind": "verb",
+    "kanji": "取",
+    "furi": "と",
+    "okuri": "る",
+    "kana": "とる",
+    "meaning": "tomar / sacar (foto)",
+    "group": 1
+  },
+  {
+    "id": "v_noru",
+    "kind": "verb",
+    "kanji": "乗",
+    "furi": "の",
+    "okuri": "る",
+    "kana": "のる",
+    "meaning": "subirse (a transporte)",
+    "group": 1
+  },
+  {
+    "id": "v_furu",
+    "kind": "verb",
+    "kanji": "降",
+    "furi": "ふ",
+    "okuri": "る",
+    "kana": "ふる",
+    "meaning": "caer (lluvia)",
+    "group": 1
+  },
+  {
+    "id": "v_tsukuru",
+    "kind": "verb",
+    "kanji": "作",
+    "furi": "つく",
+    "okuri": "る",
+    "kana": "つくる",
+    "meaning": "hacer / cocinar",
+    "group": 1
+  },
+  {
+    "id": "v_magaru",
+    "kind": "verb",
+    "kanji": "曲",
+    "furi": "ま",
+    "okuri": "がる",
+    "kana": "まがる",
+    "meaning": "doblar / girar",
+    "group": 1
+  },
+  {
+    "id": "v_okuru",
+    "kind": "verb",
+    "kanji": "送",
+    "furi": "おく",
+    "okuri": "る",
+    "kana": "おくる",
+    "meaning": "enviar",
+    "group": 1
+  },
+  {
+    "id": "v_tomaru",
+    "kind": "verb",
+    "kanji": "止",
+    "furi": "と",
+    "okuri": "まる",
+    "kana": "とまる",
+    "meaning": "detenerse",
+    "group": 1
+  },
+  {
+    "id": "v_wakaru",
+    "kind": "verb",
+    "kanji": "分",
+    "furi": "わ",
+    "okuri": "かる",
+    "kana": "わかる",
+    "meaning": "entender",
+    "group": 1
+  },
+  {
+    "id": "v_kaeru",
+    "kind": "verb",
+    "kanji": "帰",
+    "furi": "かえ",
+    "okuri": "る",
+    "kana": "かえる",
+    "meaning": "volver",
+    "group": 1,
+    "falseG2": true
+  },
+  {
+    "id": "v_hairu",
+    "kind": "verb",
+    "kanji": "入",
+    "furi": "はい",
+    "okuri": "る",
+    "kana": "はいる",
+    "meaning": "entrar",
+    "group": 1,
+    "falseG2": true
+  },
+  {
+    "id": "v_hashiru",
+    "kind": "verb",
+    "kanji": "走",
+    "furi": "はし",
+    "okuri": "る",
+    "kana": "はしる",
+    "meaning": "correr",
+    "group": 1,
+    "falseG2": true
+  },
+  {
+    "id": "v_shiru",
+    "kind": "verb",
+    "kanji": "知",
+    "furi": "し",
+    "okuri": "る",
+    "kana": "しる",
+    "meaning": "saber / conocer",
+    "group": 1,
+    "falseG2": true
+  },
+  {
+    "id": "v_kiru",
+    "kind": "verb",
+    "kanji": "切",
+    "furi": "き",
+    "okuri": "る",
+    "kana": "きる",
+    "meaning": "cortar",
+    "group": 1,
+    "falseG2": true
+  },
+  {
+    "id": "v_iru",
+    "kind": "verb",
+    "kanji": "要",
+    "furi": "い",
+    "okuri": "る",
+    "kana": "いる",
+    "meaning": "necesitar",
+    "group": 1,
+    "falseG2": true
+  },
+  {
+    "id": "v_taberu",
+    "kind": "verb",
+    "kanji": "食",
+    "furi": "た",
+    "okuri": "べる",
+    "kana": "たべる",
+    "meaning": "comer",
+    "group": 2
+  },
+  {
+    "id": "v_miru",
+    "kind": "verb",
+    "kanji": "見",
+    "furi": "み",
+    "okuri": "る",
+    "kana": "みる",
+    "meaning": "ver / mirar",
+    "group": 2
+  },
+  {
+    "id": "v_miseru",
+    "kind": "verb",
+    "kanji": "見",
+    "furi": "み",
+    "okuri": "せる",
+    "kana": "みせる",
+    "meaning": "mostrar",
+    "group": 2
+  },
+  {
+    "id": "v_neru",
+    "kind": "verb",
+    "kanji": "寝",
+    "furi": "ね",
+    "okuri": "る",
+    "kana": "ねる",
+    "meaning": "dormir",
+    "group": 2
+  },
+  {
+    "id": "v_okiru",
+    "kind": "verb",
+    "kanji": "起",
+    "furi": "お",
+    "okuri": "きる",
+    "kana": "おきる",
+    "meaning": "levantarse",
+    "group": 2
+  },
+  {
+    "id": "v_deru",
+    "kind": "verb",
+    "kanji": "出",
+    "furi": "で",
+    "okuri": "る",
+    "kana": "でる",
+    "meaning": "salir",
+    "group": 2
+  },
+  {
+    "id": "v_tsukeru",
+    "kind": "verb",
+    "okuri": "つける",
+    "kana": "つける",
+    "meaning": "encender / prender",
+    "group": 2
+  },
+  {
+    "id": "v_akeru",
+    "kind": "verb",
+    "kanji": "開",
+    "furi": "あ",
+    "okuri": "ける",
+    "kana": "あける",
+    "meaning": "abrir",
+    "group": 2
+  },
+  {
+    "id": "v_shimeru",
+    "kind": "verb",
+    "kanji": "閉",
+    "furi": "し",
+    "okuri": "める",
+    "kana": "しめる",
+    "meaning": "cerrar",
+    "group": 2
+  },
+  {
+    "id": "v_ireru",
+    "kind": "verb",
+    "kanji": "入",
+    "furi": "い",
+    "okuri": "れる",
+    "kana": "いれる",
+    "meaning": "meter / poner dentro",
+    "group": 2
+  },
+  {
+    "id": "v_oshieru",
+    "kind": "verb",
+    "kanji": "教",
+    "furi": "おし",
+    "okuri": "える",
+    "kana": "おしえる",
+    "meaning": "enseñar",
+    "group": 2
+  },
+  {
+    "id": "v_tomeru",
+    "kind": "verb",
+    "kanji": "止",
+    "furi": "と",
+    "okuri": "める",
+    "kana": "とめる",
+    "meaning": "detener / estacionar",
+    "group": 2
+  },
+  {
+    "id": "v_oboeru",
+    "kind": "verb",
+    "kanji": "覚",
+    "furi": "おぼ",
+    "okuri": "える",
+    "kana": "おぼえる",
+    "meaning": "memorizar",
+    "group": 2
+  },
+  {
+    "id": "v_wasureru",
+    "kind": "verb",
+    "kanji": "忘",
+    "furi": "わす",
+    "okuri": "れる",
+    "kana": "わすれる",
+    "meaning": "olvidar",
+    "group": 2
+  },
+  {
+    "id": "v_shiraberu",
+    "kind": "verb",
+    "kanji": "調",
+    "furi": "しら",
+    "okuri": "べる",
+    "kana": "しらべる",
+    "meaning": "investigar / revisar",
+    "group": 2
+  },
+  {
+    "id": "v_kariru",
+    "kind": "verb",
+    "kanji": "借",
+    "furi": "か",
+    "okuri": "りる",
+    "kana": "かりる",
+    "meaning": "pedir prestado",
+    "group": 2
+  },
+  {
+    "id": "v_oriru",
+    "kind": "verb",
+    "kanji": "降",
+    "furi": "お",
+    "okuri": "りる",
+    "kana": "おりる",
+    "meaning": "bajarse (de transporte)",
+    "group": 2
+  },
+  {
+    "id": "v_kiru_2",
+    "kind": "verb",
+    "kanji": "着",
+    "furi": "き",
+    "okuri": "る",
+    "kana": "きる",
+    "meaning": "ponerse (ropa)",
+    "group": 2
+  },
+  {
+    "id": "v_abiru",
+    "kind": "verb",
+    "kanji": "浴",
+    "furi": "あ",
+    "okuri": "びる",
+    "kana": "あびる",
+    "meaning": "ducharse",
+    "group": 2
+  },
+  {
+    "id": "v_dekakeru",
+    "kind": "verb",
+    "kanji": "出",
+    "furi": "で",
+    "okuri": "かける",
+    "kana": "でかける",
+    "meaning": "salir (de casa)",
+    "group": 2
+  },
+  {
+    "id": "v_suteru",
+    "kind": "verb",
+    "kanji": "捨",
+    "furi": "す",
+    "okuri": "てる",
+    "kana": "すてる",
+    "meaning": "tirar (basura)",
+    "group": 2
+  },
+  {
+    "id": "v_suru",
+    "kind": "verb",
+    "okuri": "する",
+    "kana": "する",
+    "meaning": "hacer",
+    "group": 3
+  },
+  {
+    "id": "v_kuru",
+    "kind": "verb",
+    "kanji": "来",
+    "furi": "く",
+    "okuri": "る",
+    "kana": "くる",
+    "meaning": "venir",
+    "group": 3
+  },
+  {
+    "id": "v_benkyousuru",
+    "kind": "verb",
+    "kanji": "勉強",
+    "furi": "べんきょう",
+    "okuri": "する",
+    "kana": "べんきょうする",
+    "meaning": "estudiar",
+    "group": 3
+  },
+  {
+    "id": "v_kopisuru",
+    "kind": "verb",
+    "okuri": "コピーする",
+    "kana": "コピーする",
+    "meaning": "copiar / fotocopiar",
+    "group": 3
+  },
+  {
+    "id": "v_shinpaisuru",
+    "kind": "verb",
+    "kanji": "心配",
+    "furi": "しんぱい",
+    "okuri": "する",
+    "kana": "しんぱいする",
+    "meaning": "preocuparse",
+    "group": 3
+  },
+  {
+    "id": "v_zangyousuru",
+    "kind": "verb",
+    "kanji": "残業",
+    "furi": "ざんぎょう",
+    "okuri": "する",
+    "kana": "ざんぎょうする",
+    "meaning": "hacer horas extra",
+    "group": 3
+  },
+  {
+    "id": "v_shucchousuru",
+    "kind": "verb",
+    "kanji": "出張",
+    "furi": "しゅっちょう",
+    "okuri": "する",
+    "kana": "しゅっちょうする",
+    "meaning": "viaje de trabajo",
+    "group": 3
+  },
+  {
+    "id": "n_satou",
+    "kind": "noun",
+    "kanji": "砂糖",
+    "furi": "さとう",
+    "okuri": "",
+    "kana": "さとう",
+    "meaning": "azúcar"
+  },
+  {
+    "id": "n_chizu",
+    "kind": "noun",
+    "kanji": "地図",
+    "furi": "ちず",
+    "okuri": "",
+    "kana": "ちず",
+    "meaning": "mapa"
+  },
+  {
+    "id": "v_suwaru",
+    "kind": "verb",
+    "kanji": "座",
+    "furi": "すわ",
+    "okuri": "る",
+    "kana": "すわる",
+    "meaning": "sentarse",
+    "group": 1
+  },
+  {
+    "id": "v_oku",
+    "kind": "verb",
+    "kanji": "置",
+    "furi": "お",
+    "okuri": "く",
+    "kana": "おく",
+    "meaning": "poner / dejar (algo)",
+    "group": 1
+  },
+  {
+    "id": "n_haisha",
+    "kind": "noun",
+    "kanji": "歯医者",
+    "furi": "はいしゃ",
+    "okuri": "",
+    "kana": "はいしゃ",
+    "meaning": "dentista"
+  },
+  {
+    "id": "n_tokoya",
+    "kind": "noun",
+    "kanji": "床屋",
+    "furi": "とこや",
+    "okuri": "",
+    "kana": "とこや",
+    "meaning": "barbería / peluquería"
+  },
+  {
+    "id": "n_jikokuhyou",
+    "kind": "noun",
+    "kanji": "時刻表",
+    "furi": "じこくひょう",
+    "okuri": "",
+    "kana": "じこくひょう",
+    "meaning": "horario (de trenes)"
+  },
+  {
+    "id": "n_senmon",
+    "kind": "noun",
+    "kanji": "専門",
+    "furi": "せんもん",
+    "okuri": "",
+    "kana": "せんもん",
+    "meaning": "especialidad / carrera"
+  },
+  {
+    "id": "n_shiryou",
+    "kind": "noun",
+    "kanji": "資料",
+    "furi": "しりょう",
+    "okuri": "",
+    "kana": "しりょう",
+    "meaning": "documentos / material"
+  },
+  {
+    "id": "v_norikaeru",
+    "kind": "verb",
+    "kanji": "乗り換える",
+    "okuri": "",
+    "kana": "のりかえる",
+    "meaning": "hacer transbordo",
+    "group": 2
+  },
+  {
+    "id": "v_osu",
+    "kind": "verb",
+    "kanji": "押",
+    "furi": "お",
+    "okuri": "す",
+    "kana": "おす",
+    "meaning": "apretar / empujar",
+    "group": 1
+  },
+  {
+    "id": "v_yameru",
+    "kind": "verb",
+    "okuri": "やめる",
+    "kana": "やめる",
+    "meaning": "dejar / renunciar",
+    "group": 2
+  },
+  {
+    "id": "n_jinja",
+    "kind": "noun",
+    "kanji": "神社",
+    "furi": "じんじゃ",
+    "okuri": "",
+    "kana": "じんじゃ",
+    "meaning": "santuario (sintoísta)"
+  },
+  {
+    "id": "n_atama",
+    "kind": "noun",
+    "kanji": "頭",
+    "furi": "あたま",
+    "okuri": "",
+    "kana": "あたま",
+    "meaning": "cabeza"
+  },
+  {
+    "id": "n_me",
+    "kind": "noun",
+    "kanji": "目",
+    "furi": "め",
+    "okuri": "",
+    "kana": "め",
+    "meaning": "ojo"
+  },
+  {
+    "id": "n_kami",
+    "kind": "noun",
+    "kanji": "髪",
+    "furi": "かみ",
+    "okuri": "",
+    "kana": "かみ",
+    "meaning": "pelo / cabello"
+  },
+  {
+    "id": "a_mijikai",
+    "kind": "adj_i",
+    "kanji": "短",
+    "furi": "みじか",
+    "okuri": "い",
+    "kana": "みじかい",
+    "meaning": "corto"
+  },
+  {
+    "id": "a_wakai",
+    "kind": "adj_i",
+    "kanji": "若",
+    "furi": "わか",
+    "okuri": "い",
+    "kana": "わかい",
+    "meaning": "joven"
+  },
+  {
+    "id": "p_segatakai",
+    "kind": "phrase",
+    "kanji": "背が高い",
+    "okuri": "",
+    "kana": "せがたかい",
+    "meaning": "alto (estatura)"
+  },
+  {
+    "id": "p_atamagaii",
+    "kind": "phrase",
+    "kanji": "頭",
+    "furi": "あたま",
+    "okuri": "がいい",
+    "kana": "あたまがいい",
+    "meaning": "inteligente"
+  },
+  {
+    "id": "v_nugu",
+    "kind": "verb",
+    "kanji": "脱",
+    "furi": "ぬ",
+    "okuri": "ぐ",
+    "kana": "ぬぐ",
+    "meaning": "quitarse (ropa/zapatos)",
+    "group": 1
+  },
+  {
+    "id": "p_motteiku",
+    "kind": "phrase",
+    "kanji": "持",
+    "furi": "も",
+    "okuri": "っていく",
+    "kana": "もっていく",
+    "meaning": "llevar"
+  },
+  {
+    "id": "p_mottekuru",
+    "kind": "phrase",
+    "kanji": "持",
+    "furi": "も",
+    "okuri": "ってくる",
+    "kana": "もってくる",
+    "meaning": "traer"
+  },
+  {
+    "id": "a_abunai",
+    "kind": "adj_i",
+    "kanji": "危",
+    "furi": "あぶ",
+    "okuri": "ない",
+    "kana": "あぶない",
+    "meaning": "peligroso"
+  },
+  {
+    "id": "a_itai",
+    "kind": "adj_i",
+    "kanji": "痛",
+    "furi": "いた",
+    "okuri": "い",
+    "kana": "いたい",
+    "meaning": "doloroso / duele"
+  },
+  {
+    "id": "n_kusuri",
+    "kind": "noun",
+    "kanji": "薬",
+    "furi": "くすり",
+    "okuri": "",
+    "kana": "くすり",
+    "meaning": "medicina / remedio"
+  },
+  {
+    "id": "n_kaze",
+    "kind": "noun",
+    "kanji": "風邪",
+    "furi": "かぜ",
+    "okuri": "",
+    "kana": "かぜ",
+    "meaning": "resfriado"
+  },
+  {
+    "id": "n_netsu",
+    "kind": "noun",
+    "kanji": "熱",
+    "furi": "ねつ",
+    "okuri": "",
+    "kana": "ねつ",
+    "meaning": "fiebre"
+  },
+  {
+    "id": "n_byouki",
+    "kind": "noun",
+    "kanji": "病気",
+    "furi": "びょうき",
+    "okuri": "",
+    "kana": "びょうき",
+    "meaning": "enfermedad"
+  },
+  {
+    "id": "n_kotae",
+    "kind": "noun",
+    "kanji": "答",
+    "furi": "こた",
+    "okuri": "え",
+    "kana": "こたえ",
+    "meaning": "respuesta"
+  },
+  {
+    "id": "n_mondai",
+    "kind": "noun",
+    "kanji": "問題",
+    "furi": "もんだい",
+    "okuri": "",
+    "kana": "もんだい",
+    "meaning": "problema / pregunta"
+  },
+  {
+    "id": "n_kinen",
+    "kind": "noun",
+    "kanji": "禁煙",
+    "furi": "きんえん",
+    "okuri": "",
+    "kana": "きんえん",
+    "meaning": "prohibido fumar"
+  },
+  {
+    "id": "na_taisetsu",
+    "kind": "adj_na",
+    "kanji": "大切",
+    "furi": "たいせつ",
+    "okuri": "",
+    "kana": "たいせつ",
+    "meaning": "importante / preciado"
+  },
+  {
+    "id": "na_daijoubu",
+    "kind": "adj_na",
+    "kanji": "大丈夫",
+    "furi": "だいじょうぶ",
+    "okuri": "",
+    "kana": "だいじょうぶ",
+    "meaning": "está bien / OK"
+  },
+  {
+    "id": "n_uwagi",
+    "kind": "noun",
+    "kanji": "上着",
+    "furi": "うわぎ",
+    "okuri": "",
+    "kana": "うわぎ",
+    "meaning": "abrigo / prenda de arriba"
+  },
+  {
+    "id": "v_hiku",
+    "kind": "verb",
+    "kanji": "弾",
+    "furi": "ひ",
+    "okuri": "く",
+    "kana": "ひく",
+    "meaning": "tocar (instrumento)",
+    "group": 1
+  },
+  {
+    "id": "v_arau",
+    "kind": "verb",
+    "kanji": "洗",
+    "furi": "あら",
+    "okuri": "う",
+    "kana": "あらう",
+    "meaning": "lavar",
+    "group": 1
+  },
+  {
+    "id": "v_atsumeru",
+    "kind": "verb",
+    "kanji": "集",
+    "furi": "あつ",
+    "okuri": "める",
+    "kana": "あつめる",
+    "meaning": "juntar / coleccionar",
+    "group": 2
+  },
+  {
+    "id": "v_untensuru",
+    "kind": "verb",
+    "kanji": "運転",
+    "furi": "うんてん",
+    "okuri": "する",
+    "kana": "うんてんする",
+    "meaning": "manejar / conducir",
+    "group": 3
+  },
+  {
+    "id": "v_kaeru_2",
+    "kind": "verb",
+    "kanji": "換",
+    "furi": "か",
+    "okuri": "える",
+    "kana": "かえる",
+    "meaning": "cambiar (dinero)",
+    "group": 2
+  },
+  {
+    "id": "v_yoyakusuru",
+    "kind": "verb",
+    "kanji": "予約",
+    "furi": "よやく",
+    "okuri": "する",
+    "kana": "よやくする",
+    "meaning": "reservar",
+    "group": 3
+  },
+  {
+    "id": "n_genkin",
+    "kind": "noun",
+    "kanji": "現金",
+    "furi": "げんきん",
+    "okuri": "",
+    "kana": "げんきん",
+    "meaning": "efectivo (dinero)"
+  },
+  {
+    "id": "n_inori",
+    "kind": "noun",
+    "kanji": "祈",
+    "furi": "いの",
+    "okuri": "り",
+    "kana": "いのり",
+    "meaning": "oración / rezo"
+  },
+  {
+    "id": "n_nikki",
+    "kind": "noun",
+    "kanji": "日記",
+    "furi": "にっき",
+    "okuri": "",
+    "kana": "にっき",
+    "meaning": "diario (personal)"
+  },
+  {
+    "id": "n_kokusai",
+    "kind": "noun",
+    "kanji": "国際",
+    "furi": "こくさい",
+    "okuri": "",
+    "kana": "こくさい",
+    "meaning": "internacional"
+  },
+  {
+    "id": "n_shumi",
+    "kind": "noun",
+    "kanji": "趣味",
+    "furi": "しゅみ",
+    "okuri": "",
+    "kana": "しゅみ",
+    "meaning": "pasatiempo / hobby"
+  },
+  {
+    "id": "n_doubutsu",
+    "kind": "noun",
+    "kanji": "動物",
+    "furi": "どうぶつ",
+    "okuri": "",
+    "kana": "どうぶつ",
+    "meaning": "animal"
+  },
+  {
+    "id": "n_pengin",
+    "kind": "noun",
+    "okuri": "ペンギン",
+    "kana": "ペンギン",
+    "meaning": "pingüino"
+  },
+  {
+    "id": "n_raion",
+    "kind": "noun",
+    "okuri": "ライオン",
+    "kana": "ライオン",
+    "meaning": "león"
+  },
+  {
+    "id": "n_usagi",
+    "kind": "noun",
+    "okuri": "うさぎ",
+    "kana": "うさぎ",
+    "meaning": "conejo"
+  },
+  {
+    "id": "n_panda",
+    "kind": "noun",
+    "okuri": "パンダ",
+    "kana": "パンダ",
+    "meaning": "panda"
+  },
+  {
+    "id": "n_uma",
+    "kind": "noun",
+    "kanji": "馬",
+    "furi": "うま",
+    "okuri": "",
+    "kana": "うま",
+    "meaning": "caballo"
+  },
+  {
+    "id": "n_buta",
+    "kind": "noun",
+    "kanji": "豚",
+    "furi": "ぶた",
+    "okuri": "",
+    "kana": "ぶた",
+    "meaning": "cerdo / chancho"
+  },
+  {
+    "id": "n_shachou",
+    "kind": "noun",
+    "kanji": "社長",
+    "furi": "しゃちょう",
+    "okuri": "",
+    "kana": "しゃちょう",
+    "meaning": "presidente (de empresa)"
+  },
+  {
+    "id": "n_buchou",
+    "kind": "noun",
+    "kanji": "部長",
+    "furi": "ぶちょう",
+    "okuri": "",
+    "kana": "ぶちょう",
+    "meaning": "jefe de departamento"
+  },
+  {
+    "id": "n_kachou",
+    "kind": "noun",
+    "kanji": "課長",
+    "furi": "かちょう",
+    "okuri": "",
+    "kana": "かちょう",
+    "meaning": "jefe de sección"
+  },
+  {
+    "id": "v_noboru",
+    "kind": "verb",
+    "kanji": "登",
+    "furi": "のぼ",
+    "okuri": "る",
+    "kana": "のぼる",
+    "meaning": "subir / escalar (montaña)",
+    "group": 1
+  },
+  {
+    "id": "v_tomaru_2",
+    "kind": "verb",
+    "kanji": "泊",
+    "furi": "と",
+    "okuri": "まる",
+    "kana": "とまる",
+    "meaning": "alojarse / hospedarse",
+    "group": 1
+  },
+  {
+    "id": "v_naru",
+    "kind": "verb",
+    "okuri": "なる",
+    "kana": "なる",
+    "meaning": "convertirse / volverse",
+    "group": 1
+  },
+  {
+    "id": "v_sentakusuru",
+    "kind": "verb",
+    "kanji": "洗濯",
+    "furi": "せんたく",
+    "okuri": "する",
+    "kana": "せんたくする",
+    "meaning": "lavar la ropa",
+    "group": 3
+  },
+  {
+    "id": "v_soujisuru",
+    "kind": "verb",
+    "kanji": "掃除",
+    "furi": "そうじ",
+    "okuri": "する",
+    "kana": "そうじする",
+    "meaning": "limpiar",
+    "group": 3
+  },
+  {
+    "id": "v_kanpaisuru",
+    "kind": "verb",
+    "kanji": "乾杯",
+    "furi": "かんぱい",
+    "okuri": "する",
+    "kana": "かんぱいする",
+    "meaning": "brindar (¡salud!)",
+    "group": 3
+  },
+  {
+    "id": "v_renshuusuru",
+    "kind": "verb",
+    "kanji": "練習",
+    "furi": "れんしゅう",
+    "okuri": "する",
+    "kana": "れんしゅうする",
+    "meaning": "practicar",
+    "group": 3
+  },
+  {
+    "id": "a_tsuyoi",
+    "kind": "adj_i",
+    "kanji": "強",
+    "furi": "つよ",
+    "okuri": "い",
+    "kana": "つよい",
+    "meaning": "fuerte"
+  },
+  {
+    "id": "a_yowai",
+    "kind": "adj_i",
+    "kanji": "弱",
+    "furi": "よわ",
+    "okuri": "い",
+    "kana": "よわい",
+    "meaning": "débil"
+  },
+  {
+    "id": "a_nemui",
+    "kind": "adj_i",
+    "kanji": "眠",
+    "furi": "ねむ",
+    "okuri": "い",
+    "kana": "ねむい",
+    "meaning": "con sueño"
+  },
+  {
+    "id": "na_muri",
+    "kind": "adj_na",
+    "kanji": "無理",
+    "furi": "むり",
+    "okuri": "",
+    "kana": "むり",
+    "meaning": "imposible / demasiado"
+  },
+  {
+    "id": "n_keeki",
+    "kind": "noun",
+    "okuri": "ケーキ",
+    "kana": "ケーキ",
+    "meaning": "torta / pastel"
+  },
+  {
+    "id": "n_gorufu",
+    "kind": "noun",
+    "okuri": "ゴルフ",
+    "kana": "ゴルフ",
+    "meaning": "golf"
+  },
+  {
+    "id": "n_pachinko",
+    "kind": "noun",
+    "okuri": "パチンコ",
+    "kana": "パチンコ",
+    "meaning": "pachinko (tragamonedas)"
+  },
+  {
+    "id": "n_ocha",
+    "kind": "noun",
+    "kanji": "お茶",
+    "furi": "おちゃ",
+    "okuri": "",
+    "kana": "おちゃ",
+    "meaning": "té / ceremonia del té"
+  },
+  {
+    "id": "n_sumou",
+    "kind": "noun",
+    "kanji": "相撲",
+    "furi": "すもう",
+    "okuri": "",
+    "kana": "すもう",
+    "meaning": "sumo"
+  },
+  {
+    "id": "n_choushi",
+    "kind": "noun",
+    "kanji": "調子",
+    "furi": "ちょうし",
+    "okuri": "",
+    "kana": "ちょうし",
+    "meaning": "estado / condición (física, de ánimo)"
+  },
+  {
+    "id": "v_denwasuru",
+    "kind": "verb",
+    "kanji": "電話",
+    "furi": "でんわ",
+    "okuri": "する",
+    "kana": "でんわする",
+    "meaning": "llamar por teléfono",
+    "group": 3
+  },
+  {
+    "id": "v_naosu",
+    "kind": "verb",
+    "kanji": "直",
+    "furi": "なお",
+    "okuri": "す",
+    "kana": "なおす",
+    "meaning": "arreglar / corregir",
+    "group": 1
+  },
+  {
+    "id": "v_shuurisuru",
+    "kind": "verb",
+    "kanji": "修理",
+    "furi": "しゅうり",
+    "okuri": "する",
+    "kana": "しゅうりする",
+    "meaning": "reparar",
+    "group": 3
+  },
+  {
+    "id": "n_sarariiman",
+    "kind": "noun",
+    "okuri": "サラリーマン",
+    "kana": "サラリーマン",
+    "meaning": "oficinista / asalariado"
+  },
+  {
+    "id": "n_bukka",
+    "kind": "noun",
+    "kanji": "物価",
+    "furi": "ぶっか",
+    "okuri": "",
+    "kana": "ぶっか",
+    "meaning": "costo de vida / precios"
+  },
+  {
+    "id": "n_biza",
+    "kind": "noun",
+    "okuri": "ビザ",
+    "kana": "ビザ",
+    "meaning": "visa"
+  }
+]

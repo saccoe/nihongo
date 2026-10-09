@@ -1,0 +1,4113 @@
+[
+  {
+    "id": "q001",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 14,
+    "topic": "forma て",
+    "cue": "[開|あ]ける",
+    "prompt": "Conjugá a forma て",
+    "answers": [
+      "あけて"
+    ],
+    "exp": "2º grupo: quito る + て.",
+    "itemId": "v_akeru"
+  },
+  {
+    "id": "q002",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 14,
+    "topic": "forma て",
+    "cue": "[消|け]す",
+    "prompt": "Conjugá a forma て",
+    "answers": [
+      "けして"
+    ],
+    "exp": "1º grupo, す → して.",
+    "itemId": "v_kesu"
+  },
+  {
+    "id": "q003",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 14,
+    "topic": "forma て",
+    "cue": "[急|いそ]ぐ",
+    "prompt": "Conjugá a forma て",
+    "answers": [
+      "いそいで"
+    ],
+    "exp": "1º grupo, ぐ → いで.",
+    "itemId": "v_isogu"
+  },
+  {
+    "id": "q004",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 14,
+    "topic": "forma て",
+    "cue": "[呼|よ]ぶ",
+    "prompt": "Conjugá a forma て",
+    "answers": [
+      "よんで"
+    ],
+    "exp": "1º grupo, む・ぶ・ぬ → んで.",
+    "itemId": "v_yobu"
+  },
+  {
+    "id": "q005",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 14,
+    "topic": "forma て",
+    "cue": "[持|も]つ",
+    "prompt": "Conjugá a forma て",
+    "answers": [
+      "もって"
+    ],
+    "exp": "1º grupo, う・つ・る → って.",
+    "itemId": "v_motsu"
+  },
+  {
+    "id": "q006",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 14,
+    "topic": "forma て",
+    "cue": "[手伝|てつだ]う",
+    "prompt": "Conjugá a forma て",
+    "answers": [
+      "てつだって"
+    ],
+    "exp": "1º grupo, う → って.",
+    "itemId": "v_tetsudau"
+  },
+  {
+    "id": "q007",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 14,
+    "topic": "forma て",
+    "cue": "[話|はな]す",
+    "prompt": "Conjugá a forma て",
+    "answers": [
+      "はなして"
+    ],
+    "exp": "1º grupo, す → して.",
+    "itemId": "v_hanasu"
+  },
+  {
+    "id": "q008",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 14,
+    "topic": "forma て · excepción",
+    "cue": "[行|い]く",
+    "prompt": "Conjugá a forma て",
+    "answers": [
+      "いって"
+    ],
+    "exp": "Excepción: いく → いって, NO いいて.",
+    "itemId": "v_iku"
+  },
+  {
+    "id": "q009",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 14,
+    "topic": "ています",
+    "prompt": "「[今|いま] [母|はは]は ばんごはんを ＿＿。」 (mamá está cocinando la cena)",
+    "options": [
+      "[作|つく]ります",
+      "[作|つく]っています",
+      "[作|つく]りましょう",
+      "[作|つく]ってください"
+    ],
+    "correct": 1,
+    "exp": "forma て + います = acción en curso."
+  },
+  {
+    "id": "q010",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 14,
+    "topic": "ています",
+    "prompt": "「[先生|せんせい]は [今|いま] [電話|でんわ]で ＿＿。」 (el profe está hablando por teléfono)",
+    "options": [
+      "[話|はな]しています",
+      "[話|はな]してください",
+      "[話|はな]しましょうか",
+      "[話|はな]します"
+    ],
+    "correct": 0,
+    "exp": "はなす → はなして → はなしています."
+  },
+  {
+    "id": "q011",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 14,
+    "topic": "pedido cortés",
+    "prompt": "「[時間|じかん]が ありません。＿＿ください。」 (no hay tiempo, ¡apurate!)",
+    "options": [
+      "[急|いそ]って",
+      "[急|いそ]いで",
+      "[急|いそ]ぎて",
+      "[急|いそ]んで"
+    ],
+    "correct": 1,
+    "exp": "いそぐ → いそいで + ください."
+  },
+  {
+    "id": "q012",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 14,
+    "topic": "ましょうか",
+    "prompt": "「[荷物|にもつ]を ＿＿か。」 (ofrecerte a cargarlo)",
+    "options": [
+      "[持|も]ってください",
+      "[持|も]っています",
+      "[持|も]ちましょう",
+      "[持|も]つでしょう"
+    ],
+    "correct": 2,
+    "exp": "V.ましょうか = ofrecerse. もつ → もちましょうか."
+  },
+  {
+    "id": "q013",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 14,
+    "topic": "ましょうか",
+    "prompt": "「これ、コピー ＿＿か。」 (¿lo copio yo?)",
+    "options": [
+      "しましょう",
+      "してください",
+      "しています",
+      "しては"
+    ],
+    "correct": 0,
+    "exp": "〜ましょうか = «¿lo hago yo?»."
+  },
+  {
+    "id": "q014",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 14,
+    "topic": "vocabulario",
+    "prompt": "[開|あ]ける",
+    "options": [
+      "cerrar",
+      "abrir",
+      "apagar",
+      "apurarse"
+    ],
+    "correct": 1,
+    "exp": "あける = abrir.",
+    "itemId": "v_akeru"
+  },
+  {
+    "id": "q015",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 14,
+    "topic": "vocabulario",
+    "prompt": "[消|け]す",
+    "options": [
+      "apagar",
+      "encender",
+      "llamar",
+      "sostener"
+    ],
+    "correct": 0,
+    "exp": "けす = apagar.",
+    "itemId": "v_kesu"
+  },
+  {
+    "id": "q016",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 14,
+    "topic": "vocabulario",
+    "prompt": "つける",
+    "options": [
+      "quitar",
+      "encender / prender",
+      "cerrar",
+      "esperar"
+    ],
+    "correct": 1,
+    "exp": "つける = encender/prender.",
+    "itemId": "v_tsukeru"
+  },
+  {
+    "id": "q017",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 14,
+    "topic": "vocabulario",
+    "prompt": "[曲|ま]がる",
+    "options": [
+      "esperar",
+      "ayudar",
+      "doblar (girar)",
+      "llamar"
+    ],
+    "correct": 2,
+    "exp": "まがる = doblar / girar.",
+    "itemId": "v_magaru"
+  },
+  {
+    "id": "q018",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 14,
+    "topic": "vocabulario",
+    "prompt": "[手伝|てつだ]う",
+    "options": [
+      "ayudar",
+      "enseñar",
+      "sacar (foto)",
+      "estacionar"
+    ],
+    "correct": 0,
+    "exp": "てつだう = ayudar.",
+    "itemId": "v_tetsudau"
+  },
+  {
+    "id": "q019",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 14,
+    "topic": "vocabulario",
+    "prompt": "[見|み]せる",
+    "options": [
+      "ver",
+      "mirar",
+      "mostrar",
+      "enseñar (materia)"
+    ],
+    "correct": 2,
+    "exp": "みせる = mostrar.",
+    "itemId": "v_miseru"
+  },
+  {
+    "id": "q020",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 14,
+    "topic": "vocabulario",
+    "prompt": "[呼|よ]ぶ",
+    "options": [
+      "llamar",
+      "esperar",
+      "apurarse",
+      "hablar"
+    ],
+    "correct": 0,
+    "exp": "よぶ = llamar.",
+    "itemId": "v_yobu"
+  },
+  {
+    "id": "q021",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 14,
+    "topic": "vocabulario",
+    "prompt": "[止|と]める",
+    "options": [
+      "parar / estacionar",
+      "tomar",
+      "doblar",
+      "abrir"
+    ],
+    "correct": 0,
+    "exp": "とめる = detener / estacionar.",
+    "itemId": "v_tomeru"
+  },
+  {
+    "id": "q022",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 14,
+    "topic": "vocabulario",
+    "prompt": "[砂糖|さとう]",
+    "options": [
+      "sal",
+      "azúcar",
+      "aire acondicionado",
+      "mapa"
+    ],
+    "correct": 1,
+    "exp": "さとう = azúcar. しお = sal.",
+    "itemId": "n_satou"
+  },
+  {
+    "id": "q023",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 14,
+    "topic": "vocabulario",
+    "prompt": "[地図|ちず]",
+    "options": [
+      "catálogo",
+      "pasaporte",
+      "mapa",
+      "horario"
+    ],
+    "correct": 2,
+    "exp": "ちず = mapa.",
+    "itemId": "n_chizu"
+  },
+  {
+    "id": "q024",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 14,
+    "topic": "vocabulario",
+    "prompt": "[降|ふ]る",
+    "options": [
+      "caer (lluvia)",
+      "soplar",
+      "doblar",
+      "subir"
+    ],
+    "correct": 0,
+    "exp": "ふる = caer (あめが ふる).",
+    "itemId": "v_furu"
+  },
+  {
+    "id": "q025",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 15,
+    "topic": "permiso",
+    "prompt": "「すみません、ここに ＿＿。」 (¿puedo sentarme acá?)",
+    "options": [
+      "[座|すわ]ってもいいですか",
+      "[座|すわ]ってはいけません",
+      "[座|すわ]っています",
+      "[座|すわ]りましょう"
+    ],
+    "correct": 0,
+    "exp": "forma て + もいいですか = pedir permiso."
+  },
+  {
+    "id": "q026",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 15,
+    "topic": "permiso",
+    "prompt": "「この [資料|しりょう]を ＿＿。」 (¿puedo mirarlo?)",
+    "options": [
+      "[見|み]てもいいですか",
+      "[見|み]てはいけません",
+      "[見|み]ています",
+      "[見|み]ましょう"
+    ],
+    "correct": 0,
+    "exp": "みる → みて + もいいですか."
+  },
+  {
+    "id": "q027",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 15,
+    "topic": "prohibición",
+    "prompt": "「ここに [車|くるま]を ＿＿。」 (No estacionar)",
+    "options": [
+      "[止|と]めてもいいです",
+      "[止|と]めてはいけません",
+      "[止|と]めましょうか",
+      "[止|と]めています"
+    ],
+    "correct": 1,
+    "exp": "forma て + はいけません = prohibición."
+  },
+  {
+    "id": "q028",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 15,
+    "topic": "prohibición",
+    "prompt": "「クラスで ソフトを ＿＿。」 (No usar)",
+    "options": [
+      "[使|つか]ってもいいです",
+      "[使|つか]っています",
+      "[使|つか]ってはいけません",
+      "[使|つか]いましょう"
+    ],
+    "correct": 2,
+    "exp": "つかう → つかって + はいけません."
+  },
+  {
+    "id": "q029",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 15,
+    "topic": "permiso vs prohibición",
+    "prompt": "[禁煙|きんえん] (prohibido fumar): 「ここで たばこを ＿＿。」",
+    "options": [
+      "すってもいいです",
+      "すってはいけません",
+      "すいましょうか",
+      "すっています"
+    ],
+    "correct": 1,
+    "exp": "Prohibición → てはいけません."
+  },
+  {
+    "id": "q030",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 15,
+    "topic": "rutina",
+    "prompt": "「[姉|あね]は [大学|だいがく]で [日本語|にほんご]を ＿＿。」 (rutina)",
+    "options": [
+      "[勉強|べんきょう]します",
+      "[勉強|べんきょう]しています",
+      "[勉強|べんきょう]しましょう",
+      "[勉強|べんきょう]してください"
+    ],
+    "correct": 1,
+    "exp": "V.ています también sirve para hábitos."
+  },
+  {
+    "id": "q031",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 15,
+    "topic": "estado",
+    "prompt": "「わたしは コモドロに ＿＿。」 (vivo en Comodoro)",
+    "options": [
+      "[住|す]みます",
+      "[住|す]んでいます",
+      "[住|す]んでください",
+      "[住|す]みましょう"
+    ],
+    "correct": 1,
+    "exp": "すむ → すんでいます (estado)."
+  },
+  {
+    "id": "q032",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 15,
+    "topic": "しる",
+    "prompt": "「あの[人|ひと]を [知|し]っていますか。」 — 「いいえ、＿＿。」 (no lo conozco)",
+    "options": [
+      "[知|し]っていません",
+      "[知|し]りません",
+      "[知|し]らないです",
+      "[知|し]ってません"
+    ],
+    "correct": 1,
+    "exp": "El negativo de しっています es しりません."
+  },
+  {
+    "id": "q033",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 15,
+    "topic": "vocabulario",
+    "prompt": "[座|すわ]る",
+    "options": [
+      "pararse",
+      "sentarse",
+      "vivir",
+      "usar"
+    ],
+    "correct": 1,
+    "exp": "すわる = sentarse.",
+    "itemId": "v_suwaru"
+  },
+  {
+    "id": "q034",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 15,
+    "topic": "vocabulario",
+    "prompt": "[立|た]つ",
+    "options": [
+      "sentarse",
+      "pararse / estar de pie",
+      "vender",
+      "dejar"
+    ],
+    "correct": 1,
+    "exp": "たつ = pararse.",
+    "itemId": "v_tatsu"
+  },
+  {
+    "id": "q035",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 15,
+    "topic": "vocabulario",
+    "prompt": "[住|す]む",
+    "options": [
+      "usar",
+      "vivir / residir",
+      "hacer",
+      "sentarse"
+    ],
+    "correct": 1,
+    "exp": "すむ = vivir / residir.",
+    "itemId": "v_sumu"
+  },
+  {
+    "id": "q036",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 15,
+    "topic": "vocabulario",
+    "prompt": "[作|つく]る",
+    "options": [
+      "hacer / cocinar",
+      "usar",
+      "vender",
+      "dejar"
+    ],
+    "correct": 0,
+    "exp": "つくる = hacer / cocinar.",
+    "itemId": "v_tsukuru"
+  },
+  {
+    "id": "q037",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 15,
+    "topic": "vocabulario",
+    "prompt": "[売|う]る",
+    "options": [
+      "comprar",
+      "vender",
+      "usar",
+      "guardar"
+    ],
+    "correct": 1,
+    "exp": "うる = vender.",
+    "itemId": "v_uru"
+  },
+  {
+    "id": "q038",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 15,
+    "topic": "vocabulario",
+    "prompt": "[置|お]く",
+    "options": [
+      "poner / dejar (algo)",
+      "abrir",
+      "levantar",
+      "escuchar"
+    ],
+    "correct": 0,
+    "exp": "おく = poner / dejar algo.",
+    "itemId": "v_oku"
+  },
+  {
+    "id": "q039",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 15,
+    "topic": "vocabulario",
+    "prompt": "[歯医者|はいしゃ]",
+    "options": [
+      "barbería",
+      "dentista",
+      "santuario",
+      "catálogo"
+    ],
+    "correct": 1,
+    "exp": "はいしゃ = dentista.",
+    "itemId": "n_haisha"
+  },
+  {
+    "id": "q040",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 15,
+    "topic": "vocabulario",
+    "prompt": "[床屋|とこや]",
+    "options": [
+      "dentista",
+      "barbería / peluquería",
+      "tienda",
+      "templo"
+    ],
+    "correct": 1,
+    "exp": "とこや = barbería.",
+    "itemId": "n_tokoya"
+  },
+  {
+    "id": "q041",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 15,
+    "topic": "vocabulario",
+    "prompt": "[時刻表|じこくひょう]",
+    "options": [
+      "catálogo",
+      "documento",
+      "horario (de trenes)",
+      "producto"
+    ],
+    "correct": 2,
+    "exp": "じこくひょう = horario.",
+    "itemId": "n_jikokuhyou"
+  },
+  {
+    "id": "q042",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 15,
+    "topic": "vocabulario",
+    "prompt": "[専門|せんもん]",
+    "options": [
+      "especialidad / carrera",
+      "empresa",
+      "documento",
+      "software"
+    ],
+    "correct": 0,
+    "exp": "せんもん = especialidad.",
+    "itemId": "n_senmon"
+  },
+  {
+    "id": "q043",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 15,
+    "topic": "vocabulario",
+    "prompt": "[資料|しりょう]",
+    "options": [
+      "software",
+      "documentos / material",
+      "catálogo",
+      "producto"
+    ],
+    "correct": 1,
+    "exp": "しりょう = documentos / material.",
+    "itemId": "n_shiryou"
+  },
+  {
+    "id": "q044",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 16,
+    "topic": "adjetivo て (い)",
+    "cue": "[長|なが]い",
+    "prompt": "forma て del adjetivo い (largo y…):",
+    "answers": [
+      "ながくて"
+    ],
+    "exp": "い → くて. ながい → ながくて."
+  },
+  {
+    "id": "q045",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 16,
+    "topic": "adjetivo て (い)",
+    "cue": "[短|みじか]い",
+    "prompt": "forma て del adjetivo い (corto y…):",
+    "answers": [
+      "みじかくて"
+    ],
+    "exp": "みじかい → みじかくて."
+  },
+  {
+    "id": "q046",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 16,
+    "topic": "adjetivo て (い)",
+    "cue": "[高|たか]い",
+    "prompt": "forma て del adjetivo い (caro/alto y…):",
+    "answers": [
+      "たかくて"
+    ],
+    "exp": "たかい → たかくて."
+  },
+  {
+    "id": "q047",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "adjetivo て (な)",
+    "prompt": "「[京都|きょうと]は ＿＿、にぎやかです。」 (Kioto es lindo y animado — きれい es adj な)",
+    "options": [
+      "きれくて",
+      "きれいで",
+      "きれいくて",
+      "きれいと"
+    ],
+    "correct": 1,
+    "exp": "な-adj + で. きれい → きれいで."
+  },
+  {
+    "id": "q048",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "くて (enumerar)",
+    "prompt": "「この [公園|こうえん]は [緑|みどり]が ＿＿、きれいです。」 (tiene mucho verde y es lindo — [多|おお]い)",
+    "options": [
+      "[多|おお]いで",
+      "[多|おお]くて",
+      "[多|おお]いくて",
+      "[多|おお]くって"
+    ],
+    "correct": 1,
+    "exp": "おおい es adjetivo い → おおくて."
+  },
+  {
+    "id": "q049",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "けど / が (pero)",
+    "prompt": "「この [上着|うわぎ]は かわいい ＿＿、[高|たか]いです。」 (es lindo PERO caro)",
+    "options": [
+      "くて",
+      "で",
+      "けど",
+      "から"
+    ],
+    "correct": 2,
+    "exp": "Positivo + negativo → (だ)けど / ですが."
+  },
+  {
+    "id": "q050",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "てから",
+    "prompt": "「お[風呂|ふろ]に ＿＿、[寝|ね]ます。」 (después de bañarme, me duermo)",
+    "options": [
+      "[入|はい]てから",
+      "[入|はい]ってから",
+      "[入|はい]るから",
+      "[入|はい]ったから"
+    ],
+    "correct": 1,
+    "exp": "forma て + から. はいる → はいって."
+  },
+  {
+    "id": "q051",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "てから",
+    "prompt": "「[薬|くすり]を ＿＿、[出|で]かけます。」 (después de tomar el remedio, salgo)",
+    "options": [
+      "[飲|の]みてから",
+      "[飲|の]むから",
+      "[飲|の]んでから",
+      "[飲|の]んだから"
+    ],
+    "correct": 2,
+    "exp": "のむ → のんで + から."
+  },
+  {
+    "id": "q052",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "transporte に",
+    "prompt": "「[次|つぎ]の [駅|えき]で [新幹線|しんかんせん]＿ [乗|の]ります。」 (subir al shinkansen)",
+    "options": [
+      "を",
+      "で",
+      "に",
+      "へ"
+    ],
+    "correct": 2,
+    "exp": "Subir a un transporte: に (のります)."
+  },
+  {
+    "id": "q053",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "transporte を",
+    "prompt": "「[東京|とうきょう][駅|えき]で [電車|でんしゃ]＿ [降|お]ります。」 (bajar del tren)",
+    "options": [
+      "に",
+      "を",
+      "で",
+      "へ"
+    ],
+    "correct": 1,
+    "exp": "Bajarse: を (おります)."
+  },
+  {
+    "id": "q054",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "のりかえる",
+    "prompt": "「[新宿|しんじゅく]で JR＿ [乗|の]り[換|か]えます。」 (hacer transbordo a la JR)",
+    "options": [
+      "に",
+      "を",
+      "で",
+      "から"
+    ],
+    "correct": 0,
+    "exp": "〜に のりかえる = hacer transbordo a."
+  },
+  {
+    "id": "q055",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "は / が",
+    "prompt": "「あの [留学生|りゅうがくせい]は [背|せ]＿ [高|たか]いです。」 (ese estudiante es alto)",
+    "options": [
+      "は",
+      "が",
+      "を",
+      "に"
+    ],
+    "correct": 1,
+    "exp": "Tema con は; rasgo descrito con が (せが)."
+  },
+  {
+    "id": "q056",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "は / が",
+    "prompt": "「ねこは [目|め]＿ [大|おお]きくて、かわいいです。」 (el gato tiene los ojos grandes)",
+    "options": [
+      "は",
+      "が",
+      "を",
+      "で"
+    ],
+    "correct": 1,
+    "exp": "El rasgo lleva が: め が 大きい."
+  },
+  {
+    "id": "q057",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "どうやって",
+    "prompt": "「[駅|えき]まで ＿＿ [行|い]きますか。」 (¿cómo se llega a la estación?)",
+    "options": [
+      "どうやって",
+      "どこで",
+      "なにを",
+      "いつ"
+    ],
+    "correct": 0,
+    "exp": "どうやって = «cómo»."
+  },
+  {
+    "id": "q058",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "vocabulario",
+    "prompt": "[浴|あ]びる（シャワーを）",
+    "options": [
+      "llenar",
+      "ducharse",
+      "secarse",
+      "nadar"
+    ],
+    "correct": 1,
+    "exp": "シャワーを あびる = ducharse.",
+    "itemId": "v_abiru"
+  },
+  {
+    "id": "q059",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "vocabulario",
+    "prompt": "[入|い]れる",
+    "options": [
+      "sacar",
+      "meter / poner dentro",
+      "empujar",
+      "mostrar"
+    ],
+    "correct": 1,
+    "exp": "いれる = meter. だす = sacar.",
+    "itemId": "v_ireru"
+  },
+  {
+    "id": "q060",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "vocabulario",
+    "prompt": "[乗|の]る",
+    "options": [
+      "subirse a (transporte)",
+      "bajarse de",
+      "hacer transbordo",
+      "conducir"
+    ],
+    "correct": 0,
+    "exp": "のる = subirse (〜に のる).",
+    "itemId": "v_noru"
+  },
+  {
+    "id": "q061",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "vocabulario",
+    "prompt": "[降|お]りる",
+    "options": [
+      "subirse a",
+      "bajarse de (transporte)",
+      "transbordar",
+      "estacionar"
+    ],
+    "correct": 1,
+    "exp": "おりる = bajarse (〜を おりる).",
+    "itemId": "v_oriru"
+  },
+  {
+    "id": "q062",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "vocabulario",
+    "prompt": "[乗|の]り[換|か]える",
+    "options": [
+      "subir",
+      "bajar",
+      "hacer transbordo",
+      "manejar"
+    ],
+    "correct": 2,
+    "exp": "のりかえる = hacer transbordo.",
+    "itemId": "v_norikaeru"
+  },
+  {
+    "id": "q063",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "vocabulario",
+    "prompt": "[押|お]す",
+    "options": [
+      "tirar",
+      "apretar / empujar",
+      "levantar",
+      "abrir"
+    ],
+    "correct": 1,
+    "exp": "おす = apretar / empujar.",
+    "itemId": "v_osu"
+  },
+  {
+    "id": "q064",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "vocabulario",
+    "prompt": "やめる",
+    "options": [
+      "empezar",
+      "continuar",
+      "dejar / renunciar",
+      "descansar"
+    ],
+    "correct": 2,
+    "exp": "やめる = dejar / renunciar.",
+    "itemId": "v_yameru"
+  },
+  {
+    "id": "q065",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "vocabulario",
+    "prompt": "[神社|じんじゃ]",
+    "options": [
+      "templo (budista)",
+      "santuario (sintoísta)",
+      "iglesia",
+      "castillo"
+    ],
+    "correct": 1,
+    "exp": "じんじゃ = santuario sintoísta.",
+    "itemId": "n_jinja"
+  },
+  {
+    "id": "q066",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "cuerpo",
+    "prompt": "[頭|あたま]",
+    "options": [
+      "cara",
+      "cabeza",
+      "panza",
+      "brazo"
+    ],
+    "correct": 1,
+    "exp": "あたま = cabeza.",
+    "itemId": "n_atama"
+  },
+  {
+    "id": "q067",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "cuerpo",
+    "prompt": "[目|め]",
+    "options": [
+      "oreja",
+      "boca",
+      "ojo",
+      "nariz"
+    ],
+    "correct": 2,
+    "exp": "め = ojo.",
+    "itemId": "n_me"
+  },
+  {
+    "id": "q068",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "cuerpo",
+    "prompt": "[髪|かみ]",
+    "options": [
+      "cara",
+      "pelo / cabello",
+      "panza",
+      "pierna"
+    ],
+    "correct": 1,
+    "exp": "かみ = pelo.",
+    "itemId": "n_kami"
+  },
+  {
+    "id": "q069",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "adjetivos",
+    "prompt": "[短|みじか]い",
+    "options": [
+      "largo",
+      "corto",
+      "alto",
+      "bajo"
+    ],
+    "correct": 1,
+    "exp": "みじかい = corto. ながい = largo.",
+    "itemId": "a_mijikai"
+  },
+  {
+    "id": "q070",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "adjetivos",
+    "prompt": "[若|わか]い",
+    "options": [
+      "anciano",
+      "joven",
+      "alto",
+      "inteligente"
+    ],
+    "correct": 1,
+    "exp": "わかい = joven.",
+    "itemId": "a_wakai"
+  },
+  {
+    "id": "q071",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "adjetivos",
+    "prompt": "[背|せ]が[高|たか]い",
+    "options": [
+      "bajo (estatura)",
+      "alto (estatura)",
+      "inteligente",
+      "joven"
+    ],
+    "correct": 1,
+    "exp": "せがたかい = alto de estatura.",
+    "itemId": "p_segatakai"
+  },
+  {
+    "id": "q072",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 16,
+    "topic": "adjetivos",
+    "prompt": "[頭|あたま]がいい",
+    "options": [
+      "cabezón",
+      "inteligente",
+      "olvidadizo",
+      "alegre"
+    ],
+    "correct": 1,
+    "exp": "あたまがいい = inteligente.",
+    "itemId": "p_atamagaii"
+  },
+  {
+    "id": "q073",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 17,
+    "topic": "forma ない",
+    "cue": "[払|はら]う",
+    "prompt": "Conjugá a forma ない",
+    "answers": [
+      "はらわない"
+    ],
+    "exp": "1º grupo: う → わ + ない.",
+    "itemId": "v_harau"
+  },
+  {
+    "id": "q074",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 17,
+    "topic": "forma ない",
+    "cue": "[返|かえ]す",
+    "prompt": "Conjugá a forma ない",
+    "answers": [
+      "かえさない"
+    ],
+    "exp": "1º grupo: す → さ + ない.",
+    "itemId": "v_kaesu"
+  },
+  {
+    "id": "q075",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 17,
+    "topic": "forma ない",
+    "cue": "[脱|ぬ]ぐ",
+    "prompt": "Conjugá a forma ない",
+    "answers": [
+      "ぬがない"
+    ],
+    "exp": "1º grupo: ぐ → が + ない."
+  },
+  {
+    "id": "q076",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 17,
+    "topic": "forma ない",
+    "cue": "[待|ま]つ",
+    "prompt": "Conjugá a forma ない",
+    "answers": [
+      "またない"
+    ],
+    "exp": "1º grupo: つ → た + ない.",
+    "itemId": "v_matsu"
+  },
+  {
+    "id": "q077",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 17,
+    "topic": "forma ない",
+    "cue": "[飲|の]む",
+    "prompt": "Conjugá a forma ない",
+    "answers": [
+      "のまない"
+    ],
+    "exp": "1º grupo: む → ま + ない.",
+    "itemId": "v_nomu"
+  },
+  {
+    "id": "q078",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 17,
+    "topic": "forma ない",
+    "cue": "[出|で]かける",
+    "prompt": "Conjugá a forma ない",
+    "answers": [
+      "でかけない"
+    ],
+    "exp": "2º grupo: quito る + ない.",
+    "itemId": "v_dekakeru"
+  },
+  {
+    "id": "q079",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 17,
+    "topic": "forma ない",
+    "cue": "[来|く]る",
+    "prompt": "Conjugá a forma ない",
+    "answers": [
+      "こない"
+    ],
+    "exp": "3º grupo: くる → こない.",
+    "itemId": "v_kuru"
+  },
+  {
+    "id": "q080",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 17,
+    "topic": "ない · falso G2",
+    "cue": "[入|はい]る",
+    "prompt": "Conjugá a forma ない",
+    "answers": [
+      "はいらない"
+    ],
+    "exp": "はいる es un falso Grupo 2: en realidad es Grupo 1 → はいらない (no はいない).",
+    "itemId": "v_hairu"
+  },
+  {
+    "id": "q081",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "ない · excepción",
+    "prompt": "El negativo informal de ある es…",
+    "options": [
+      "あらない",
+      "あない",
+      "ない",
+      "ありない"
+    ],
+    "correct": 2,
+    "exp": "Excepción: ある → ない."
+  },
+  {
+    "id": "q082",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 17,
+    "topic": "pasado ない",
+    "cue": "[払|はら]わない",
+    "prompt": "Pasalo a pasado negativo (…なかった):",
+    "answers": [
+      "はらわなかった"
+    ],
+    "exp": "ない → なかった."
+  },
+  {
+    "id": "q083",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "no hagas",
+    "prompt": "「[危|あぶ]ないですから、そこに ＿＿ください。」 (no entres ahí)",
+    "options": [
+      "[入|はい]って",
+      "[入|はい]らないで",
+      "[入|はい]らなくて",
+      "[入|はい]っては"
+    ],
+    "correct": 1,
+    "exp": "V.ない + でください. はいる → はいらない."
+  },
+  {
+    "id": "q084",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "no hagas",
+    "prompt": "「その ボタンを ＿＿ください。」 (no lo aprietes)",
+    "options": [
+      "[押|お]して",
+      "[押|お]さなくて",
+      "[押|お]さないで",
+      "[押|お]しては"
+    ],
+    "correct": 2,
+    "exp": "おす → おさない + でください."
+  },
+  {
+    "id": "q085",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "obligación",
+    "prompt": "「[風邪|かぜ]ですから、[薬|くすり]を ＿＿。」 (hay que tomarlo)",
+    "options": [
+      "[飲|の]まなくてもいいです",
+      "[飲|の]まなければなりません",
+      "[飲|の]まないでください",
+      "[飲|の]んでもいいです"
+    ],
+    "correct": 1,
+    "exp": "V.ない → なければなりません = obligación."
+  },
+  {
+    "id": "q086",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "obligación",
+    "prompt": "「[明日|あした] レポートを ＿＿。」 (hay que entregarlo)",
+    "options": [
+      "[出|だ]さなくてもいいです",
+      "[出|だ]してはいけません",
+      "[出|だ]さなければなりません",
+      "[出|だ]してもいいです"
+    ],
+    "correct": 2,
+    "exp": "だす → ださなければなりません."
+  },
+  {
+    "id": "q087",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "no hace falta",
+    "prompt": "「[漢字|かんじ]は ＿＿。」 (no hace falta escribir)",
+    "options": [
+      "[書|か]かなくてもいいです",
+      "[書|か]かなければなりません",
+      "[書|か]いてはいけません",
+      "[書|か]いてください"
+    ],
+    "correct": 0,
+    "exp": "V.ない + くてもいいです. かく → かかなくてもいいです."
+  },
+  {
+    "id": "q088",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "までに",
+    "prompt": "「この [本|ほん]は [金曜日|きんようび]＿ [返|かえ]して ください。」 (devolvé el libro antes del viernes)",
+    "options": [
+      "まで",
+      "までに",
+      "から",
+      "に"
+    ],
+    "correct": 1,
+    "exp": "までに = fecha/hora LÍMITE."
+  },
+  {
+    "id": "q089",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "objeto como tema",
+    "prompt": "「カレー＿ スプーンで [食|た]べます。」 (el curry lo como con cuchara)",
+    "options": [
+      "を",
+      "は",
+      "が",
+      "で"
+    ],
+    "correct": 1,
+    "exp": "El objeto pasa a tema: は y la を desaparece."
+  },
+  {
+    "id": "q090",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[覚|おぼ]える",
+    "options": [
+      "olvidar",
+      "memorizar / recordar",
+      "enseñar",
+      "estudiar"
+    ],
+    "correct": 1,
+    "exp": "おぼえる = memorizar.",
+    "itemId": "v_oboeru"
+  },
+  {
+    "id": "q091",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[払|はら]う",
+    "options": [
+      "devolver",
+      "pagar",
+      "prestar",
+      "comprar"
+    ],
+    "correct": 1,
+    "exp": "はらう = pagar.",
+    "itemId": "v_harau"
+  },
+  {
+    "id": "q092",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[返|かえ]す",
+    "options": [
+      "devolver",
+      "pagar",
+      "recibir",
+      "pedir prestado"
+    ],
+    "correct": 0,
+    "exp": "かえす = devolver.",
+    "itemId": "v_kaesu"
+  },
+  {
+    "id": "q093",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[出|で]かける",
+    "options": [
+      "volver",
+      "salir (de casa)",
+      "entrar",
+      "viajar"
+    ],
+    "correct": 1,
+    "exp": "でかける = salir de casa.",
+    "itemId": "v_dekakeru"
+  },
+  {
+    "id": "q094",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[脱|ぬ]ぐ",
+    "options": [
+      "ponerse (ropa)",
+      "quitarse (ropa/zapatos)",
+      "lavar",
+      "doblar"
+    ],
+    "correct": 1,
+    "exp": "ぬぐ = quitarse.",
+    "itemId": "v_nugu"
+  },
+  {
+    "id": "q095",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[持|も]っていく",
+    "options": [
+      "traer",
+      "llevar",
+      "dejar",
+      "perder"
+    ],
+    "correct": 1,
+    "exp": "もっていく = llevar.",
+    "itemId": "p_motteiku"
+  },
+  {
+    "id": "q096",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[持|も]ってくる",
+    "options": [
+      "llevar",
+      "traer",
+      "devolver",
+      "mostrar"
+    ],
+    "correct": 1,
+    "exp": "もってくる = traer.",
+    "itemId": "p_mottekuru"
+  },
+  {
+    "id": "q097",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[心配|しんぱい]する",
+    "options": [
+      "preocuparse",
+      "alegrarse",
+      "apurarse",
+      "descansar"
+    ],
+    "correct": 0,
+    "exp": "しんぱいする = preocuparse.",
+    "itemId": "v_shinpaisuru"
+  },
+  {
+    "id": "q098",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[残業|ざんぎょう]する",
+    "options": [
+      "viajar por trabajo",
+      "hacer horas extra",
+      "renunciar",
+      "descansar"
+    ],
+    "correct": 1,
+    "exp": "ざんぎょうする = horas extra.",
+    "itemId": "v_zangyousuru"
+  },
+  {
+    "id": "q099",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[出張|しゅっちょう]する",
+    "options": [
+      "horas extra",
+      "viaje de trabajo",
+      "mudarse",
+      "estudiar"
+    ],
+    "correct": 1,
+    "exp": "しゅっちょうする = viaje de trabajo.",
+    "itemId": "v_shucchousuru"
+  },
+  {
+    "id": "q100",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[危|あぶ]ない",
+    "options": [
+      "doloroso",
+      "peligroso",
+      "aburrido",
+      "tranquilo"
+    ],
+    "correct": 1,
+    "exp": "あぶない = peligroso.",
+    "itemId": "a_abunai"
+  },
+  {
+    "id": "q101",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[痛|いた]い",
+    "options": [
+      "peligroso",
+      "doloroso / duele",
+      "cansado",
+      "importante"
+    ],
+    "correct": 1,
+    "exp": "いたい = duele.",
+    "itemId": "a_itai"
+  },
+  {
+    "id": "q102",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[薬|くすり]",
+    "options": [
+      "enfermedad",
+      "medicina / remedio",
+      "fiebre",
+      "resfriado"
+    ],
+    "correct": 1,
+    "exp": "くすり = medicina.",
+    "itemId": "n_kusuri"
+  },
+  {
+    "id": "q103",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[風邪|かぜ]",
+    "options": [
+      "fiebre",
+      "resfriado",
+      "viento fuerte",
+      "enfermedad grave"
+    ],
+    "correct": 1,
+    "exp": "かぜ = resfriado.",
+    "itemId": "n_kaze"
+  },
+  {
+    "id": "q104",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[熱|ねつ]",
+    "options": [
+      "resfriado",
+      "fiebre",
+      "dolor",
+      "tos"
+    ],
+    "correct": 1,
+    "exp": "ねつ = fiebre.",
+    "itemId": "n_netsu"
+  },
+  {
+    "id": "q105",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[病気|びょうき]",
+    "options": [
+      "enfermedad",
+      "medicina",
+      "hospital",
+      "dolor"
+    ],
+    "correct": 0,
+    "exp": "びょうき = enfermedad.",
+    "itemId": "n_byouki"
+  },
+  {
+    "id": "q106",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[答|こた]え",
+    "options": [
+      "pregunta / problema",
+      "respuesta",
+      "examen",
+      "duda"
+    ],
+    "correct": 1,
+    "exp": "こたえ = respuesta.",
+    "itemId": "n_kotae"
+  },
+  {
+    "id": "q107",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[問題|もんだい]",
+    "options": [
+      "respuesta",
+      "problema / pregunta",
+      "examen",
+      "tarea"
+    ],
+    "correct": 1,
+    "exp": "もんだい = problema / pregunta.",
+    "itemId": "n_mondai"
+  },
+  {
+    "id": "q108",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[禁煙|きんえん]",
+    "options": [
+      "prohibido pasar",
+      "prohibido fumar",
+      "salida de emergencia",
+      "zona de fumadores"
+    ],
+    "correct": 1,
+    "exp": "きんえん = prohibido fumar.",
+    "itemId": "n_kinen"
+  },
+  {
+    "id": "q109",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[大切|たいせつ]",
+    "options": [
+      "peligroso",
+      "importante / preciado",
+      "difícil",
+      "tranquilo"
+    ],
+    "correct": 1,
+    "exp": "たいせつ (な) = importante.",
+    "itemId": "na_taisetsu"
+  },
+  {
+    "id": "q110",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[大丈夫|だいじょうぶ]",
+    "options": [
+      "está bien / OK",
+      "peligroso",
+      "imposible",
+      "importante"
+    ],
+    "correct": 0,
+    "exp": "だいじょうぶ = está bien.",
+    "itemId": "na_daijoubu"
+  },
+  {
+    "id": "q111",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 17,
+    "topic": "vocabulario",
+    "prompt": "[上着|うわぎ]",
+    "options": [
+      "ropa interior",
+      "abrigo / prenda de arriba",
+      "zapatos",
+      "sombrero"
+    ],
+    "correct": 1,
+    "exp": "うわぎ = prenda de arriba. したぎ = ropa interior.",
+    "itemId": "n_uwagi"
+  },
+  {
+    "id": "cj_kaku",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_kaku"
+  },
+  {
+    "id": "cj_kiku",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_kiku"
+  },
+  {
+    "id": "cj_iku",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_iku"
+  },
+  {
+    "id": "cj_isogu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_isogu"
+  },
+  {
+    "id": "cj_oyogu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_oyogu"
+  },
+  {
+    "id": "cj_hanasu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_hanasu"
+  },
+  {
+    "id": "cj_kesu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_kesu"
+  },
+  {
+    "id": "cj_kaesu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_kaesu"
+  },
+  {
+    "id": "cj_kasu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_kasu"
+  },
+  {
+    "id": "cj_matsu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_matsu"
+  },
+  {
+    "id": "cj_motsu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_motsu"
+  },
+  {
+    "id": "cj_tatsu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_tatsu"
+  },
+  {
+    "id": "cj_kau",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_kau"
+  },
+  {
+    "id": "cj_tsukau",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_tsukau"
+  },
+  {
+    "id": "cj_tetsudau",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_tetsudau"
+  },
+  {
+    "id": "cj_harau",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_harau"
+  },
+  {
+    "id": "cj_au",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_au"
+  },
+  {
+    "id": "cj_utau",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_utau"
+  },
+  {
+    "id": "cj_nomu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_nomu"
+  },
+  {
+    "id": "cj_yomu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_yomu"
+  },
+  {
+    "id": "cj_sumu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_sumu"
+  },
+  {
+    "id": "cj_yasumu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_yasumu"
+  },
+  {
+    "id": "cj_yobu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_yobu"
+  },
+  {
+    "id": "cj_asobu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_asobu"
+  },
+  {
+    "id": "cj_hakobu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_hakobu"
+  },
+  {
+    "id": "cj_uru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_uru"
+  },
+  {
+    "id": "cj_toru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_toru"
+  },
+  {
+    "id": "cj_noru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_noru"
+  },
+  {
+    "id": "cj_furu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_furu"
+  },
+  {
+    "id": "cj_tsukuru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_tsukuru"
+  },
+  {
+    "id": "cj_magaru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_magaru"
+  },
+  {
+    "id": "cj_okuru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_okuru"
+  },
+  {
+    "id": "cj_tomaru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_tomaru"
+  },
+  {
+    "id": "cj_wakaru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_wakaru"
+  },
+  {
+    "id": "cj_kaeru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_kaeru"
+  },
+  {
+    "id": "cj_hairu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_hairu"
+  },
+  {
+    "id": "cj_hashiru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_hashiru"
+  },
+  {
+    "id": "cj_shiru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_shiru"
+  },
+  {
+    "id": "cj_kiru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_kiru"
+  },
+  {
+    "id": "cj_iru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_iru"
+  },
+  {
+    "id": "cj_taberu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_taberu"
+  },
+  {
+    "id": "cj_miru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_miru"
+  },
+  {
+    "id": "cj_miseru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_miseru"
+  },
+  {
+    "id": "cj_neru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_neru"
+  },
+  {
+    "id": "cj_okiru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_okiru"
+  },
+  {
+    "id": "cj_deru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_deru"
+  },
+  {
+    "id": "cj_tsukeru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_tsukeru"
+  },
+  {
+    "id": "cj_akeru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_akeru"
+  },
+  {
+    "id": "cj_shimeru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_shimeru"
+  },
+  {
+    "id": "cj_ireru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_ireru"
+  },
+  {
+    "id": "cj_oshieru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_oshieru"
+  },
+  {
+    "id": "cj_tomeru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_tomeru"
+  },
+  {
+    "id": "cj_oboeru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_oboeru"
+  },
+  {
+    "id": "cj_wasureru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_wasureru"
+  },
+  {
+    "id": "cj_shiraberu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_shiraberu"
+  },
+  {
+    "id": "cj_kariru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_kariru"
+  },
+  {
+    "id": "cj_oriru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_oriru"
+  },
+  {
+    "id": "cj_kiru_2",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_kiru_2"
+  },
+  {
+    "id": "cj_abiru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_abiru"
+  },
+  {
+    "id": "cj_dekakeru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_dekakeru"
+  },
+  {
+    "id": "cj_suteru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_suteru"
+  },
+  {
+    "id": "cj_suru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_suru"
+  },
+  {
+    "id": "cj_kuru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_kuru"
+  },
+  {
+    "id": "cj_benkyousuru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_benkyousuru"
+  },
+  {
+    "id": "cj_kopisuru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_kopisuru"
+  },
+  {
+    "id": "cj_shinpaisuru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_shinpaisuru"
+  },
+  {
+    "id": "cj_zangyousuru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_zangyousuru"
+  },
+  {
+    "id": "cj_shucchousuru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_shucchousuru"
+  },
+  {
+    "id": "cj_suwaru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_suwaru"
+  },
+  {
+    "id": "cj_oku",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_oku"
+  },
+  {
+    "id": "cj_norikaeru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_norikaeru"
+  },
+  {
+    "id": "cj_osu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_osu"
+  },
+  {
+    "id": "cj_yameru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_yameru"
+  },
+  {
+    "id": "cj_nugu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_nugu"
+  },
+  {
+    "id": "q112",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "ことができる",
+    "prompt": "「[漢字|かんじ]を ＿＿が できます。」 (puedo escribir kanji)",
+    "options": [
+      "かいて",
+      "かくこと",
+      "かく",
+      "かきます"
+    ],
+    "correct": 1,
+    "exp": "V.じしょけい + こと + が できます. Sin こと no se le puede poner partícula al verbo."
+  },
+  {
+    "id": "q113",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "ことができる",
+    "prompt": "「[兄|あに]は [泳|およ]ぐことが ＿＿。」 (mi hermano no sabe nadar)",
+    "options": [
+      "しません",
+      "できます",
+      "ありません",
+      "できません"
+    ],
+    "correct": 3,
+    "exp": "V.こと が できません = no puede."
+  },
+  {
+    "id": "q114",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 18,
+    "topic": "ことができる",
+    "cue": "たばこを やめます。",
+    "prompt": "Reescribí con 〜ことができません (no puede dejar de fumar):",
+    "answers": [
+      "たばこをやめることができません"
+    ],
+    "exp": "やめる (dicc.) + こと + が できません."
+  },
+  {
+    "id": "q115",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 18,
+    "topic": "ことができる",
+    "cue": "[漢字|かんじ]を [書|か]きます。",
+    "prompt": "Reescribí con 〜ことができます:",
+    "answers": [
+      "かんじをかくことができます",
+      "漢字を書くことができます"
+    ],
+    "exp": "かく (dicc.) + こと + が できます."
+  },
+  {
+    "id": "q116",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "ことができる",
+    "prompt": "「スキー＿ できます。」 (sé esquiar)",
+    "options": [
+      "を",
+      "で",
+      "に",
+      "が"
+    ],
+    "correct": 3,
+    "exp": "Sust. + する: saco する y uso directamente Sust. が できます."
+  },
+  {
+    "id": "q117",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "ことができる",
+    "prompt": "「バイク＿ [運転|うんてん]が できます。」 (sé manejar moto)",
+    "options": [
+      "に",
+      "の",
+      "が",
+      "を"
+    ],
+    "correct": 1,
+    "exp": "Sin する no hay verbo de acción directa, así que を se reemplaza por の."
+  },
+  {
+    "id": "q118",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "しゅみ",
+    "prompt": "「[私|わたし]の しゅみは ギターを ＿＿です。」",
+    "options": [
+      "ひく",
+      "ひいて",
+      "ひくこと",
+      "ひきます"
+    ],
+    "correct": 2,
+    "exp": "しゅみは V.じしょけい + こと です."
+  },
+  {
+    "id": "q119",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "しゅみ",
+    "prompt": "「しゅみは ＿＿。」 (mi hobby es la cocina)",
+    "options": [
+      "りょうりです",
+      "りょうりするです",
+      "りょうりがです",
+      "りょうりことです"
+    ],
+    "correct": 0,
+    "exp": "Si el hobby ya es sustantivo, va directo: しゅみは Sust. です."
+  },
+  {
+    "id": "q120",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "ことが好き",
+    "prompt": "「おいしい ものを [食|た]べる＿＿ [好|す]きです。」 (me gusta comer cosas ricas)",
+    "options": [
+      "ことが",
+      "ことで",
+      "ことを",
+      "に"
+    ],
+    "correct": 0,
+    "exp": "V.じしょけい + ことが すきです."
+  },
+  {
+    "id": "q121",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "まえに",
+    "prompt": "「[寝|ね]る＿＿ [勉強|べんきょう]します。」 (estudio antes de dormir)",
+    "options": [
+      "まえに",
+      "まで",
+      "のまえに",
+      "あとで"
+    ],
+    "correct": 0,
+    "exp": "V.じしょけい + まえに. El verbo de まえに (B) es lo que pasa DESPUÉS."
+  },
+  {
+    "id": "q122",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "まえに",
+    "prompt": "「[食事|しょくじ]＿＿ [手|て]を [洗|あら]いましょう。」 (antes de comer)",
+    "options": [
+      "のまえに",
+      "からまえに",
+      "てまえに",
+      "まえに"
+    ],
+    "correct": 0,
+    "exp": "Con sustantivo (evento, fecha) se agrega の: Sust. の まえに."
+  },
+  {
+    "id": "q123",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "まえに",
+    "prompt": "「[出|で]かける まえに、クッキーを ＿＿。」 (antes de salir hice galletitas)",
+    "options": [
+      "つくった まえに",
+      "つくって",
+      "つくりました",
+      "つくる"
+    ],
+    "correct": 2,
+    "exp": "El tiempo (pasado) lo marca el verbo final; el de まえに va siempre en forma diccionario."
+  },
+  {
+    "id": "q124",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "hace tiempo",
+    "prompt": "「5[年|ねん]＿＿、ひっこしました。」 (me mudé hace 5 años)",
+    "options": [
+      "のまえに",
+      "まで",
+      "まえに",
+      "から"
+    ],
+    "correct": 2,
+    "exp": "Contador de tiempo + まえに = hace tanto tiempo (sin の)."
+  },
+  {
+    "id": "q125",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "かえる",
+    "prompt": "「ドルを [円|えん]に ＿＿。」 (cambio dólares a yenes)",
+    "options": [
+      "[返|かえ]します",
+      "[帰|かえ]ります",
+      "[買|か]います",
+      "[換|か]えます"
+    ],
+    "correct": 3,
+    "exp": "換える (cambiar, G2) vs 帰る (volver, G1) vs 返す (devolver)."
+  },
+  {
+    "id": "q180",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "[弾|ひ]く",
+    "options": [
+      "cantar",
+      "bailar",
+      "tocar (instrumento)",
+      "escuchar"
+    ],
+    "correct": 2,
+    "exp": "ひく = tocar (instrumento).",
+    "itemId": "v_hiku"
+  },
+  {
+    "id": "q181",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "[洗|あら]う",
+    "options": [
+      "cocinar",
+      "lavar",
+      "limpiar",
+      "secar"
+    ],
+    "correct": 1,
+    "exp": "あらう = lavar.",
+    "itemId": "v_arau"
+  },
+  {
+    "id": "q182",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "[集|あつ]める",
+    "options": [
+      "tirar",
+      "vender",
+      "juntar / coleccionar",
+      "perder"
+    ],
+    "correct": 2,
+    "exp": "あつめる = juntar / coleccionar.",
+    "itemId": "v_atsumeru"
+  },
+  {
+    "id": "q183",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "[運転|うんてん]する",
+    "options": [
+      "viajar",
+      "estacionar",
+      "caminar",
+      "manejar / conducir"
+    ],
+    "correct": 3,
+    "exp": "うんてんする = manejar / conducir.",
+    "itemId": "v_untensuru"
+  },
+  {
+    "id": "q184",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "[換|か]える",
+    "options": [
+      "pagar",
+      "cambiar (dinero)",
+      "volver",
+      "ahorrar"
+    ],
+    "correct": 1,
+    "exp": "かえる = cambiar (dinero). Ojo: 換える es Grupo 2 (え en el okurigana); 帰る (volver) es Grupo 1.",
+    "itemId": "v_kaeru_2"
+  },
+  {
+    "id": "q185",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "[予約|よやく]する",
+    "options": [
+      "pagar",
+      "cancelar",
+      "reservar",
+      "llamar por teléfono"
+    ],
+    "correct": 2,
+    "exp": "よやくする = reservar.",
+    "itemId": "v_yoyakusuru"
+  },
+  {
+    "id": "q186",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "[現金|げんきん]",
+    "options": [
+      "efectivo (dinero)",
+      "banco",
+      "tarjeta de crédito",
+      "billetera"
+    ],
+    "correct": 0,
+    "exp": "げんきん = efectivo (dinero).",
+    "itemId": "n_genkin"
+  },
+  {
+    "id": "q187",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "[祈|いの]り",
+    "options": [
+      "promesa",
+      "canción",
+      "oración / rezo",
+      "saludo"
+    ],
+    "correct": 2,
+    "exp": "いのり = oración / rezo.",
+    "itemId": "n_inori"
+  },
+  {
+    "id": "q188",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "[日記|にっき]",
+    "options": [
+      "diario (periódico)",
+      "carta",
+      "agenda",
+      "diario (personal)"
+    ],
+    "correct": 3,
+    "exp": "にっき = diario (personal).",
+    "itemId": "n_nikki"
+  },
+  {
+    "id": "q189",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "[国際|こくさい]",
+    "options": [
+      "extranjero",
+      "nacional",
+      "local",
+      "internacional"
+    ],
+    "correct": 3,
+    "exp": "こくさい = internacional.",
+    "itemId": "n_kokusai"
+  },
+  {
+    "id": "q190",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "[趣味|しゅみ]",
+    "options": [
+      "especialidad",
+      "trabajo",
+      "pasatiempo / hobby",
+      "deporte"
+    ],
+    "correct": 2,
+    "exp": "しゅみ = pasatiempo / hobby.",
+    "itemId": "n_shumi"
+  },
+  {
+    "id": "q191",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "[動物|どうぶつ]",
+    "options": [
+      "planta",
+      "mascota",
+      "animal",
+      "insecto"
+    ],
+    "correct": 2,
+    "exp": "どうぶつ = animal.",
+    "itemId": "n_doubutsu"
+  },
+  {
+    "id": "q192",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "ペンギン",
+    "options": [
+      "loro",
+      "foca",
+      "pato",
+      "pingüino"
+    ],
+    "correct": 3,
+    "exp": "ペンギン = pingüino.",
+    "itemId": "n_pengin"
+  },
+  {
+    "id": "q193",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "ライオン",
+    "options": [
+      "mono",
+      "oso",
+      "león",
+      "tigre"
+    ],
+    "correct": 2,
+    "exp": "ライオン = león.",
+    "itemId": "n_raion"
+  },
+  {
+    "id": "q194",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "うさぎ",
+    "options": [
+      "gato",
+      "conejo",
+      "zorro",
+      "ratón"
+    ],
+    "correct": 1,
+    "exp": "うさぎ = conejo.",
+    "itemId": "n_usagi"
+  },
+  {
+    "id": "q195",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "パンダ",
+    "options": [
+      "panda",
+      "oso",
+      "perro",
+      "koala"
+    ],
+    "correct": 0,
+    "exp": "パンダ = panda.",
+    "itemId": "n_panda"
+  },
+  {
+    "id": "q196",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "[馬|うま]",
+    "options": [
+      "vaca",
+      "perro",
+      "caballo",
+      "burro"
+    ],
+    "correct": 2,
+    "exp": "うま = caballo.",
+    "itemId": "n_uma"
+  },
+  {
+    "id": "q197",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "[豚|ぶた]",
+    "options": [
+      "vaca",
+      "pollo",
+      "oveja",
+      "cerdo / chancho"
+    ],
+    "correct": 3,
+    "exp": "ぶた = cerdo / chancho.",
+    "itemId": "n_buta"
+  },
+  {
+    "id": "q198",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "[社長|しゃちょう]",
+    "options": [
+      "empleado",
+      "presidente (de empresa)",
+      "jefe de sección",
+      "jefe de departamento"
+    ],
+    "correct": 1,
+    "exp": "しゃちょう = presidente (de empresa).",
+    "itemId": "n_shachou"
+  },
+  {
+    "id": "q199",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "[部長|ぶちょう]",
+    "options": [
+      "jefe de sección",
+      "empleado",
+      "presidente (de empresa)",
+      "jefe de departamento"
+    ],
+    "correct": 3,
+    "exp": "ぶちょう = jefe de departamento. しゃちょう > ぶちょう > かちょう.",
+    "itemId": "n_buchou"
+  },
+  {
+    "id": "q200",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 18,
+    "topic": "vocabulario",
+    "prompt": "[課長|かちょう]",
+    "options": [
+      "cliente",
+      "presidente (de empresa)",
+      "jefe de departamento",
+      "jefe de sección"
+    ],
+    "correct": 3,
+    "exp": "かちょう = jefe de sección.",
+    "itemId": "n_kachou"
+  },
+  {
+    "id": "q126",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 19,
+    "topic": "forma た",
+    "cue": "[歌|うた]う",
+    "prompt": "Conjugá a forma た",
+    "answers": [
+      "うたった"
+    ],
+    "exp": "1º grupo: う → った.",
+    "itemId": "v_utau"
+  },
+  {
+    "id": "q127",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 19,
+    "topic": "forma た",
+    "cue": "[泳|およ]ぐ",
+    "prompt": "Conjugá a forma た",
+    "answers": [
+      "およいだ"
+    ],
+    "exp": "1º grupo: ぐ → いだ.",
+    "itemId": "v_oyogu"
+  },
+  {
+    "id": "q128",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 19,
+    "topic": "forma た",
+    "cue": "[遊|あそ]ぶ",
+    "prompt": "Conjugá a forma た",
+    "answers": [
+      "あそんだ"
+    ],
+    "exp": "1º grupo: ぶ → んだ.",
+    "itemId": "v_asobu"
+  },
+  {
+    "id": "q129",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 19,
+    "topic": "forma た",
+    "cue": "[行|い]く",
+    "prompt": "Conjugá a forma た",
+    "answers": [
+      "いった"
+    ],
+    "exp": "Excepción: いく → いった (no いいた).",
+    "itemId": "v_iku"
+  },
+  {
+    "id": "q130",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 19,
+    "topic": "forma た",
+    "cue": "[話|はな]す",
+    "prompt": "Conjugá a forma た",
+    "answers": [
+      "はなした"
+    ],
+    "exp": "1º grupo: す → した.",
+    "itemId": "v_hanasu"
+  },
+  {
+    "id": "q131",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 19,
+    "topic": "forma た",
+    "cue": "[登|のぼ]る",
+    "prompt": "Conjugá a forma た",
+    "answers": [
+      "のぼった"
+    ],
+    "exp": "1º grupo: る → った.",
+    "itemId": "v_noboru"
+  },
+  {
+    "id": "q132",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 19,
+    "topic": "forma た",
+    "cue": "[書|か]く",
+    "prompt": "Conjugá a forma た",
+    "answers": [
+      "かいた"
+    ],
+    "exp": "1º grupo: く → いた.",
+    "itemId": "v_kaku"
+  },
+  {
+    "id": "q133",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 19,
+    "topic": "forma た",
+    "cue": "[捨|す]てる",
+    "prompt": "Conjugá a forma た",
+    "answers": [
+      "すてた"
+    ],
+    "exp": "2º grupo: quito る + た.",
+    "itemId": "v_suteru"
+  },
+  {
+    "id": "q134",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 19,
+    "topic": "forma た",
+    "cue": "[来|く]る",
+    "prompt": "Conjugá a forma た",
+    "answers": [
+      "きた"
+    ],
+    "exp": "3º grupo: くる → きた.",
+    "itemId": "v_kuru"
+  },
+  {
+    "id": "q135",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 19,
+    "topic": "forma た",
+    "cue": "[帰|かえ]る",
+    "prompt": "Conjugá a forma た",
+    "answers": [
+      "かえった"
+    ],
+    "exp": "Falso G2: es 1º grupo → かえった.",
+    "itemId": "v_kaeru"
+  },
+  {
+    "id": "q136",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 19,
+    "topic": "pasado informal",
+    "cue": "もう ゴミを [捨|す]てました。",
+    "prompt": "Pasalo a pasado informal:",
+    "answers": [
+      "もうゴミをすてた",
+      "もうゴミを捨てた"
+    ],
+    "exp": "ました → forma た."
+  },
+  {
+    "id": "q137",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "たことがある",
+    "prompt": "「すしを ＿＿ことが あります。」 (he comido sushi)",
+    "options": [
+      "[食|た]べて",
+      "[食|た]べた",
+      "[食|た]べます",
+      "[食|た]べる"
+    ],
+    "correct": 1,
+    "exp": "Experiencias: V.た + ことが あります."
+  },
+  {
+    "id": "q138",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "たことがある",
+    "prompt": "「[富士山|ふじさん]に ＿＿ことが ありません。」 (nunca subí al Fuji)",
+    "options": [
+      "[登|のぼ]った",
+      "[登|のぼ]る",
+      "[登|のぼ]りました",
+      "[登|のぼ]って"
+    ],
+    "correct": 0,
+    "exp": "V.た + ことが ありません = no lo he hecho."
+  },
+  {
+    "id": "q139",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "たことがある",
+    "prompt": "「ちかてつに ＿＿ のったことが あります。」 (me subí una vez)",
+    "options": [
+      "いちど",
+      "ぜんぜん",
+      "まだ",
+      "いちども"
+    ],
+    "correct": 0,
+    "exp": "いちど = una vez."
+  },
+  {
+    "id": "q140",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "たことがある",
+    "prompt": "「さしみを ＿＿ [食|た]べたことが ありません。」 (nunca, ni una vez)",
+    "options": [
+      "いちど",
+      "もう",
+      "いちども",
+      "よく"
+    ],
+    "correct": 2,
+    "exp": "いちども + negativo = ni una sola vez."
+  },
+  {
+    "id": "q141",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "たことがある",
+    "prompt": "¿Cuál suena natural con 〜たことが あります?",
+    "options": [
+      "[夜|よる] [寝|ね]た",
+      "[日本|にほん]に [行|い]った",
+      "[朝|あさ]ごはんを [食|た]べた",
+      "[会社|かいしゃ]で [働|はたら]いた"
+    ],
+    "correct": 1,
+    "exp": "Se usa para experiencias únicas o poco usuales, no para acciones habituales."
+  },
+  {
+    "id": "q142",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "たり",
+    "prompt": "「しゅうまつは [音楽|おんがく]を [聞|き]いたり、[映画|えいが]を ＿＿します。」",
+    "options": [
+      "[見|み]た",
+      "[見|み]て",
+      "[見|み]たり",
+      "[見|み]ます"
+    ],
+    "correct": 2,
+    "exp": "V.たり、V.たり する: acciones sin orden ni lista cerrada."
+  },
+  {
+    "id": "q143",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "たり",
+    "prompt": "「きのう [仕事|しごと]を したり、[本|ほん]を [読|よ]んだり ＿＿。」",
+    "options": [
+      "します",
+      "しました",
+      "した",
+      "して"
+    ],
+    "correct": 1,
+    "exp": "Se cierra con する; el tiempo va ahí: ayer → しました."
+  },
+  {
+    "id": "q144",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 19,
+    "topic": "たり",
+    "cue": "[読|よ]む",
+    "prompt": "Conjugá a forma たり",
+    "answers": [
+      "よんだり"
+    ],
+    "exp": "た + り: よんだ → よんだり.",
+    "itemId": "v_yomu"
+  },
+  {
+    "id": "q145",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 19,
+    "topic": "たり",
+    "cue": "する",
+    "prompt": "Conjugá a forma たり",
+    "answers": [
+      "したり"
+    ],
+    "exp": "した → したり.",
+    "itemId": "v_suru"
+  },
+  {
+    "id": "q146",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "なる",
+    "prompt": "「さむ＿ なりました。」 (se puso frío)",
+    "options": [
+      "い",
+      "な",
+      "に",
+      "く"
+    ],
+    "correct": 3,
+    "exp": "Adj い: い → く + なる."
+  },
+  {
+    "id": "q147",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "なる",
+    "prompt": "「いもうとは [元気|げんき]＿ なりました。」",
+    "options": [
+      "で",
+      "が",
+      "に",
+      "く"
+    ],
+    "correct": 2,
+    "exp": "Adj な: + に なる."
+  },
+  {
+    "id": "q148",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "なる",
+    "prompt": "「[山田|やまだ]さんは いしゃ＿ なります。」 (será médico)",
+    "options": [
+      "を",
+      "く",
+      "が",
+      "に"
+    ],
+    "correct": 3,
+    "exp": "Sustantivo + に なる."
+  },
+  {
+    "id": "q149",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "なる",
+    "prompt": "「[調子|ちょうし]が ＿＿ なりました。」 (mejoró)",
+    "options": [
+      "いく",
+      "よい",
+      "よく",
+      "いいに"
+    ],
+    "correct": 2,
+    "exp": "Excepción: いい → よく なる."
+  },
+  {
+    "id": "q150",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 19,
+    "topic": "なる",
+    "cue": "[強|つよ]い",
+    "prompt": "Decí \"se volvió fuerte\" (pasado cortés, 〜なりました):",
+    "answers": [
+      "つよくなりました",
+      "強くなりました"
+    ],
+    "exp": "Adj い: い → く + なりました.",
+    "itemId": "a_tsuyoi"
+  },
+  {
+    "id": "q151",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 19,
+    "topic": "なる",
+    "cue": "[上手|じょうず]",
+    "prompt": "Decí \"se volvió hábil\" (pasado cortés, 〜なりました):",
+    "answers": [
+      "じょうずになりました",
+      "上手になりました"
+    ],
+    "exp": "Adj な: + に なりました."
+  },
+  {
+    "id": "q201",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "vocabulario",
+    "prompt": "[登|のぼ]る",
+    "options": [
+      "bajar",
+      "correr",
+      "subir / escalar (montaña)",
+      "nadar"
+    ],
+    "correct": 2,
+    "exp": "のぼる = subir / escalar (montaña).",
+    "itemId": "v_noboru"
+  },
+  {
+    "id": "q202",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "vocabulario",
+    "prompt": "[泊|と]まる",
+    "options": [
+      "alojarse / hospedarse",
+      "reservar",
+      "detenerse",
+      "mudarse"
+    ],
+    "correct": 0,
+    "exp": "とまる = alojarse / hospedarse. 泊まる (alojarse) suena igual que 止まる (detenerse).",
+    "itemId": "v_tomaru_2"
+  },
+  {
+    "id": "q203",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "vocabulario",
+    "prompt": "なる",
+    "options": [
+      "existir",
+      "quedarse",
+      "hacer",
+      "convertirse / volverse"
+    ],
+    "correct": 3,
+    "exp": "なる = convertirse / volverse. Cambios: 〜くなる (adj い) / 〜になる (adj な, sustantivo).",
+    "itemId": "v_naru"
+  },
+  {
+    "id": "q204",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "vocabulario",
+    "prompt": "[洗濯|せんたく]する",
+    "options": [
+      "planchar",
+      "limpiar",
+      "lavar la ropa",
+      "cocinar"
+    ],
+    "correct": 2,
+    "exp": "せんたくする = lavar la ropa.",
+    "itemId": "v_sentakusuru"
+  },
+  {
+    "id": "q205",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "vocabulario",
+    "prompt": "[掃除|そうじ]する",
+    "options": [
+      "tirar la basura",
+      "limpiar",
+      "lavar la ropa",
+      "ordenar"
+    ],
+    "correct": 1,
+    "exp": "そうじする = limpiar.",
+    "itemId": "v_soujisuru"
+  },
+  {
+    "id": "q206",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "vocabulario",
+    "prompt": "[乾杯|かんぱい]する",
+    "options": [
+      "agradecer",
+      "brindar (¡salud!)",
+      "saludar",
+      "despedirse"
+    ],
+    "correct": 1,
+    "exp": "かんぱいする = brindar (¡salud!).",
+    "itemId": "v_kanpaisuru"
+  },
+  {
+    "id": "q207",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "vocabulario",
+    "prompt": "[練習|れんしゅう]する",
+    "options": [
+      "practicar",
+      "estudiar",
+      "descansar",
+      "enseñar"
+    ],
+    "correct": 0,
+    "exp": "れんしゅうする = practicar.",
+    "itemId": "v_renshuusuru"
+  },
+  {
+    "id": "q208",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "vocabulario",
+    "prompt": "[強|つよ]い",
+    "options": [
+      "alto",
+      "rápido",
+      "fuerte",
+      "débil"
+    ],
+    "correct": 2,
+    "exp": "つよい = fuerte.",
+    "itemId": "a_tsuyoi"
+  },
+  {
+    "id": "q209",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "vocabulario",
+    "prompt": "[弱|よわ]い",
+    "options": [
+      "débil",
+      "fuerte",
+      "bajo",
+      "lento"
+    ],
+    "correct": 0,
+    "exp": "よわい = débil.",
+    "itemId": "a_yowai"
+  },
+  {
+    "id": "q210",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "vocabulario",
+    "prompt": "[眠|ねむ]い",
+    "options": [
+      "cansado",
+      "con hambre",
+      "con sueño",
+      "aburrido"
+    ],
+    "correct": 2,
+    "exp": "ねむい = con sueño.",
+    "itemId": "a_nemui"
+  },
+  {
+    "id": "q211",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "vocabulario",
+    "prompt": "[無理|むり]",
+    "options": [
+      "imposible / demasiado",
+      "fácil",
+      "importante",
+      "peligroso"
+    ],
+    "correct": 0,
+    "exp": "むり = imposible / demasiado. Adj な: むりです / むりな ことです.",
+    "itemId": "na_muri"
+  },
+  {
+    "id": "q212",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "vocabulario",
+    "prompt": "ケーキ",
+    "options": [
+      "galletita",
+      "pan",
+      "torta / pastel",
+      "helado"
+    ],
+    "correct": 2,
+    "exp": "ケーキ = torta / pastel.",
+    "itemId": "n_keeki"
+  },
+  {
+    "id": "q213",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "vocabulario",
+    "prompt": "ゴルフ",
+    "options": [
+      "béisbol",
+      "tenis",
+      "golf",
+      "fútbol"
+    ],
+    "correct": 2,
+    "exp": "ゴルフ = golf.",
+    "itemId": "n_gorufu"
+  },
+  {
+    "id": "q214",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "vocabulario",
+    "prompt": "パチンコ",
+    "options": [
+      "videojuego",
+      "bowling",
+      "pachinko (tragamonedas)",
+      "karaoke"
+    ],
+    "correct": 2,
+    "exp": "パチンコ = pachinko (tragamonedas).",
+    "itemId": "n_pachinko"
+  },
+  {
+    "id": "q215",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "vocabulario",
+    "prompt": "[お茶|おちゃ]",
+    "options": [
+      "café",
+      "té / ceremonia del té",
+      "jugo",
+      "sopa"
+    ],
+    "correct": 1,
+    "exp": "おちゃ = té / ceremonia del té.",
+    "itemId": "n_ocha"
+  },
+  {
+    "id": "q216",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "vocabulario",
+    "prompt": "[相撲|すもう]",
+    "options": [
+      "judo",
+      "karate",
+      "kendo",
+      "sumo"
+    ],
+    "correct": 3,
+    "exp": "すもう = sumo.",
+    "itemId": "n_sumou"
+  },
+  {
+    "id": "q217",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 19,
+    "topic": "vocabulario",
+    "prompt": "[調子|ちょうし]",
+    "options": [
+      "estado / condición (física, de ánimo)",
+      "horario",
+      "humor (chiste)",
+      "enfermedad"
+    ],
+    "correct": 0,
+    "exp": "ちょうし = estado / condición (física, de ánimo).",
+    "itemId": "n_choushi"
+  },
+  {
+    "id": "q152",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 20,
+    "topic": "cortés → informal",
+    "cue": "[犬|いぬ]は ボールを [持|も]ってきます。",
+    "prompt": "Pasalo a informal:",
+    "answers": [
+      "いぬはボールをもってくる",
+      "犬はボールを持ってくる",
+      "いぬはボールもってくる"
+    ],
+    "exp": "ます → forma diccionario. もってきます → もってくる."
+  },
+  {
+    "id": "q153",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 20,
+    "topic": "cortés → informal",
+    "cue": "[肉|にく]を [食|た]べません。",
+    "prompt": "Pasalo a informal:",
+    "answers": [
+      "にくをたべない",
+      "肉を食べない",
+      "にくたべない",
+      "肉食べない"
+    ],
+    "exp": "ません → forma ない."
+  },
+  {
+    "id": "q154",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 20,
+    "topic": "cortés → informal",
+    "cue": "[現金|げんきん]で [払|はら]いました。",
+    "prompt": "Pasalo a informal:",
+    "answers": [
+      "げんきんではらった",
+      "現金で払った"
+    ],
+    "exp": "ました → forma た."
+  },
+  {
+    "id": "q155",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 20,
+    "topic": "cortés → informal",
+    "cue": "[昨日|きのう] どこも [行|い]きませんでした。",
+    "prompt": "Pasalo a informal:",
+    "answers": [
+      "きのうどこもいかなかった",
+      "昨日どこも行かなかった"
+    ],
+    "exp": "ませんでした → forma なかった."
+  },
+  {
+    "id": "q156",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 20,
+    "topic": "なかった",
+    "cue": "[行|い]かない",
+    "prompt": "Pasado negativo informal (〜なかった):",
+    "answers": [
+      "いかなかった"
+    ],
+    "exp": "ない → なかった (como un adj い).",
+    "itemId": "v_iku"
+  },
+  {
+    "id": "q157",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 20,
+    "topic": "なかった",
+    "cue": "[食|た]べない",
+    "prompt": "Pasado negativo informal (〜なかった):",
+    "answers": [
+      "たべなかった"
+    ],
+    "exp": "ない → なかった.",
+    "itemId": "v_taberu"
+  },
+  {
+    "id": "q158",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 20,
+    "topic": "なかった",
+    "cue": "[来|こ]ない",
+    "prompt": "Pasado negativo informal (〜なかった):",
+    "answers": [
+      "こなかった"
+    ],
+    "exp": "くる → こない → こなかった.",
+    "itemId": "v_kuru"
+  },
+  {
+    "id": "q159",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 20,
+    "topic": "なかった",
+    "cue": "ある",
+    "prompt": "Pasado negativo informal (〜なかった):",
+    "answers": [
+      "なかった"
+    ],
+    "exp": "ある → ない → なかった."
+  },
+  {
+    "id": "q160",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "だ",
+    "prompt": "「[田中|たなか]は [私|わたし]の ともだち＿＿よ。」 (es mi amigo)",
+    "options": [
+      "じゃない",
+      "だった",
+      "な",
+      "だ"
+    ],
+    "correct": 3,
+    "exp": "です → だ. Solo se dice delante de ね / よ; sola suena muy fuerte."
+  },
+  {
+    "id": "q161",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "だった",
+    "prompt": "「おじいちゃんは いしゃ＿＿。」 (era médico)",
+    "options": [
+      "じゃなかった",
+      "だった",
+      "だ",
+      "でした"
+    ],
+    "correct": 1,
+    "exp": "でした → だった."
+  },
+  {
+    "id": "q162",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "じゃない",
+    "prompt": "「これは オレンジ＿＿。」 (no es una naranja)",
+    "options": [
+      "じゃなかった",
+      "じゃない",
+      "くない",
+      "だない"
+    ],
+    "correct": 1,
+    "exp": "じゃありません → じゃない."
+  },
+  {
+    "id": "q163",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "adj い",
+    "prompt": "「[先週|せんしゅう] いそがし＿＿。」 (estuve ocupado)",
+    "options": [
+      "くなかった",
+      "かった",
+      "いだった",
+      "だった"
+    ],
+    "correct": 1,
+    "exp": "Adj い: se saca です y queda いそがしかった."
+  },
+  {
+    "id": "q164",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "adj い",
+    "prompt": "「にもつは かる＿＿。」 (no era liviano)",
+    "options": [
+      "じゃなかった",
+      "くない",
+      "かった",
+      "くなかった"
+    ],
+    "correct": 3,
+    "exp": "かるくなかったです → かるくなかった."
+  },
+  {
+    "id": "q165",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "adj な",
+    "prompt": "「[昨日|きのう] ひま＿＿。」 (ayer estaba libre)",
+    "options": [
+      "でした",
+      "くなかった",
+      "かった",
+      "だった"
+    ],
+    "correct": 3,
+    "exp": "Adj な: igual que sustantivos. ひまでした → ひまだった."
+  },
+  {
+    "id": "q166",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "adj な",
+    "prompt": "「[今朝|けさ] つくえは きれい＿＿。」 (no estaba limpio)",
+    "options": [
+      "だった",
+      "じゃない",
+      "くなかった",
+      "じゃなかった"
+    ],
+    "correct": 3,
+    "exp": "きれい es adj な aunque termine en い → じゃなかった."
+  },
+  {
+    "id": "q167",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 20,
+    "topic": "adj い",
+    "cue": "[大|おお]きい",
+    "prompt": "Pasado negativo informal:",
+    "answers": [
+      "おおきくなかった",
+      "大きくなかった"
+    ],
+    "exp": "い → くなかった."
+  },
+  {
+    "id": "q168",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 20,
+    "topic": "adj な",
+    "cue": "[便利|べんり]",
+    "prompt": "Negativo informal:",
+    "answers": [
+      "べんりじゃない",
+      "便利じゃない"
+    ],
+    "exp": "Adj な + じゃない."
+  },
+  {
+    "id": "q169",
+    "skill": "grammar",
+    "type": "type",
+    "chapter": 20,
+    "topic": "adj い",
+    "cue": "いい",
+    "prompt": "Pasado informal:",
+    "answers": [
+      "よかった"
+    ],
+    "exp": "Excepción: いい → よかった."
+  },
+  {
+    "id": "q170",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "expresiones",
+    "prompt": "Informal de 「いっしょに [映画|えいが]を [見|み]ませんか。」",
+    "options": [
+      "いっしょに [映画|えいが] [見|み]ないか。",
+      "いっしょに [映画|えいが] [見|み]る？",
+      "いっしょに [映画|えいが] [見|み]ない？",
+      "いっしょに [映画|えいが] [見|み]た？"
+    ],
+    "correct": 2,
+    "exp": "Invitar: V.ませんか → V.ない？ (tono ascendente)."
+  },
+  {
+    "id": "q171",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "expresiones",
+    "prompt": "Informal de 「ちょっと [待|ま]ってください。」",
+    "options": [
+      "ちょっと [待|ま]って。",
+      "ちょっと [待|ま]った。",
+      "ちょっと [待|ま]つ。",
+      "ちょっと [待|ま]たない。"
+    ],
+    "correct": 0,
+    "exp": "V.てください → se omite ください."
+  },
+  {
+    "id": "q172",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "expresiones",
+    "prompt": "Informal de 「ゲーム[会社|がいしゃ]で [働|はたら]いています。」",
+    "options": [
+      "ゲーム[会社|がいしゃ]で [働|はたら]いてだ。",
+      "ゲーム[会社|がいしゃ]で [働|はたら]いてある。",
+      "ゲーム[会社|がいしゃ]で [働|はたら]いてます。",
+      "ゲーム[会社|がいしゃ]で [働|はたら]いてる。"
+    ],
+    "correct": 3,
+    "exp": "V.ています → V.ている, y la い se puede omitir: 〜てる."
+  },
+  {
+    "id": "q173",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "expresiones",
+    "prompt": "Informal de 「[勉強|べんきょう]しなければなりません。」",
+    "options": [
+      "[勉強|べんきょう]しなければない。",
+      "[勉強|べんきょう]しなければならない。",
+      "[勉強|べんきょう]しなければだ。",
+      "[勉強|べんきょう]しない。"
+    ],
+    "correct": 1,
+    "exp": "なりません → ならない."
+  },
+  {
+    "id": "q174",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "expresiones",
+    "prompt": "Informal de 「[京都|きょうと]に [行|い]ったことが ありますか。」",
+    "options": [
+      "[京都|きょうと]に [行|い]ったこと だ？",
+      "[京都|きょうと]に [行|い]ったこと ある？",
+      "[京都|きょうと]に [行|い]くこと ある？",
+      "[京都|きょうと]に [行|い]ったこと あるか。"
+    ],
+    "correct": 1,
+    "exp": "あります → ある, y か se reemplaza por tono ascendente (？)."
+  },
+  {
+    "id": "q175",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "expresiones",
+    "prompt": "Informal de 「にもつは ここに [置|お]いても いいですか。」",
+    "options": [
+      "にもつ ここに [置|お]いても いいだ？",
+      "にもつ ここに [置|お]いても いい？",
+      "にもつ ここに [置|お]いても いいか。",
+      "にもつ ここに [置|お]いて いい？"
+    ],
+    "correct": 1,
+    "exp": "V.てもいいですか → se omite ですか: 〜てもいい？"
+  },
+  {
+    "id": "q176",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "expresiones",
+    "prompt": "Informal de 「[明日|あした]も [来|き]ますか。」",
+    "options": [
+      "[明日|あした]も [来|く]るか。",
+      "[明日|あした]も [来|く]る？",
+      "[明日|あした]も [来|き]る？",
+      "[明日|あした]も [来|こ]ない。"
+    ],
+    "correct": 1,
+    "exp": "か se omite: la pregunta va con tono ascendente (？ al escribir)."
+  },
+  {
+    "id": "q177",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "けど",
+    "prompt": "「この レストラン おいしい＿＿、[高|たか]い。」 (es rico pero caro)",
+    "options": [
+      "だから",
+      "けど",
+      "だけど",
+      "から"
+    ],
+    "correct": 1,
+    "exp": "が (pero) → けど. Con adj い va directo."
+  },
+  {
+    "id": "q178",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "けど",
+    "prompt": "「[子|こ]ども＿＿、りょうりが [上手|じょうず]。」 (es un niño pero cocina bien)",
+    "options": [
+      "けど",
+      "なけど",
+      "のけど",
+      "だけど"
+    ],
+    "correct": 3,
+    "exp": "Sustantivo / adj な: primero だ, después けど."
+  },
+  {
+    "id": "q179",
+    "skill": "grammar",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "うん / ううん",
+    "prompt": "En informal, \"no\" se dice…",
+    "options": [
+      "ええ",
+      "はい",
+      "ううん",
+      "うん"
+    ],
+    "correct": 2,
+    "exp": "はい → うん; いいえ → ううん."
+  },
+  {
+    "id": "q218",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "vocabulario",
+    "prompt": "[電話|でんわ]する",
+    "options": [
+      "llamar (a alguien en voz alta)",
+      "mandar un mail",
+      "llamar por teléfono",
+      "escribir"
+    ],
+    "correct": 2,
+    "exp": "でんわする = llamar por teléfono.",
+    "itemId": "v_denwasuru"
+  },
+  {
+    "id": "q219",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "vocabulario",
+    "prompt": "[直|なお]す",
+    "options": [
+      "arreglar / corregir",
+      "investigar",
+      "comprar",
+      "romper"
+    ],
+    "correct": 0,
+    "exp": "なおす = arreglar / corregir.",
+    "itemId": "v_naosu"
+  },
+  {
+    "id": "q220",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "vocabulario",
+    "prompt": "[修理|しゅうり]する",
+    "options": [
+      "revisar",
+      "romper",
+      "fabricar",
+      "reparar"
+    ],
+    "correct": 3,
+    "exp": "しゅうりする = reparar.",
+    "itemId": "v_shuurisuru"
+  },
+  {
+    "id": "q221",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "vocabulario",
+    "prompt": "サラリーマン",
+    "options": [
+      "estudiante",
+      "médico",
+      "oficinista / asalariado",
+      "ama de casa"
+    ],
+    "correct": 2,
+    "exp": "サラリーマン = oficinista / asalariado.",
+    "itemId": "n_sarariiman"
+  },
+  {
+    "id": "q222",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "vocabulario",
+    "prompt": "[物価|ぶっか]",
+    "options": [
+      "sueldo",
+      "costo de vida / precios",
+      "impuesto",
+      "presupuesto"
+    ],
+    "correct": 1,
+    "exp": "ぶっか = costo de vida / precios.",
+    "itemId": "n_bukka"
+  },
+  {
+    "id": "q223",
+    "skill": "vocab",
+    "type": "mc",
+    "chapter": 20,
+    "topic": "vocabulario",
+    "prompt": "ビザ",
+    "options": [
+      "pasaporte",
+      "pasaje",
+      "tarjeta",
+      "visa"
+    ],
+    "correct": 3,
+    "exp": "ビザ = visa.",
+    "itemId": "n_biza"
+  },
+  {
+    "id": "cj_hiku",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_hiku"
+  },
+  {
+    "id": "cj_arau",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_arau"
+  },
+  {
+    "id": "cj_atsumeru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_atsumeru"
+  },
+  {
+    "id": "cj_untensuru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_untensuru"
+  },
+  {
+    "id": "cj_kaeru_2",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_kaeru_2"
+  },
+  {
+    "id": "cj_yoyakusuru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_yoyakusuru"
+  },
+  {
+    "id": "cj_noboru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_noboru"
+  },
+  {
+    "id": "cj_tomaru_2",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_tomaru_2"
+  },
+  {
+    "id": "cj_naru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_naru"
+  },
+  {
+    "id": "cj_sentakusuru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_sentakusuru"
+  },
+  {
+    "id": "cj_soujisuru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_soujisuru"
+  },
+  {
+    "id": "cj_kanpaisuru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_kanpaisuru"
+  },
+  {
+    "id": "cj_renshuusuru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_renshuusuru"
+  },
+  {
+    "id": "cj_denwasuru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_denwasuru"
+  },
+  {
+    "id": "cj_naosu",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_naosu"
+  },
+  {
+    "id": "cj_shuurisuru",
+    "skill": "conjugation",
+    "type": "conjugate",
+    "itemId": "v_shuurisuru"
+  }
+]

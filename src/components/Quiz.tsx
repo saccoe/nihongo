@@ -1,11 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import questionsData from '../data/questions.json';
-import type { Question } from '../lib/types';
+import { db, exercisesOf, itemOf, lessonsInOrder } from '../lib/db';
+import type { Exercise, Item } from '../lib/types';
 import { normalize } from '../lib/conjugator';
 import { renderRuby } from './Ruby';
 import Choices from './Choices';
-
-const QUESTIONS = questionsData as Question[];
+import ConjugationCard from './ConjugationCard';
 
 declare global {
   interface Window {
@@ -13,24 +12,15 @@ declare global {
   }
 }
 
-// Un solo eje de filtro: temas de gramática + vocabulario como opción aparte.
-// (la clave usa el nº de capítulo internamente, pero no se muestra)
-type FilterDef = {
-  key: string;
-  label: string;
-  color: 'primary' | 'accent';
-  match: (q: Question) => boolean;
-};
-const FILTERS: FilterDef[] = [
-  { key: 'g14', label: 'forma て · pedidos', color: 'primary', match: (q) => q.cat === 'gram' && q.ch === 14 },
-  { key: 'g15', label: 'permiso · prohibición', color: 'primary', match: (q) => q.cat === 'gram' && q.ch === 15 },
-  { key: 'g16', label: 'くて/で · から · partículas', color: 'primary', match: (q) => q.cat === 'gram' && q.ch === 16 },
-  { key: 'g17', label: 'ない · obligación · までに', color: 'primary', match: (q) => q.cat === 'gram' && q.ch === 17 },
-  { key: 'vocab', label: 'Vocabulario', color: 'accent', match: (q) => q.cat === 'vocab' },
-];
-const ALL_KEYS = FILTERS.map((f) => f.key);
+// Config for embedded conjugation questions. Could later come from exercise.params
+// or a quiz-level setting; defaults keep mixed quizzes snappy.
+const CONJ_MODE = 'rapido' as const;
 
-type Miss = { q: Question; given: string };
+// Filters = the lessons, in order. A chapter lesson bundles its grammar + vocab;
+// the conjugación lesson holds the generated conjugate exercises.
+const LESSONS = lessonsInOrder();
+
+type Miss = { ex: Exercise; given: string; sol: string };
 type Feedback = { ok: boolean; sol: string; exp: string } | null;
 type Phase = 'setup' | 'quiz' | 'result';
 
@@ -46,11 +36,11 @@ const hasJP = (s: string) => /[぀-ゟ゠-ヿ一-鿿]/.test(s);
 
 export default function Quiz() {
   const [phase, setPhase] = useState<Phase>('setup');
-  const [selKeys, setSelKeys] = useState<Set<string>>(new Set(ALL_KEYS));
+  const [selKeys, setSelKeys] = useState<Set<string>>(new Set(LESSONS.map((l) => l.id)));
   const [len, setLen] = useState<'15' | '30' | 'all'>('15');
   const [shuffle, setShuffle] = useState(true);
 
-  const [queue, setQueue] = useState<Question[]>([]);
+  const [queue, setQueue] = useState<Exercise[]>([]);
   const [idx, setIdx] = useState(0);
   const [score, setScore] = useState(0);
   const [answered, setAnswered] = useState(false);
@@ -59,10 +49,20 @@ export default function Quiz() {
   const [feedback, setFeedback] = useState<Feedback>(null);
   const [misses, setMisses] = useState<Miss[]>([]);
 
-  const pool = useMemo(
-    () => QUESTIONS.filter((q) => FILTERS.some((f) => selKeys.has(f.key) && f.match(q))),
-    [selKeys],
-  );
+  // Union of the selected lessons' exercises, deduped by id.
+  const pool = useMemo(() => {
+    const seen = new Set<string>();
+    const out: Exercise[] = [];
+    for (const l of LESSONS) {
+      if (!selKeys.has(l.id)) continue;
+      for (const ex of exercisesOf(l)) {
+        if (seen.has(ex.id)) continue;
+        seen.add(ex.id);
+        out.push(ex);
+      }
+    }
+    return out;
+  }, [selKeys]);
   const target = len === 'all' ? pool.length : Math.min(+len, pool.length);
 
   function toggleKey(key: string) {
@@ -74,7 +74,7 @@ export default function Quiz() {
     setSelKeys(next);
   }
 
-  function start(list?: Question[]) {
+  function start(list?: Exercise[]) {
     let q = list ?? pool;
     if (shuffle) q = shuffleArr(q);
     if (!list) q = q.slice(0, target);
@@ -100,18 +100,24 @@ export default function Quiz() {
     setPicked(i);
     const ok = i === q.correct;
     if (ok) setScore((s) => s + 1);
-    else setMisses((m) => [...m, { q, given: q.options![i] }]);
-    setFeedback({ ok, sol: q.options![q.correct!], exp: q.exp });
+    else setMisses((m) => [...m, { ex: q, given: q.options![i], sol: q.options![q.correct!] }]);
+    setFeedback({ ok, sol: q.options![q.correct!], exp: q.exp ?? '' });
   }
   function checkType() {
     if (answered || !q) return;
     const val = normalize(typed);
     if (!val) return;
     setAnswered(true);
-    const ok = q.a!.map(normalize).includes(val);
+    const ok = q.answers!.map(normalize).includes(val);
     if (ok) setScore((s) => s + 1);
-    else setMisses((m) => [...m, { q, given: typed.trim() || '(vacío)' }]);
-    setFeedback({ ok, sol: q.a![0], exp: q.exp });
+    else setMisses((m) => [...m, { ex: q, given: typed.trim() || '(vacío)', sol: q.answers![0] }]);
+    setFeedback({ ok, sol: q.answers![0], exp: q.exp ?? '' });
+  }
+  function finishConjugate(pass: boolean) {
+    if (answered || !q) return;
+    setAnswered(true);
+    if (pass) setScore((s) => s + 1);
+    else setMisses((m) => [...m, { ex: q, given: '', sol: '' }]);
   }
   function next() {
     if (idx + 1 >= queue.length) setPhase('result');
@@ -121,7 +127,7 @@ export default function Quiz() {
     }
   }
 
-  // Enter pasa a la siguiente pregunta cuando la actual ya está respondida.
+  // Enter goes to the next question once the current one is answered.
   const enterRef = useRef({ active: false, next: () => {} });
   enterRef.current = { active: phase === 'quiz' && answered, next };
   useEffect(() => {
@@ -136,7 +142,7 @@ export default function Quiz() {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  // Señaliza al navbar que hay un quiz en curso (para confirmar al salir).
+  // Signals the navbar that a quiz is in progress (to confirm before leaving).
   useEffect(() => {
     window.__nihongoQuizActive = phase === 'quiz';
     return () => {
@@ -153,19 +159,19 @@ export default function Quiz() {
             Configurá tu repaso
           </span>
           <p className="mt-1 text-sm opacity-70">
-            Gramática y vocabulario. Corrección al instante con explicación.
+            Gramática, vocabulario y conjugación. Corrección al instante con explicación.
           </p>
 
           <Label>Qué practicar</Label>
           <div className="flex flex-wrap gap-2">
-            {FILTERS.map((f) => (
+            {LESSONS.map((l) => (
               <Chip
-                key={f.key}
-                color={f.color}
-                active={selKeys.has(f.key)}
-                onClick={() => toggleKey(f.key)}
+                key={l.id}
+                color={l.chapter ? 'primary' : 'accent'}
+                active={selKeys.has(l.id)}
+                onClick={() => toggleKey(l.id)}
               >
-                {f.label}
+                {l.subtitle ?? l.title}
               </Chip>
             ))}
           </div>
@@ -194,7 +200,7 @@ export default function Quiz() {
               Empezar →
             </button>
             <span className="text-xs opacity-60">
-              {pool.length ? `${target} de ${pool.length} disponibles` : 'Elegí tema y tipo'}
+              {pool.length ? `${target} de ${pool.length} disponibles` : 'Elegí un tema'}
             </span>
           </div>
         </div>
@@ -228,26 +234,9 @@ export default function Quiz() {
               <h3 className="text-xs font-bold uppercase tracking-widest text-accent">
                 Para repasar ({misses.length})
               </h3>
-              {misses.map((m, i) => {
-                const sol = m.q.type === 'mc' ? m.q.options![m.q.correct!] : m.q.a![0];
-                return (
-                  <div
-                    key={i}
-                    className="rounded-box border border-base-300 border-l-4 border-l-error bg-base-200 px-3.5 py-3"
-                  >
-                    <div className="text-sm opacity-70">
-                      <b>{m.q.topic === 'vocabulario' ? 'Vocabulario' : m.q.topic}</b> ·{' '}
-                      {renderRuby(m.q.prompt)}
-                      {m.q.cue && <span className="jp"> （{renderRuby(m.q.cue)}）</span>}
-                    </div>
-                    <div className="jp mt-1 font-bold">
-                      <span className="text-error line-through opacity-80">{m.given}</span> →{' '}
-                      <span className="text-success">{renderRuby(sol)}</span>
-                    </div>
-                    <div className="mt-1 text-sm opacity-70">{m.q.exp}</div>
-                  </div>
-                );
-              })}
+              {misses.map((m, i) => (
+                <MissRow key={i} miss={m} />
+              ))}
             </div>
           ) : (
             <p className="mt-4 text-center text-lg font-bold text-success">Sin errores. 完璧！</p>
@@ -255,7 +244,7 @@ export default function Quiz() {
 
           <div className="mt-5 flex justify-center gap-3">
             {misses.length > 0 && (
-              <button className="btn btn-primary" onClick={() => start(misses.map((m) => m.q))}>
+              <button className="btn btn-primary" onClick={() => start(misses.map((m) => m.ex))}>
                 Repasar los errores
               </button>
             )}
@@ -270,18 +259,19 @@ export default function Quiz() {
 
   /* ---------- QUIZ ---------- */
   if (!q) return null;
-  const optJP = q.cat !== 'vocab' || hasJP(q.options?.[0] ?? '');
-  // Largo visible: descartamos la lectura de furigana ([漢字|よみ] → 漢字).
+  const isConjugate = q.type === 'conjugate';
+  const optJP = q.skill !== 'vocab' || hasJP(q.options?.[0] ?? '');
+  // Visible length: drop the furigana reading ([漢字|よみ] → 漢字).
   const displayLen = (s: string) => s.replace(/\[([^|\]]+)\|[^\]]+\]/g, '$1').length;
-  // Opciones japonesas cortas (partículas, formas breves) → grilla 2×2;
-  // el resto (significados en español, frases largas) → una por fila.
+  // Short Japanese options (particles, brief forms) → 2×2 grid; the rest → one per row.
   const mcLayout =
     optJP && (q.options?.every((o) => displayLen(o) <= 10) ?? false) ? 'grid' : 'stack';
   const isLast = idx + 1 >= queue.length;
+  const conjItem = isConjugate ? itemOf(q) : undefined;
   return (
     <section className="card border border-base-300 bg-base-100 shadow-xl">
       <div className="card-body p-4 sm:p-6">
-        {/* header: puntaje · progreso · salir (mismo patrón que Conjugación) */}
+        {/* header: score · progress · exit */}
         <div className="flex items-center gap-3 text-sm font-semibold">
           <span className="badge badge-ghost shrink-0 tabular-nums opacity-70">
             {score} / {answered ? idx + 1 : idx}
@@ -296,109 +286,159 @@ export default function Quiz() {
           </button>
         </div>
 
-        {/* ───── ÁREA DE PREGUNTA (card de info) ───── */}
-        <div className="mt-3 rounded-box border border-base-300 bg-base-200/50 p-4 text-center">
-          <div className="text-xs font-bold uppercase tracking-wider text-accent">
-            {q.cat === 'vocab' ? 'Vocabulario' : 'Gramática'}
-          </div>
-          <div
-            className={`mx-auto mt-2 max-w-prose text-pretty text-xl font-semibold sm:text-2xl ${
-              hasJP(q.prompt) ? 'jp' : ''
-            }`}
-          >
-            {q.prompt.split('＿＿').map((part, i, arr) => (
-              <span key={i}>
-                {renderRuby(part)}
-                {i < arr.length - 1 && <span className="jp font-extrabold text-primary">＿＿</span>}
-              </span>
-            ))}
-          </div>
-          {q.cue && (
-            <div className="jp eva-titlecard mt-3 text-3xl font-extrabold sm:text-4xl">
-              {renderRuby(q.cue)}
+        {isConjugate && conjItem ? (
+          /* ───── CONJUGATION: the compound card runs its own steps ───── */
+          <div className="mt-3">
+            <ConjugationCard key={q.id} item={conjItem} mode={CONJ_MODE} onComplete={finishConjugate} />
+            <div className="mt-3 flex h-12 items-center justify-center">
+              {answered && (
+                <button className="btn btn-primary px-8" onClick={next}>
+                  {isLast ? 'Ver resultado →' : 'Siguiente →'}
+                </button>
+              )}
             </div>
-          )}
-        </div>
-
-        {/* ───── ÁREA DE RESPUESTA (tamaño fijo) ───── */}
-        <div className="mt-3 flex min-h-[13rem] flex-col justify-center">
-          {q.type === 'mc' ? (
-            <Choices
-              options={q.options!}
-              correct={q.correct!}
-              picked={picked}
-              onPick={answerMC}
-              jp={optJP}
-              layout={mcLayout}
-            />
-          ) : (
-            <div className="mx-auto w-full max-w-sm">
-              <input
-                className={`jp input input-bordered w-full text-center text-2xl ${
-                  answered ? (feedback?.ok ? 'input-success' : 'input-error') : ''
+          </div>
+        ) : (
+          <>
+            {/* ───── QUESTION AREA (info card) ───── */}
+            <div className="mt-3 rounded-box border border-base-300 bg-base-200/50 p-4 text-center">
+              <div className="text-xs font-bold uppercase tracking-wider text-accent">
+                {q.skill === 'vocab' ? 'Vocabulario' : 'Gramática'}
+              </div>
+              <div
+                className={`mx-auto mt-2 max-w-prose text-pretty text-xl font-semibold sm:text-2xl ${
+                  hasJP(q.prompt ?? '') ? 'jp' : ''
                 }`}
-                autoComplete="off"
-                autoCapitalize="off"
-                spellCheck={false}
-                placeholder="escribí en hiragana…"
-                value={typed}
-                readOnly={answered}
-                autoFocus
-                onChange={(e) => setTyped(e.target.value)}
-                onKeyDown={(e) => {
-                  // Enter revisa; una vez revisado, el handler global avanza.
-                  if (e.key === 'Enter') {
-                    e.preventDefault();
-                    if (!answered) checkType();
-                  }
-                }}
-              />
-            </div>
-          )}
-        </div>
-
-        {/* feedback: espacio reservado para que el botón no se mueva */}
-        <div className="mt-3 min-h-[5.5rem]">
-          {feedback && (
-            <div
-              className={`rounded-box border px-4 py-3 text-sm ${
-                feedback.ok ? 'border-success bg-success/10' : 'border-error bg-error/10'
-              }`}
-            >
-              <div className="flex items-center justify-between gap-2">
-                <div className={`font-extrabold ${feedback.ok ? 'text-success' : 'text-error'}`}>
-                  {feedback.ok ? '✓ ¡Correcto!' : '✗ No exactamente'}
+              >
+                {(q.prompt ?? '').split('＿＿').map((part, i, arr) => (
+                  <span key={i}>
+                    {renderRuby(part)}
+                    {i < arr.length - 1 && <span className="jp font-extrabold text-primary">＿＿</span>}
+                  </span>
+                ))}
+              </div>
+              {q.cue && (
+                <div className="jp eva-titlecard mt-3 text-3xl font-extrabold sm:text-4xl">
+                  {renderRuby(q.cue)}
                 </div>
-                {q.topic !== 'vocabulario' && (
-                  <span className="badge badge-ghost badge-sm shrink-0">{q.topic}</span>
-                )}
-              </div>
-              <div className="jp mt-1 font-bold">
-                {feedback.ok ? '' : 'Respuesta: '}
-                {renderRuby(feedback.sol)}
-              </div>
-              <div className="mt-1 opacity-70">{feedback.exp}</div>
+              )}
             </div>
-          )}
-        </div>
 
-        {/* acción — siempre en el mismo lugar */}
-        <div className="mt-2 flex h-12 items-center justify-center">
-          {answered ? (
-            <button className="btn btn-primary px-8" onClick={next}>
-              {isLast ? 'Ver resultado →' : 'Siguiente →'}
-            </button>
-          ) : q.type === 'mc' ? (
-            <span className="text-sm opacity-70">Elegí una opción</span>
-          ) : (
-            <button className="btn btn-primary px-8" onClick={checkType}>
-              Revisar
-            </button>
-          )}
-        </div>
+            {/* ───── ANSWER AREA (fixed height) ───── */}
+            <div className="mt-3 flex min-h-[13rem] flex-col justify-center">
+              {q.type === 'mc' ? (
+                <Choices
+                  options={q.options!}
+                  correct={q.correct!}
+                  picked={picked}
+                  onPick={answerMC}
+                  jp={optJP}
+                  layout={mcLayout}
+                />
+              ) : (
+                <div className="mx-auto w-full max-w-sm">
+                  <input
+                    className={`jp input input-bordered w-full text-center text-2xl ${
+                      answered ? (feedback?.ok ? 'input-success' : 'input-error') : ''
+                    }`}
+                    autoComplete="off"
+                    autoCapitalize="off"
+                    spellCheck={false}
+                    placeholder="escribí en hiragana…"
+                    value={typed}
+                    readOnly={answered}
+                    autoFocus
+                    onChange={(e) => setTyped(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        e.preventDefault();
+                        if (!answered) checkType();
+                      }
+                    }}
+                  />
+                </div>
+              )}
+            </div>
+
+            {/* feedback: reserved space so the button doesn't jump */}
+            <div className="mt-3 min-h-[5.5rem]">
+              {feedback && (
+                <div
+                  className={`rounded-box border px-4 py-3 text-sm ${
+                    feedback.ok ? 'border-success bg-success/10' : 'border-error bg-error/10'
+                  }`}
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <div className={`font-extrabold ${feedback.ok ? 'text-success' : 'text-error'}`}>
+                      {feedback.ok ? '✓ ¡Correcto!' : '✗ No exactamente'}
+                    </div>
+                    {q.topic && q.topic !== 'vocabulario' && (
+                      <span className="badge badge-ghost badge-sm shrink-0">{q.topic}</span>
+                    )}
+                  </div>
+                  <div className="jp mt-1 font-bold">
+                    {feedback.ok ? '' : 'Respuesta: '}
+                    {renderRuby(feedback.sol)}
+                  </div>
+                  <div className="mt-1 opacity-70">{feedback.exp}</div>
+                </div>
+              )}
+            </div>
+
+            {/* action — always in the same place */}
+            <div className="mt-2 flex h-12 items-center justify-center">
+              {answered ? (
+                <button className="btn btn-primary px-8" onClick={next}>
+                  {isLast ? 'Ver resultado →' : 'Siguiente →'}
+                </button>
+              ) : q.type === 'mc' ? (
+                <span className="text-sm opacity-70">Elegí una opción</span>
+              ) : (
+                <button className="btn btn-primary px-8" onClick={checkType}>
+                  Revisar
+                </button>
+              )}
+            </div>
+          </>
+        )}
       </div>
     </section>
   );
+}
+
+function MissRow({ miss }: { miss: Miss }) {
+  const { ex } = miss;
+  const item = itemOf(ex);
+  const topic = ex.topic === 'vocabulario' ? 'Vocabulario' : ex.topic;
+  if (ex.type === 'conjugate' && item) {
+    return (
+      <div className="rounded-box border border-base-300 border-l-4 border-l-error bg-base-200 px-3.5 py-3">
+        <div className="text-sm opacity-70">
+          <b>Conjugación</b> · <span className="jp">{renderRuby(cueOf(item))}</span> — {item.meaning}
+        </div>
+        <div className="mt-1 text-sm font-bold text-error">Revisá las formas de este verbo.</div>
+      </div>
+    );
+  }
+  return (
+    <div className="rounded-box border border-base-300 border-l-4 border-l-error bg-base-200 px-3.5 py-3">
+      <div className="text-sm opacity-70">
+        <b>{topic}</b> · {renderRuby(ex.prompt ?? '')}
+        {ex.cue && <span className="jp"> （{renderRuby(ex.cue)}）</span>}
+      </div>
+      <div className="jp mt-1 font-bold">
+        <span className="text-error line-through opacity-80">{miss.given}</span> →{' '}
+        <span className="text-success">{renderRuby(miss.sol)}</span>
+      </div>
+      <div className="mt-1 text-sm opacity-70">{ex.exp}</div>
+    </div>
+  );
+}
+
+// Furigana notation for an item's dictionary form, e.g. [消|け]す.
+function cueOf(item: Item): string {
+  if (item.kanji && item.furi) return `[${item.kanji}|${item.furi}]${item.okuri ?? ''}`;
+  return item.kana;
 }
 
 function Label({ children }: { children: React.ReactNode }) {

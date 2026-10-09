@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 
-type Section = 'repaso' | 'conj' | 'ref';
+type Section = 'repaso' | 'ref';
 
 const NAV: { id: Section; label: string; path: string }[] = [
   { id: 'repaso', label: 'Repaso', path: '' },
-  { id: 'conj', label: 'Conjugación', path: 'conjugacion' },
   { id: 'ref', label: 'Referencia', path: 'referencia' },
 ];
 

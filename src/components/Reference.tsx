@@ -1,10 +1,14 @@
 import { useMemo, useState } from 'react';
-import verbsData from '../data/verbs.json';
-import type { Verb, Group } from '../lib/types';
-import { conjugate, normalize } from '../lib/conjugator';
+import { db } from '../lib/db';
+import type { Item, Group } from '../lib/types';
+import { conjugate, conjugateAdj } from '../lib/conjugator';
 import Furigana from './Furigana';
 
-const VERBS = verbsData as Verb[];
+// Only verbs (with a group) can be conjugated in this reference table.
+type Verb = Item & { group: Group };
+const VERBS = db.items.all.filter((i): i is Verb => i.kind === 'verb' && i.group != null);
+type Adj = Item & { kind: 'adj_i' | 'adj_na' };
+const ADJS = db.items.all.filter((i): i is Adj => i.kind === 'adj_i' || i.kind === 'adj_na');
 const GROUP_COLOR: Record<Group, string> = { 1: 'badge-info', 2: 'badge-warning', 3: 'badge-secondary' };
 
 type Filter = 'all' | '1' | '2' | '3' | 'false2';
@@ -46,7 +50,8 @@ export default function Reference() {
             />
             <p>
               <b>ます:</b> última sílaba a fila <b>-i</b> + ます. <b>ない:</b> a fila <b>-a</b> + ない
-              (う → わ). <b>Excepción:</b> <span className="jp">いく → いって</span>.
+              (う → わ). <b>Excepciones:</b> <span className="jp">いく → いって</span>,{' '}
+              <span className="jp">ある → ない</span>.
             </p>
           </RuleBlock>
 
@@ -77,6 +82,20 @@ export default function Reference() {
             </p>
           </RuleBlock>
 
+          <RuleBlock badge="badge-accent" title="Formas た · なかった · たり">
+            <RTable
+              head={['Forma', 'Cómo se arma', 'Ej.']}
+              rows={[
+                ['た', 'igual que て, cambiando て → た / で → だ', '書いて → 書いた'],
+                ['なかった', 'forma ない: い → かった', '行かない → 行かなかった'],
+                ['たり', 'forma た + り', '読んだ → 読んだり'],
+              ]}
+            />
+            <p className="jp">
+              ある → ない → なかった. いく → いった (no いいた).
+            </p>
+          </RuleBlock>
+
           <div className="rounded-box border-l-4 border-primary bg-base-100 px-4 py-3 text-sm">
             <b className="text-primary">Truco de los «falsos Grupo 2».</b> Verbos que terminan en{' '}
             <span className="jp">〜える / 〜いる</span> parecen Grupo 2, pero algunos son Grupo 1.
@@ -94,6 +113,98 @@ export default function Reference() {
               <span className="jp">みる・着る</span> hay que memorizarlos.
             </p>
           </div>
+        </div>
+
+        <span className="mt-8 text-xs font-bold uppercase tracking-widest text-accent">
+          Habla informal · ふつうけい
+        </span>
+        <div className="mx-auto mt-3 flex w-full max-w-3xl flex-col gap-4">
+          <RuleBlock badge="badge-info" title="Verbos">
+            <RTable
+              head={['', 'Cortés', 'Informal', 'Ej.']}
+              rows={[
+                ['Presente', '〜ます', 'diccionario', '行きます → 行く'],
+                ['Presente neg.', '〜ません', '〜ない', '行きません → 行かない'],
+                ['Pasado', '〜ました', '〜た', '行きました → 行った'],
+                ['Pasado neg.', '〜ませんでした', '〜なかった', '行きませんでした → 行かなかった'],
+              ]}
+            />
+          </RuleBlock>
+
+          <RuleBlock badge="badge-warning" title="Sustantivos y adjetivos な">
+            <RTable
+              head={['', 'Cortés', 'Informal']}
+              rows={[
+                ['Presente', 'きれいです', 'きれい（だ）'],
+                ['Presente neg.', 'きれいじゃありません', 'きれいじゃない'],
+                ['Pasado', 'きれいでした', 'きれいだった'],
+                ['Pasado neg.', 'きれいじゃありませんでした', 'きれいじゃなかった'],
+              ]}
+            />
+            <p>
+              <b className="jp">だ</b> sola suena muy fuerte: normalmente se omite, salvo antes de{' '}
+              <span className="jp">ね / よ</span> (<span className="jp">ともだちだよ</span>).
+            </p>
+          </RuleBlock>
+
+          <RuleBlock badge="badge-secondary" title="Adjetivos い">
+            <RTable
+              head={['', 'Cortés', 'Informal']}
+              rows={[
+                ['Presente', '大きいです', '大きい'],
+                ['Presente neg.', '大きくないです', '大きくない'],
+                ['Pasado', '大きかったです', '大きかった'],
+                ['Pasado neg.', '大きくなかったです', '大きくなかった'],
+              ]}
+            />
+            <p>
+              Sólo se saca <span className="jp">です</span>. <b>Excepción:</b>{' '}
+              <span className="jp">いい → よくない / よかった / よくなかった</span>.
+            </p>
+          </RuleBlock>
+
+          <RuleBlock badge="badge-accent" title="Expresiones">
+            <RTable
+              head={['Cortés', 'Informal']}
+              rows={[
+                ['〜たいです', '〜たい'],
+                ['〜ませんか (invitar)', '〜ない？'],
+                ['〜てください', '〜て'],
+                ['〜ています', '〜て（い）る'],
+                ['〜ことができます', '〜ことができる'],
+                ['〜たり〜たりします', '〜たり〜たりする'],
+                ['〜てもいいですか', '〜てもいい？'],
+                ['〜なければなりません', '〜なければならない'],
+                ['〜たことがあります', '〜たことがある'],
+                ['〜が (pero)', '〜けど / Sust.・adj な + だけど'],
+                ['〜か', '↗ tono ascendente (？)'],
+                ['はい / いいえ', 'うん / ううん'],
+              ]}
+            />
+            <p>
+              Las partículas <span className="jp">を・は・が・へ・に</span> (destino) se pueden omitir:{' '}
+              <span className="jp">ビール（を）飲んだ</span>.
+            </p>
+          </RuleBlock>
+
+          <RuleBlock badge="badge-primary" title="Construcciones (cap. 18–19)">
+            <RTable
+              head={['Patrón', 'Significado', 'Ej.']}
+              rows={[
+                ['V.dicc + ことができる', 'poder / saber hacer', '泳ぐことができる'],
+                ['Sust. + ができる', 'ídem con Sust.+する', 'スキーができる'],
+                ['しゅみは V.dicc + ことです', 'mi hobby es…', 'ギターをひくことです'],
+                ['V.dicc + ことが好き', 'me gusta…', '食べることが好き'],
+                ['V.dicc + まえに', 'antes de…', '寝るまえに'],
+                ['Sust. + のまえに', 'antes de (evento)', '食事のまえに'],
+                ['tiempo + まえに', 'hace…', '5年まえに'],
+                ['V.た + ことがある', 'experiencia (lo he hecho)', '行ったことがある'],
+                ['V.たり、V.たりする', 'acciones sin orden', '見たり読んだりする'],
+                ['adj い: 〜くなる', 'volverse…', '強くなる'],
+                ['adj な / Sust.: 〜になる', 'volverse…', '元気になる / いしゃになる'],
+              ]}
+            />
+          </RuleBlock>
         </div>
 
         {/* tabla */}
@@ -122,7 +233,7 @@ export default function Reference() {
           <table className="table">
             <thead>
               <tr className="text-xs uppercase">
-                <th>Verbo</th><th>Dicc.</th><th>ます</th><th>ない</th><th>た</th><th>て</th>
+                <th>Verbo</th><th>Dicc.</th><th>ます</th><th>ない</th><th>た</th><th>なかった</th><th>て</th>
                 <th>Grupo</th><th>Significado</th>
               </tr>
             </thead>
@@ -136,6 +247,7 @@ export default function Reference() {
                     <td className="jp">{F.masu}</td>
                     <td className="jp">{F.nai}</td>
                     <td className="jp">{F.ta}</td>
+                    <td className="jp">{F.nakatta}</td>
                     <td className="jp">{F.te}</td>
                     <td>
                       <span className={`badge badge-sm ${GROUP_COLOR[v.group]}`}>
@@ -153,6 +265,40 @@ export default function Reference() {
         <p className="mt-2 text-sm opacity-70">
           Deslizá la tabla para ver todas las columnas. * = falso Grupo 2 (parece G2 pero es G1).
         </p>
+
+        <div className="mt-6 text-xs font-bold uppercase tracking-wider opacity-70">
+          Lista de adjetivos (informal)
+        </div>
+        <div className="mt-3 overflow-x-auto rounded-box border border-base-300">
+          <table className="table">
+            <thead>
+              <tr className="text-xs uppercase">
+                <th>Adjetivo</th><th>Presente</th><th>Neg.</th><th>Pasado</th><th>Pasado neg.</th>
+                <th>Tipo</th><th>Significado</th>
+              </tr>
+            </thead>
+            <tbody>
+              {ADJS.map((a) => {
+                const F = conjugateAdj(a.kana, a.kind);
+                return (
+                  <tr key={a.id} className="whitespace-nowrap">
+                    <td className="jp font-semibold"><Furigana verb={a} /></td>
+                    <td className="jp">{F.pres}</td>
+                    <td className="jp">{F.neg}</td>
+                    <td className="jp">{F.past}</td>
+                    <td className="jp">{F.pastNeg}</td>
+                    <td>
+                      <span className={`badge badge-sm ${a.kind === 'adj_i' ? 'badge-secondary' : 'badge-warning'}`}>
+                        {a.kind === 'adj_i' ? 'い' : 'な'}
+                      </span>
+                    </td>
+                    <td>{a.meaning}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
   );
