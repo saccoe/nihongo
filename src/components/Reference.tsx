@@ -96,23 +96,30 @@ export default function Reference() {
             </p>
           </RuleBlock>
 
-          <div className="rounded-box border-l-4 border-primary bg-base-100 px-4 py-3 text-sm">
-            <b className="text-primary">Truco de los «falsos Grupo 2».</b> Verbos que terminan en{' '}
-            <span className="jp">〜える / 〜いる</span> parecen Grupo 2, pero algunos son Grupo 1.
-            Mirá dónde está la vocal <b>い/え</b> con el furigana:
-            <div className="mt-2 flex flex-wrap gap-x-5 gap-y-2 text-xl">
+          <RuleBlock badge="badge-primary" title="¿Grupo 1 o Grupo 2? (verbos en 〜る)">
+            <RTable
+              head={['Si el verbo…', 'Grupo', 'Ej.']}
+              rows={[
+                ['termina en 〜aる / 〜uる / 〜oる', 'siempre G1', '撮る → 撮った, わかる → わからない, つくる'],
+                ['termina en 〜iる / 〜eる', 'casi siempre G2', '食べる → 食べた, 起きる → 起きた'],
+                ['〜iる / 〜eる con la い/え DENTRO de la lectura del kanji', 'casi siempre G1 (falso G2)', '帰る → 帰った, 入る → 入った, 知る → 知らない, 走る → 走った, 要る → 要らない'],
+                ['〜iる / 〜eる con la い/え en el okurigana (kana suelto)', 'G2', '食べる, 起きる, 見せる'],
+                ['es corto y el kanji es toda la raíz', 'G2 (excepción al truco)', '見る → 見た, 着る → 着た, 寝る → 寝た, 出る → 出た, 居る → 居た'],
+              ]}
+            />
+            <div className="mt-1 flex flex-wrap gap-x-5 gap-y-2 text-xl">
               <Example verb={{ kanji: '帰', furi: 'かえ', okuri: 'る' }} note="え DENTRO → G1" />
               <Example verb={{ kanji: '入', furi: 'はい', okuri: 'る' }} note="い dentro → G1" />
               <Example verb={{ kanji: '走', furi: 'はし', okuri: 'る' }} note="し dentro → G1" />
               <Example verb={{ kanji: '食', furi: 'た', okuri: 'べる' }} note="べ okurigana → G2" />
               <Example verb={{ kanji: '起', furi: 'お', okuri: 'きる' }} note="き okurigana → G2" />
+              <Example verb={{ kanji: '見', furi: 'み', okuri: 'る' }} note="corto → G2" />
             </div>
-            <p className="mt-2 opacity-70">
-              Si la vocal い/え está <b>dentro</b> de la lectura del kanji, casi siempre es Grupo 1.
-              Si está en el <b>okurigana</b> (kana suelto), es Grupo 2. Verbos cortos como{' '}
-              <span className="jp">みる・着る</span> hay que memorizarlos.
+            <p>
+              <b>Ojo con el pasado:</b> el G2 saca る y agrega た (una sola t: <span className="jp">食べた</span>).
+              El G1 en る cambia る → った (<span className="jp">撮った</span>, <span className="jp">帰った</span>).
             </p>
-          </div>
+          </RuleBlock>
         </div>
 
         <span className="mt-8 text-xs font-bold uppercase tracking-widest text-accent">
