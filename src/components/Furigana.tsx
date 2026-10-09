@@ -1,11 +1,9 @@
-import type { Verb } from '../lib/types';
-
 type Props = {
-  verb: Pick<Verb, 'kanji' | 'furi' | 'okuri'>;
+  verb: { kanji?: string; furi?: string; okuri?: string };
   className?: string;
 };
 
-/** Muestra un verbo con furigana solo sobre el kanji (el okurigana queda en kana). */
+/** Renders a word with furigana over the kanji only (okurigana stays as plain kana). */
 export default function Furigana({ verb, className = '' }: Props) {
   return (
     <span className={`jp ${className}`}>
