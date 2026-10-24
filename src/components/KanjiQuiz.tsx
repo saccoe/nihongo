@@ -114,22 +114,32 @@ export default function KanjiQuiz() {
             </button>
           </div>
         </div>
-        <div className="mt-1 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
-          {LESSON_NUMS.map((n) => (
-            <button
-              key={n}
-              className={`btn btn-sm btn-outline h-auto flex-col items-start gap-0.5 py-2 text-left ${
-                lessons.includes(n) ? 'btn-primary' : 'opacity-60'
-              }`}
-              aria-pressed={lessons.includes(n)}
-              onClick={() => set({ lessons: toggle(lessons, n, false) })}
-            >
-              <span>Lección {n}</span>
-              <span className="jp text-sm font-normal tracking-wide">
-                {kanjiOfLesson(n).map((k) => k.char).join('')}
-              </span>
-            </button>
-          ))}
+        {/* Phones: compact number + first kanji, so the whole setup fits in ~one screen.
+            From sm up there's room for the full kanji list. */}
+        <div className="mt-1 grid grid-cols-4 gap-2 sm:grid-cols-3 lg:grid-cols-4">
+          {LESSON_NUMS.map((n) => {
+            const chars = kanjiOfLesson(n).map((k) => k.char).join('');
+            return (
+              <button
+                key={n}
+                className={`btn btn-sm btn-outline h-auto flex-col items-center gap-0.5 px-1 py-2 sm:items-start sm:px-3 sm:text-left ${
+                  lessons.includes(n) ? 'btn-primary' : 'opacity-60'
+                }`}
+                aria-pressed={lessons.includes(n)}
+                aria-label={`Lección ${n}: ${chars}`}
+                onClick={() => set({ lessons: toggle(lessons, n, false) })}
+              >
+                <span className="text-base sm:text-sm">
+                  <span className="sm:hidden">{n}</span>
+                  <span className="hidden sm:inline">Lección {n}</span>
+                </span>
+                <span className="jp text-sm font-normal tracking-wide">
+                  <span className="sm:hidden">{chars.slice(0, 2)}…</span>
+                  <span className="hidden sm:inline">{chars}</span>
+                </span>
+              </button>
+            );
+          })}
         </div>
 
         <Label>Modos</Label>
@@ -169,7 +179,8 @@ export default function KanjiQuiz() {
           ))}
         </div>
 
-        <div className="mt-5 flex flex-wrap items-center gap-3">
+        {/* Pinned to the bottom on phones so you can start without scrolling. */}
+        <div className="sticky bottom-0 z-10 -mx-4 mt-5 flex flex-wrap items-center gap-3 border-t border-base-300 bg-base-100/95 px-4 py-3 backdrop-blur sm:static sm:mx-0 sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none">
           <button className="btn btn-primary" disabled={tasks.length === 0} onClick={start}>
             Empezar →
           </button>
