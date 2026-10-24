@@ -26,7 +26,7 @@ export interface Item {
 }
 
 /** One question row. `skill` = pedagogical axis; `type` = how it's rendered and graded. */
-export type Skill = 'grammar' | 'vocab' | 'conjugation';
+export type Skill = 'grammar' | 'vocab' | 'conjugation' | 'kanji';
 export type ExerciseType = 'mc' | 'type' | 'conjugate';
 export interface Exercise {
   id: string;
@@ -52,4 +52,30 @@ export interface Lesson {
   position: number;
   chapter?: number;
   exerciseIds: string[];
+}
+
+/* ---------- Kanji (Basic Kanji Book vol. 1) ---------- */
+
+/** Readings as printed in the BKB index: on in katakana, kun in hiragana with `-`
+ *  before the okurigana (あたら-しい). Only the readings the book teaches. */
+export interface Kanji {
+  id: string;
+  char: string;
+  lesson: number;
+  on: string[];
+  kun: string[];
+  meaning: string;
+}
+
+/** A word written only with BKB1 kanji. `ruby` ([新|しん][聞|ぶん]) is the source of
+ *  truth: written form, kana and lesson are derived from it (lib/kanji.ts).
+ *  A multi-kanji block ([今日|きょう]) is a reading of the whole (jukujikun).
+ *  `alt` = other correct readings, never offered as distractors. */
+export type WordKind = 'noun' | 'verb' | 'adj_i' | 'adj_na' | 'other';
+export interface KanjiWord {
+  id: string;
+  ruby: string;
+  kind: WordKind;
+  meaning: string;
+  alt?: string[];
 }

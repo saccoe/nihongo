@@ -7,7 +7,9 @@
 import itemsJson from '../data/items.json';
 import exercisesJson from '../data/exercises.json';
 import lessonsJson from '../data/lessons.json';
-import type { Item, Exercise, Lesson, Skill } from './types';
+import kanjiJson from '../data/kanji.json';
+import kanjiWordsJson from '../data/kanji-words.json';
+import type { Item, Exercise, Lesson, Skill, Kanji, KanjiWord } from './types';
 
 interface Table<T extends { id: string }> {
   all: T[];
@@ -24,6 +26,8 @@ export const db = {
   items: table(itemsJson as Item[]),
   exercises: table(exercisesJson as Exercise[]),
   lessons: table(lessonsJson as Lesson[]),
+  kanji: table(kanjiJson as Kanji[]),
+  kanjiWords: table(kanjiWordsJson as KanjiWord[]),
 };
 
 /* ---------- queries ("JOIN" is a lookup by id) ---------- */

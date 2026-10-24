@@ -1,7 +1,8 @@
 # 日本語 クイズ · Nihongo
 
 App de estudio de japonés: repaso de gramática y vocabulario,
-entrenador de conjugación de verbos y una referencia con las reglas de cada grupo.
+entrenador de conjugación de verbos, práctica de kanji del Basic Kanji Book 1
+y una referencia con las reglas de cada grupo.
 
 Hecho con **Astro + React + Tailwind + daisyUI**. Los datos viven en JSON, así que
 agregar preguntas o verbos es editar un archivo.
@@ -10,10 +11,14 @@ agregar preguntas o verbos es editar un archivo.
 
 ```
 src/
-  data/verbs.json       ← base de verbos (kanji · furigana · grupo · significado)
-  data/questions.json   ← banco de preguntas del quiz
-  lib/conjugator.ts     ← reglas de conjugación (ます · ない · た · て · なければ…)
-  components/           App · Quiz · Conjugation · Reference · Furigana (React)
+  data/items.json        ← léxico (verbos, sustantivos, adjetivos…)
+  data/exercises.json    ← banco de preguntas del repaso
+  data/lessons.json      ← capítulos (agrupan ejercicios)
+  data/kanji.json        ← los 251 kanji del BKB1 (lección · on · kun · significado)
+  data/kanji-words.json  ← palabras con esos kanji, en furigana: [新|しん][聞|ぶん]
+  lib/conjugator.ts      ← reglas de conjugación (ます · ない · た · て · なければ…)
+  lib/kanji.ts           ← arma los ejercicios de kanji y sus distractores
+  components/            QuizRunner · Quiz · KanjiQuiz · ConjugationCard · Reference…
   layouts/ · pages/ · styles/
 ```
 

@@ -62,7 +62,7 @@ export default function Choices({
               ? 'btn h-auto px-5 py-2 text-3xl'
               : layout === 'grid'
                 ? jp
-                  ? 'btn h-auto py-3 text-2xl'
+                  ? 'btn h-auto py-3 text-xl sm:text-2xl'
                   : 'btn h-auto py-2 text-sm font-normal normal-case'
                 : 'btn h-auto justify-start py-3 text-base font-normal normal-case';
           if (reveal) {
