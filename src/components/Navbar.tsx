@@ -64,10 +64,19 @@ export default function Navbar({ current, base }: { current: Section; base: stri
     </li>
   ));
 
+  const furiganaToggle = (
+    <input
+      type="checkbox"
+      className="toggle toggle-primary toggle-sm"
+      checked={furigana}
+      onChange={(e) => setFurigana(e.target.checked)}
+    />
+  );
+
   return (
-    <header className="rounded-box border border-base-300 bg-base-200">
-      <div className="navbar min-h-0 gap-1 p-2 sm:px-3">
-        <div className="navbar-start gap-1">
+    <header className="border-b border-base-300 md:rounded-box md:border md:bg-base-200">
+      <div className="navbar min-h-0 gap-1 px-0 py-1 md:p-2 md:px-3">
+        <div className="navbar-start gap-1 max-md:w-auto max-md:flex-1">
           {/* hamburguesa — sólo en pantallas chicas */}
           <div className="dropdown md:hidden">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-sm btn-square">
@@ -88,9 +97,32 @@ export default function Navbar({ current, base }: { current: Section; base: stri
             </div>
             <ul
               tabIndex={-1}
-              className="menu dropdown-content z-10 mt-2 w-48 gap-1 rounded-box border border-base-300 bg-base-200 p-2 shadow-xl"
+              className="menu dropdown-content z-10 mt-2 w-56 gap-1 rounded-box border border-base-300 bg-base-200 p-2 shadow-xl"
             >
               {links}
+              <li className="menu-title mt-2 border-t border-base-300 pt-3">Ajustes</li>
+              <li>
+                <label className="justify-between">
+                  Furigana
+                  {furiganaToggle}
+                </label>
+              </li>
+              <li>
+                <label className="justify-between gap-2">
+                  🎨 Tema
+                  <select
+                    className="select select-sm w-28 capitalize"
+                    value={theme}
+                    onChange={(e) => setTheme(e.target.value)}
+                  >
+                    {THEMES.map((t) => (
+                      <option key={t} value={t}>
+                        {t}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </li>
             </ul>
           </div>
 
@@ -101,13 +133,13 @@ export default function Navbar({ current, base }: { current: Section; base: stri
           >
             <span
               aria-hidden
-              className="size-6 shrink-0 rounded-full"
+              className="size-4 shrink-0 rounded-full md:size-6"
               style={{
                 background:
                   'radial-gradient(circle at 50% 42%, var(--color-primary), var(--color-primary) 62%, transparent 63%)',
               }}
             />
-            <span className="eva-titlecard text-lg font-extrabold tracking-tight">
+            <span className="eva-titlecard whitespace-nowrap text-base font-extrabold md:text-lg tracking-tight">
               日本語 <span className="text-primary">クイズ</span>
             </span>
           </a>
@@ -118,23 +150,18 @@ export default function Navbar({ current, base }: { current: Section; base: stri
           <ul className="menu menu-horizontal gap-1 p-0">{links}</ul>
         </div>
 
-        <div className="navbar-end gap-1 sm:gap-2">
+        <div className="navbar-end hidden gap-2 md:flex">
           <label
             className="flex cursor-pointer items-center gap-1.5"
             title="Furigana (lecturas sobre el kanji)"
           >
             <span className="jp text-sm font-semibold opacity-70">振</span>
-            <input
-              type="checkbox"
-              className="toggle toggle-primary toggle-sm"
-              checked={furigana}
-              onChange={(e) => setFurigana(e.target.checked)}
-            />
+            {furiganaToggle}
           </label>
 
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-sm btn-ghost gap-1">
-              🎨 <span className="hidden capitalize sm:inline">{theme}</span>
+              🎨 <span className="capitalize">{theme}</span>
             </div>
             <ul
               tabIndex={0}
