@@ -67,7 +67,7 @@ export default function Navbar({ current, base }: { current: Section; base: stri
   return (
     <header className="rounded-box border border-base-300 bg-base-200">
       <div className="navbar min-h-0 gap-1 p-2 sm:px-3">
-        <div className="navbar-start gap-1">
+        <div className="navbar-start gap-1 max-md:w-auto max-md:flex-1">
           {/* hamburguesa — sólo en pantallas chicas */}
           <div className="dropdown md:hidden">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-sm btn-square">
@@ -107,7 +107,7 @@ export default function Navbar({ current, base }: { current: Section; base: stri
                   'radial-gradient(circle at 50% 42%, var(--color-primary), var(--color-primary) 62%, transparent 63%)',
               }}
             />
-            <span className="eva-titlecard text-lg font-extrabold tracking-tight">
+            <span className="eva-titlecard whitespace-nowrap text-lg font-extrabold tracking-tight">
               日本語 <span className="text-primary">クイズ</span>
             </span>
           </a>
@@ -118,7 +118,7 @@ export default function Navbar({ current, base }: { current: Section; base: stri
           <ul className="menu menu-horizontal gap-1 p-0">{links}</ul>
         </div>
 
-        <div className="navbar-end gap-1 sm:gap-2">
+        <div className="navbar-end gap-1 max-md:w-auto sm:gap-2">
           <label
             className="flex cursor-pointer items-center gap-1.5"
             title="Furigana (lecturas sobre el kanji)"
